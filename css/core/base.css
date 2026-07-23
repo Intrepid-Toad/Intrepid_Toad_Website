@@ -1,0 +1,155 @@
+/* ======================
+   Base Styles
+======================= */
+
+/* CSS Reset & Defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* check the note important over rider after refactor */
+h1, .block h1 {
+    text-transform: none !important;
+}
+
+
+h1 {
+    color: var(--h1-color);
+    font-size: 34px;
+    font-weight: 500;
+}
+
+h2 {
+    color: var(--h2-color);
+    font-size: 30px;
+    font-weight: 500;
+}
+
+h3 {
+    color: var(--h3-color);
+    font-size: 26px;
+    font-weight: 500;
+}
+
+h4 {
+    color: var(--h1-color);
+    font-size: 22px;
+    font-weight: 500;
+}
+
+h5 {
+    color: var(--h2-color);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+h6 {
+    color: var(--h3-color);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+p {
+    font-size: 15px;
+    line-height: 28px;
+    color: var(--text-primary);
+    text-align: justify;
+}
+
+/* Lists */
+ul {
+    list-style: disc;
+    padding-left: 40px;
+    margin: 0 0 1em 0;
+}
+
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: none;
+    /* OPTIMIZED: was 'transition: all' — animating every property on
+       every link forces the browser to watch all style changes on all
+       anchors (including portfolio tiles). Scoped to what actually
+       animates on links: color and background. */
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+a:active, a:focus {
+    color: var(--secondary);
+}
+
+a:focus, a:hover {
+    text-decoration: underline;
+}
+
+.well,
+.sidebar-widget, /* use your actual class if different */
+.articles-sidebar,
+.articles-categories,
+.sidebar-panel {
+    background: var(--form-bg, var(--background));
+    /* fallback to background if form-bg isn't set */
+    color: var(--foreground);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border: 1px solid var(--border-color);
+    /* Feel free to adjust shadow or border to fit your design */
+}
+
+.lead {
+    color: var(--tertiary); /* or any other suitable variable */
+    font-weight: 500;
+}
+
+
+
+table
+{
+    font-size: 0.9em;
+}
+
+button {
+    background-color: var(--primary);
+    color: var(--primaryBgContrast);
+}
+
+input {
+    background-color: var(--neutral-70);
+    color: var(--neutral-10);
+}
+
+pre
+{
+    background-color: #060606;
+    color: #15ff00;
+    border-color: var(--tertiary);
+}
+
+code
+{
+    background-color: #060606;
+    color: #15ff00;
+    border-color: var(--tertiary);
+}
+
+select
+{
+    background-color: var(--neutral-70);
+    color: var(--neutral-10);
+}

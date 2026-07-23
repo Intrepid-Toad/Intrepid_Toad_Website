@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="robots" content="noai, noimageai">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+        Pijove – Statistical design tool
+        
+    </title>
+    <meta name="description" content="Intrepid Toad, Game Studio from Ireland">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    <link rel="icon" type="image/x-icon" href="/pijove.ico">
+    
+    <link rel="stylesheet" href="/css/owl.carousel.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/ionicons.min.css">
+<link rel="stylesheet" href="/css/animate.css">
+<link rel="stylesheet" href="/css/responsive.css">
+
+
+<link rel="stylesheet" href="/css/themes/pijove.css">
+
+<script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/min/waypoints.min.js"></script>
+<script src="/js/jquery.counterup.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="/js/main.js"></script>
+
+
+<script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+    };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+<script src="/js/post-lists.js"></script>
+
+
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-default">
+    <div class="container-fluid">
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+    <img src="/img/icons/logo-40-intrepid-toad.png" alt="Intrepid Toad">
+</a>
+<a class="navbar-brand" href="/alt-kreation">
+    <img src="/img/icons/logo-40-alt-kreation.png" alt="alt-kreation">
+</a>
+<a class="navbar-brand" href="/pijove">
+    <img src="/img/icons/logo-40-pijove.png" alt="Pijove">
+</a>
+
+        </div>
+        
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-center nav-black">
+                
+                
+                <li class="">
+                    <a href="/pijove">Home</a>
+                </li>
+                <li class="">
+                    <a href="/pijove/portfolio.html">Portfolio</a>
+                </li>
+                <li class="">
+                    <a href="/pijove/articles.html">Articles</a>
+                </li>
+                <li class="">
+                    <a href="/pijove/contact.html">Contact</a>
+                </li>
+            </ul>
+            <div class="nav navbar-nav navbar-right">
+                <form action="/intrepid-toad/articles/search.html" method="get">
+    <input
+            type="text"
+            id="searchInput"
+            name="q"
+            placeholder="Search articles...">
+    <button
+            type="submit"
+            id="searchButton">
+        Search
+    </button>
+</form>
+            </div>
+        </div>
+       
+    </div>
+</nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="global-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h1>Pijove</h1>
+          
+              <h2 class="header-subtitle">Statistical design tool</h2>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<article id="post">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                
+                
+<details class="post-nav" open="">
+  <summary class="post-nav-summary">Navigation</summary>
+
+  <h4 class="no_toc">Contents</h4>
+<ul id="markdown-toc">
+  <li><a href="#composite-score-design-tool" id="markdown-toc-composite-score-design-tool">Composite Score Design Tool</a></li>
+  <li><a href="#key-features" id="markdown-toc-key-features">Key Features</a>    <ul>
+      <li><a href="#data-import" id="markdown-toc-data-import">Data Import</a></li>
+      <li><a href="#composite-scoring" id="markdown-toc-composite-scoring">Composite Scoring</a></li>
+      <li><a href="#data-exploration-and-group-comparison" id="markdown-toc-data-exploration-and-group-comparison">Data Exploration and Group Comparison</a></li>
+    </ul>
+  </li>
+  <li><a href="#technical-goals" id="markdown-toc-technical-goals">Technical Goals</a></li>
+</ul>
+
+  <nav id="lof" class="post-list-nav"></nav>
+
+</details>
+
+<h1 id="composite-score-design-tool">Composite Score Design Tool</h1>
+<p>During game design and analysis, I often work with large collections of documents and datasets that require repeated evaluation, comparison, and ranking. Many of these processes involved manually calculating metrics, filtering information, and creating different views of the same data.
+To streamline this workflow, I built a lightweight and flexible application for generating composite scores from structured data. The tool imports generic spreadsheets, applies configurable scoring methods, generates statistical summaries, and provides multiple ways to explore relationships within the dataset.
+The goal was to create a reusable analysis tool that improves clarity when comparing complex groups of data.</p>
+
+<h1 id="key-features">Key Features</h1>
+
+<ul>
+  <li>Imports generic spreadsheet datasets</li>
+  <li>Applies filtering and configurable scoring weights</li>
+  <li>Generates descriptive statistics including:
+    <ul>
+      <li>Minimum and maximum values</li>
+      <li>Z-scores</li>
+      <li>Composite scores</li>
+    </ul>
+  </li>
+  <li>Exports processed results into separate sheets</li>
+  <li>Provides element-level and grouped data views</li>
+  <li>Enables comparison between individual entries and larger datasets</li>
+</ul>
+
+<h2 id="data-import">Data Import</h2>
+
+<figure data-name="import">
+    <img src="/img/pijove/portfolio/design-tool/design-tool-import.png" alt="Import data with weighted variable scoring for a composite score" loading="lazy" />
+    <figcaption>Import data with weighted variable scoring for a composite score</figcaption>
+</figure>
+
+<p>The workflow begins by importing structured data (<a class="xref" href="#figure-import" data-xref-type="figure" data-xref-name="import" data-xref-label="Fig.">Fig.</a>). The application then processes the dataset by applying filters and user-defined weights before generating composite scores.</p>
+
+<h2 id="composite-scoring">Composite Scoring</h2>
+
+<figure data-name="rank">
+    <img src="/img/pijove/portfolio/design-tool/design-tool-ranking.png" alt="See the results of weighted score for analysis" loading="lazy" />
+    <figcaption>See the results of weighted score for analysis</figcaption>
+</figure>
+
+<p>The scoring system combines multiple weighted metrics into a single composite score (<a class="xref" href="#figure-rank" data-xref-type="figure" data-xref-name="rank" data-xref-label="Fig.">Fig.</a>). Transforms multiple measurements into one score.</p>
+
+<h2 id="data-exploration-and-group-comparison">Data Exploration and Group Comparison</h2>
+
+<figure data-name="data">
+    <img src="/img/pijove/portfolio/design-tool/design-tool-database.png" alt="Analysis unit values in comparison to groups" loading="lazy" />
+    <figcaption>Analysis unit values in comparison to groups</figcaption>
+</figure>
+
+<p>The database view allows individual elements to be inspected (<a class="xref" href="#figure-data" data-xref-type="figure" data-xref-name="data" data-xref-label="Fig.">Fig.</a>) while comparing them against their broader groups. This provides additional context beyond simple rankings by showing how each element performs relative to similar entries.</p>
+
+<h1 id="technical-goals">Technical Goals</h1>
+
+<ul>
+  <li>Build a flexible system that works with different datasets rather than a fixed schema</li>
+  <li>Automate repetitive analysis workflows</li>
+  <li>Provide transparent scoring calculations</li>
+  <li>Create multiple perspectives of the same dataset to improve decision-making</li>
+</ul>
+
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <footer class="footer">
+    <hr>
+    <nav class="footer__menu">
+        <ul class="footer__menu-list">
+            <li class="footer__menu-item"><a class="footer__menu-link" href="/pijove/contact.html">Contact</a></li>
+            <li class="footer__menu-item"><a class="footer__menu-link" href="/support.html">Support</a></li>
+            <li class="footer__menu-item"><a class="footer__menu-link" href="/terms.html">Terms</a></li>
+        </ul>
+    </nav>
+</footer>
+<a href="/xyz-assets-cache/" style="display:none" aria-hidden="true" tabindex="-1" rel="nofollow">.</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

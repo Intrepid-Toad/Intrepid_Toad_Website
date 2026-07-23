@@ -1,0 +1,182 @@
+/* ------ Portfolio Section ------ */
+#portfolio-work {
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+/* ---------------- Portfolio Menu ---------------- */
+#portfolio-work .block .portfolio-menu {
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Pill box: self-centering via margin auto, independent of parent */
+#portfolio-work .block .portfolio-menu ul {
+    border: 1px solid var(--border-color);
+    display: block;
+    width: fit-content;
+    margin: 0 auto 10px;
+}
+
+#portfolio-work .block .portfolio-menu ul li {
+    display: inline-block;
+    padding: 0 25px;
+    cursor: pointer;
+    font-size: 15px;
+    line-height: 40px;
+    font-weight: 600;
+    text-transform: capitalize;
+    position: relative;
+}
+
+/* Active/Hover Arrow Icon */
+#portfolio-work .block .portfolio-menu ul li.active::before,
+#portfolio-work .block .portfolio-menu ul li:hover::before {
+    content: "\f0d7";
+    position: absolute;
+    font-family: 'FontAwesome';
+    font-size: 30px;
+    width: 20px;
+    height: 30px;
+    left: 50%;
+    top: 23px;
+    transform: translateX(-50%);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.9);
+}
+
+/* Highlight active filter */
+#portfolio-work .block .portfolio-menu ul li.active {
+    color: var(--primary);
+}
+
+
+/* ---------------- Portfolio Groups & Cards ---------------- */
+.portfolio-group {
+    margin-bottom: 32px;
+}
+
+.portfolio-group-title {
+    max-width: 960px;
+    margin: 0 auto 16px;
+    border-bottom: 1px solid var(--border-color);
+    padding-top: 40px;
+    padding-bottom: 6px;
+    text-align: center;
+}
+
+/* Hide headings while a specific filter is active */
+.portfolio-groups.is-filtered .portfolio-group-title { display: none; }
+/* Collapse groups with no visible items */
+.portfolio-group.is-empty { display: none; }
+.portfolio-groups.is-filtered .portfolio-group { margin-bottom: 0; }
+
+.portfolio-card {
+    display: block;
+    max-width: 960px;
+    margin: 0 auto 24px;
+    border: 8px solid var(--secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+}
+
+.portfolio-card:hover {
+    border: 2px solid var(--tertiary);
+}
+
+.portfolio-card-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-card-text {
+    padding: 14px 18px 16px;
+}
+
+.portfolio-card-title {
+    margin: 0 0 6px;
+    font-size: 24px;
+    color: var(--primary);
+}
+
+.portfolio-card:hover .portfolio-card-title {
+    text-decoration: underline;
+    color: var(--secondary);
+}
+
+.portfolio-card-content {
+    margin: 0 0 6px;
+}
+
+.portfolio-card-date {
+    font-size: 13px;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+/* ---------------- Overlay Effect (instant, centered) ---------------- */
+#portfolio-work .block .portfolio-contant .overly {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    opacity: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+#portfolio-work .block .portfolio-contant ul li:hover .overly {
+    opacity: 1;
+}
+
+/* ------------- Filter/Sort MixItUp ------------- */
+#portfolio-work .block .mix { display: none; }
+#portfolio-work .block .mix.show { display: block; }
+
+/* ------------- Filter fade ------------- */
+/* Covers both containers: the portfolio's <ul> and the
+   author/search feed's <div class="articles-list"> */
+#portfolio-work .block .portfolio-contant > ul,
+#portfolio-work .block .portfolio-contant > .articles-list {
+    transition: opacity 0.15s ease;
+}
+
+#portfolio-work .block .portfolio-contant > ul.is-filtering,
+#portfolio-work .block .portfolio-contant > .articles-list.is-filtering {
+    opacity: 0;
+}
+
+/* ---------------- Filter Menu (component) ---------------- */
+.filter-menu {
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.filter-menu ul {
+    border: 1px solid var(--border-color);
+    display: block;
+    width: fit-content;
+    margin: 0 auto 10px;
+}
+
+/* (the li / arrow / active rules can keep their existing selectors,
+   or be shortened to .filter-menu ul li at your leisure) */
+
+/* ---------------- Filter Grid (component) ---------------- */
+.filter-grid > .mix { display: none; }
+.filter-grid > .mix.show { display: block; }
+
+.filter-grid {
+    transition: opacity 0.15s ease;
+}
+
+.filter-grid.is-filtering {
+    opacity: 0;
+}

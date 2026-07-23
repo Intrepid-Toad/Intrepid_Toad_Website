@@ -1,0 +1,174 @@
+.criteria-list 
+{
+    margin: 1em 0 2em 1.5em;
+    padding: 0;
+    font-size: 1.08em;
+    line-height: 1.5;
+}
+.criteria-list li 
+{
+    margin-bottom: 0.5em;
+}
+
+blockquote 
+{
+    border-left: 4px solid var(--primary);
+    padding-left: 1.5em;
+    color: var(--neutral-70);
+    margin: 2em 0;
+    background: #111111;
+    font-style: italic;
+}
+blockquote footer 
+{
+    margin-top: 1em;
+    color: #888;
+    font-size: 0.95em;
+}
+
+.text-row 
+{
+    margin: 1em 0;
+    padding-left: 3em;               /* Indentation */
+    max-width: 38em;                 /* Keeps the text width comfortable */
+    font-size: 1.15em;
+    letter-spacing: 0.01em;          /* Slightly improved readability */
+}
+
+.text-row p 
+{
+    margin: 0.5em 0;
+}
+
+.text-row p:last-child
+{
+    margin-bottom: 0;
+}
+
+.clearfix 
+{
+    clear: both;
+}
+
+.image-row 
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-row__item 
+{
+    max-width: 200px;  /* or any size you prefer */
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* optional: adds rounded corners */
+    object-fit: cover;  /* helps if images are different sizes */
+}
+
+.page-intent {
+    padding-left: 2rem; /* Indents the content inside the section */
+}
+
+.text-row-center 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* This centers child elements horizontally */
+    margin: 2em auto;
+}
+
+.text-row-center img 
+{
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1em;
+}
+
+.text-row-center .text-block {
+    max-width: 52em;
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-sizing: border-box;
+    text-align: justify;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) 
+{
+    .text-row-center .text-block 
+    {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.nav.navbar-nav.navbar-right.nav-black > li > a 
+{
+    color: var(--primaryBgContrast);
+}
+
+.nav.navbar-nav.navbar-center.nav-black > li > a 
+{
+    color: var(--primaryBgContrast);
+}
+
+.header-subtitle 
+{
+    font-size: 1.25em;
+    color: var(--primaryBgContrast);
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+/* Style for the search section */
+.search-section 
+{
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+}
+
+/* Unified style for input and button to ensure equal height */
+#searchInput,
+#searchButton 
+{
+    font-size: 1em;
+    padding: 0.5em 1em;
+    line-height: 1.2;
+    box-sizing: border-box;
+    height: 2.5em; /* Sets a fixed height for perfect match */
+    vertical-align: middle;
+}
+
+/* Input field style */
+#searchInput 
+{
+    color: #000;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-right: none;         
+    border-radius: 4px 0 0 4px; 
+}
+
+/* Button style */
+#searchButton 
+{
+    color: var(--primaryBgContrast);
+    background: var(--primary);
+    border: 2px solid var(--secondary);
+    border-radius: 0 4px 4px 0;   /* Optional: rounded right side */
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#searchButton:hover 
+{
+    background: #ddd;
+}

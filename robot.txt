@@ -1,0 +1,40 @@
+# Allow all standard search engine crawlers
+User-agent: *
+Disallow: /xyz-assets-cache/
+
+# Block OpenAI
+User-agent: GPTBot
+Disallow: /
+
+# Block Google AI training (but NOT Google Search)
+User-agent: Google-Extended
+Disallow: /
+
+# Block Common Crawl (used by many AI datasets)
+User-agent: CCBot
+Disallow: /
+
+# Block Anthropic (Claude)
+User-agent: anthropic-ai
+Disallow: /
+
+# Block Perplexity AI
+User-agent: PerplexityBot
+Disallow: /
+
+# Block Amazon AI-related crawlers
+User-agent: Amazonbot
+Disallow: /
+
+# Block Meta/Facebook AI crawler
+User-agent: FacebookBot
+Disallow: /
+
+# OpenAI — powers ChatGPT browsing/search results
+User-agent: OAI-SearchBot
+Disallow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Disallow: /
+

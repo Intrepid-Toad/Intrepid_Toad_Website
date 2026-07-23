@@ -1,0 +1,36 @@
+@import url('/css/core/variables.css');
+:root {
+    --primary:      #0191ff;
+    --secondary:    #01ff6d;
+    --tertiary:     #ff8c01;
+
+    --primaryBgContrast:   #000000;
+    --secondaryBgContrast: #000000;
+    --tertiaryBgContrast:  #000000;
+    
+    --neutral-0:    #fff;
+    --neutral-10:   #f2f0ef;
+    --neutral-40:   #999;
+    --neutral-70:   #404040;
+    --neutral-90:   #212424;
+    --neutral-100:  #000;
+
+    --overlay-transparent: rgba(1, 145, 255, 0.75);
+    --overlay-titleText: var(--secondary);
+    
+    --background:        var(--neutral-100);
+    --foreground:        var(--neutral-0);
+    --text-primary:      var(--neutral-10);
+    --text-secondary:    var(--neutral-40);
+    --link:              var(--primary);
+
+    --h1-color:          var(--primary);
+    --h2-color:          var(--secondary);
+    --h3-color:          var(--tertiary);
+
+    --header-bg:         var(--neutral-100);
+    --form-bg:           var(--neutral-100);
+    --border-color:      var(--neutral-70);
+    --button-bg:         var(--primary);
+    --button-hover:      var(--tertiary);
+}
