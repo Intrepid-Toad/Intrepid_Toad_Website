@@ -1,0 +1,51 @@
+/* ------ Intro Section (BEM) ------ */
+.intro {
+  padding: 100px 0;
+}
+
+.intro__row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.intro__content-col {
+  flex: 0 0 75%; /* ~7/12 for md screens */
+  max-width: 75%;
+  box-sizing: border-box;
+}
+
+.intro__image-col {
+  flex: 0 0 41.6667%; /* ~5/12 for md screens */
+  max-width: 41.6667%;
+  box-sizing: border-box;
+}
+
+.intro__image-col-small {
+  flex: 0 0 25%; /* ~5/12 for md screens */
+  max-width: 25%;
+  box-sizing: border-box;
+}
+
+.intro__section-title {
+  margin-bottom: 0;
+}
+
+.intro__heading {
+  padding-top: 35px;
+  line-height: 27px;
+  margin: 0;
+}
+
+.intro__subtitle {
+  padding-top: 20px;
+}
+
+.intro__text {
+  padding-top: 20px;
+}
+
+.intro__image {
+  padding-left: 40px;
+  width: 100%;
+  display: block;
+}

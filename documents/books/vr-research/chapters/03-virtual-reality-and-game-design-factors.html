@@ -1,0 +1,2031 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta name="robots" content="noai, noimageai">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+      
+        VRMT Research – Chapter 3. Virtual Reality (VR) and Game Design Factors
+      
+    </title>
+    <meta name="description" content="Intrepid Toad, Game Studio from Ireland">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <link rel="stylesheet" href="/css/owl.carousel.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/ionicons.min.css">
+<link rel="stylesheet" href="/css/animate.css">
+<link rel="stylesheet" href="/css/responsive.css">
+
+
+<link rel="stylesheet" href="/css/themes/pijove.css">
+
+<script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/min/waypoints.min.js"></script>
+<script src="/js/jquery.counterup.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="/js/main.js"></script>
+
+
+<script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+    };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+<script src="/js/post-lists.js"></script>
+
+
+  </head>
+  <body>
+  
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+    <img src="/img/icons/logo-40-intrepid-toad.png" alt="Intrepid Toad">
+</a>
+<a class="navbar-brand" href="/alt-kreation">
+    <img src="/img/icons/logo-40-alt-kreation.png" alt="alt-kreation">
+</a>
+<a class="navbar-brand" href="/pijove">
+    <img src="/img/icons/logo-40-pijove.png" alt="Pijove">
+</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-center nav-black">
+        <li class="">
+          <a href="/pijove/">Home</a>
+        </li><li class="">
+          <a href="/pijove/portfolio.html">Releases</a>
+        </li><li class="">
+          <a href="/pijove/articles.html">Articles</a>
+        </li><li class="">
+          <a href="/pijove/contact.html">Contact</a>
+        </li>
+      </ul>
+      <div class="nav navbar-nav navbar-right">
+        <form action="/intrepid-toad/articles/search.html" method="get">
+    <input
+            type="text"
+            id="searchInput"
+            name="q"
+            placeholder="Search articles...">
+    <button
+            type="submit"
+            id="searchButton">
+        Search
+    </button>
+</form>
+      </div>
+    </div>
+  </div>
+</nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <section id="global-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h1>VRMT Research</h1>
+          
+              <h2 class="header-subtitle">Chapter 3. Virtual Reality (VR) and Game Design Factors</h2>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<article id="post">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                
+                
+<details class="post-nav" open="">
+  <summary class="post-nav-summary">Navigation</summary>
+
+  <h4 class="no_toc">Contents</h4>
+<ul id="markdown-toc">
+  <li><a href="#virtual-reality-vr-and-game-design-factors" id="markdown-toc-virtual-reality-vr-and-game-design-factors">Virtual Reality (VR) and Game Design Factors</a>    <ul>
+      <li><a href="#human-senses" id="markdown-toc-human-senses">Human Senses</a></li>
+      <li><a href="#perception-and-attitude" id="markdown-toc-perception-and-attitude">Perception and attitude</a></li>
+      <li><a href="#game-elements" id="markdown-toc-game-elements">Game Elements</a></li>
+      <li><a href="#development-tools-sensors-and-controllers" id="markdown-toc-development-tools-sensors-and-controllers">Development tools, sensors, and controllers</a>        <ul>
+          <li><a href="#hardware" id="markdown-toc-hardware">Hardware</a></li>
+          <li><a href="#software" id="markdown-toc-software">Software</a></li>
+        </ul>
+      </li>
+      <li><a href="#virtual-reality-suitability" id="markdown-toc-virtual-reality-suitability">Virtual Reality Suitability</a></li>
+      <li><a href="#summary" id="markdown-toc-summary">Summary</a></li>
+    </ul>
+  </li>
+</ul>
+
+  <nav id="lof" class="post-list-nav"></nav>
+
+  <nav id="lot" class="post-list-nav"></nav>
+
+</details>
+
+<h1 id="virtual-reality-vr-and-game-design-factors">Virtual Reality (VR) and Game Design Factors</h1>
+
+<p>From a technological perspective, Virtual Reality (VR) is a computer-generated three-dimensional (3D)
+image updated in real-time to the patient to provide the illusion that they are in a Virtual Environment (VE)
+[100]. VR headsets offer a stereoscopic vision of the VE created by the software. Although VR has an
+emphasis on vision, it is not the only factor. Including more senses can potentially make it more immersive.
+Virtual worlds have the potential identical “standard” simulation environments [100], which would make
+technological solutions scalable.</p>
+
+<p>On the reality-virtuality continuum [101], VR lies at the opposite end of the spectrum of reality, as it
+encapsulates the patient with the VE with no references to reality. As technology overlays reality, augmented
+reality is in the middle of the continuum.
+To create a convincing illusion in VR, it is necessary to understand how people perceive the environment
+and how that perception may be replicated by technology. The technological component of creating that
+objective world is immersion. However, humans are complex and even if the same objective reality is
+experienced, it can be perceived differently. Presence is a critical component required for the MT illusion
+to work. A better understanding of the mechanisms will give a better indicator of what should work. Once
+this is known it can assist in game design. Fundamental design decisions dramatically influence the
+development process such as the input devices and the advantages and disadvantages of each.</p>
+
+<p>Slater and Wilbur’s [102] Framework for Immersive Virtual Environments (FIVE) makes a clear distinction
+between immersion and presence:
+“Immersion is a description of a technology and describes the extent to which the computer displays are capable of delivering an
+inclusive, extensive, surrounding and vivid illusion of reality to the senses of a human participant. Inclusive (I) indicates the
+extent to which physical reality is shut out. Extensive (E) indicates the range of sensory modalities accommodated. Surrounding
+(S) indicates the extent to which this virtual reality is panoramic rather than limited to a narrow field. Vivid (V) indicates the
+resolution, fidelity, and variety of energy simulated within a particular modality (for example, the visual and colour resolution).
+Vividness is concerned with the richness, information content, resolution and quality of the displays.”</p>
+
+<h2 id="human-senses">Human Senses</h2>
+
+<p>To construct a virtual world, an understanding of the mechanisms that govern the physical world is
+informative on how to design and develop properties required for presence. Distal stimuli are actual objects
+and events out in the world (objective reality) [103]. Proximal stimuli are the energy from distal stimuli that
+reach the senses (eyes, ears, skin) [103].. To engage with humans, one must first be able to comprehend the
+processes of the senses, before learning how to represent or stimulate the sense through technology (<a class="xref" href="#figure-f4" data-xref-type="figure" data-xref-name="f4" data-xref-label="Fig.">Fig.</a>)
+[103].To create an immersive technology, how the patient inputs information into the system needs to be
+known (Tables 3).
+Figure 4: Multimodal, bidirectional interaction between the patient and Virtual Environment (modified).</p>
+
+<figure data-name="f4">
+    <img src="/assets/images/03-virtual-reality-and-game-design-factors/p039-1.png" alt="Multimodal, bidirectional interaction between the patient and Virtual Environment (modified)." loading="lazy" />
+    <figcaption>Multimodal, bidirectional interaction between the patient and Virtual Environment (modified).</figcaption>
+</figure>
+
+<p>Table 3: Example of Different Input Modalities.
+Physiological
+Information
+Physical quantities
+function
+transferred
+Voice,
+Sound,
+Sound pressure,
+speech
+acoustics,
+frequency
+Measurement device
+examples
+Microphone
+words,
+commands
+Muscle
+Posture and
+Position, velocity,
+Joystick, gonio-
+activities,
+body motion;
+angle, Acceleration;
+accelerometer
+segmental
+Mechanical
+force, moment
+kinematic
+load
+and kinetics
+Physiological
+Cardiovascular
+Heart rate,
+Thermometer,
+functions
+state,
+temperature,
+electromyogram
+thoughts,
+electrophysiological
+(EMG),
+well-being
+electroencephalogram
+(EEG), pulse
+oxymeter
+Before crafting an immersive system, it is important to understand the underlying mechanisms of how
+things work and to see how technology is trying to replicate it.</p>
+
+<figure data-name="f5">
+    <img src="/assets/images/03-virtual-reality-and-game-design-factors/p040-1.png" alt="Cues to Depth Perception." loading="lazy" />
+    <figcaption>Cues to Depth Perception.</figcaption>
+</figure>
+
+<p>VR depth perception is integral to the design in presenting a correct environment. The value of the depth
+cue (<a class="xref" href="#figure-f5" data-xref-type="figure" data-xref-name="f5" data-xref-label="Fig.">Fig.</a>) [104] varies depending on the space (<a class="xref" href="#table-visual-cues-order" data-xref-type="table" data-xref-name="visual-cues-order" data-xref-label="Table">Table</a>), allowing the designer to know what to prioritise
+to present a believable environment to the patient. Natural perception of space in VR is still a challenge for
+both the display technology and the developers.</p>
+
+<table data-caption="The approximate order of importance (with 1 being most important) of visual cues for perceiving egocentric distance in personal space, action space and vista space." data-name="visual-cues-order">
+  <thead>
+    <tr>
+      <th>Source of Information</th>
+      <th>Personal</th>
+      <th>Action</th>
+      <th>Vista</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Occlusion</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Binocular</td>
+      <td>2</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>Motion</td>
+      <td>3</td>
+      <td>7</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>Relative / familiar size</td>
+      <td>4</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Shadows/shading</td>
+      <td>5</td>
+      <td>5</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>Texture gradient</td>
+      <td>6</td>
+      <td>6</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>Linear perspective</td>
+      <td>7</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>Oculomotor</td>
+      <td>8</td>
+      <td>10</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>Height relative to horizon</td>
+      <td>9</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Aerial perspective</td>
+      <td>10</td>
+      <td>9</td>
+      <td>8</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Upholding a duty of care for the patients, the developer must carefully design to minimise any potential
+harm as myopia can develop due to environmental factors [106]. A better understanding of the mechanisms
+of how the eyes work allows the designer to make safer design decisions.
+VR headsets have not been perfected. A study on visual comfort of binocular and 3D displays by Kooi et
+al. [107] found that the factors for visual comfort:
+“The factors that determine stereoscopic viewing comfort most strongly are vertical disparity, crosstalk, and blur. Even a little
+amount of each (1PD, 5%, 3.4 arcmins, respectively) causes noticeable discomfort. Hyperstereopsis may cause some discomfort
+when the represented depth exceeds the depth-of-focus as previously reported, but the effect is rather weak. For short viewing
+durations, the distortions that only affect the periphery of the perceived image are less important. The quality of a person’s
+binocular vision affects the binocular-viewing comfort to a limited extent. Binocular misalignment and excessive stereoscopic
+disparity are less troublesome for people with reduced (binocular) vision.”
+Essentially this quote highlights the importance of proper calibration or representation of the image, so the
+patient is comfortable within the virtual environment to not have a negative experience.
+Banks et al. [108] state “Since previous 3D fads, technology has advanced for stereo media however problems of discomfort,
+fatigue and poor stereoscopic depth perception remain prevalent” [108]. Therefore, developers cannot relax and expect
+adverse effects to be resolved solely by newer hardware; the design is key. Not all literature is negative, as
+the study by Pan et al. [109] was established to treat amblyopia in adults with dichoptic training using the
+virtual reality Oculus Rift HMD. The developer may need to be aware of other eye conditions such as
+colour blindness to be more inclusive. Eyes strain is a concern, so any patient interface should not be too
+close to the patient’s face.</p>
+
+<h2 id="perception-and-attitude">Perception and attitude</h2>
+
+<p>The system provides the immersion using technology and presence is how the patient perceives it
+psychologically. To make a system capable of high presence it must use immersive technologies
+appropriately. Even if the system has high immersion proprieties, it is just potential presence.
+Jerald also describes immersion and its elements as: “Immersion is the objective degree that which a VR system can
+project stimuli onto sensory receptors of patients such that it is extensive, matching, surrounding, vivid, interactive and plot
+informing.”[105].
+Extensively is the range of senses presented [105]. Watching a video on mute (visual only) is less immersive
+than playing a video game with speakers and a vibrating controller (Visual, audio, haptic). Matching is
+congruence between the senses[105]. An example of matching could be the location of the patient’s avatar
+relative to their body; a system with multiple trackers could represent the body position more precisely than
+only use the VR HMD. Surroundedness is related to panoramic cues like wide field of vision (FOV) or
+360o audio[105]. Current generation HMD like HTC Vive have a FOV of 110 O [110] when the natural
+human eye has much larger FOV when you include peripheral vision [104]. Vividness is the quality of an
+element such as resolution[105], colour space, frame rate and audio bitrate. Using resolution for vividness,
+a low-resolution circle will appear blocky and will be easily detected while a high-resolution circle will appear
+as a smoother curve. Plot is the story, the consistent portrayal of a message or experience [105]. Plot can
+be related to the narrative of the experience and therefore presence. One example of low immersion though
+story would be in a historical themed game introducing elements which do not exist in that historical period.
+A lusory attitude may be considered as a person’s capacity to accept an illusion; to be able to suspend
+disbelief or become immersed. If the patient has difficulty engaging with the believability of a virtual
+environment, then it is expected that it would be less likely that the illusions of VRMT would be effective.
+Many factors contribute to a lusory attitude. Efforts should be made to maximise these factors for an
+optimal experience.</p>
+<ul>
+  <li>Pre-lusory goals: Goals that are set by the game.</li>
+  <li>Lusory goals: Rules that are set by the game.</li>
+  <li>Lusory attitude: a playful mindset. An understanding of entering play [111].</li>
+</ul>
+
+<p>Being present in VE can have both physiological and psychological effects. VR can be used to treat phobias
+and cerebral stroke. The phenomenon of body ownership in a virtual avatar are examples that prove the
+strong physical and psychological effects of VR, which is an interesting area and is still the subject of
+ongoing research [112]. VR is a powerful medium although the exact mechanisms of presence are not
+completely understood.</p>
+
+<p>In an exploratory study on VR HMD and their impact on player presence (Oculus Rift DK1), many
+participants were unable to continue playing for the whole session. The reasons cited were motion sickness,
+eye strain, and disorientation which are part of the cybersickness definition. The negative feeling while using
+VR HMD has a significant effect on patients’ enjoyment [113]. It is important to note the impact of
+unnatural interaction on the patient and the year of the technology used. In the future, this should continue
+to improve, but this is not the only factor, and design is key to minimise any detrimental effects. Minimising
+any undesirable side effects, allows presence to be optimised.
+Presence induced by technology-driven stimuli can be considered an illusion since VR stimuli are forms of
+energy projected onto our receptors, such as pixels or audio from a different time and place. Presence can
+be viewed as four main components [105]:</p>
+<ol>
+  <li>Stable spatial place</li>
+  <li>Self-embodiment</li>
+  <li>Physical interaction</li>
+  <li>Social presence</li>
+</ol>
+
+<p>Presence Fidelity groups into three categories: representation, interaction and experiential [105]. The goal
+of VR is not necessarily to replicate reality contrary to initial thoughts; presence does not require
+photorealism, presence-inducing cues such as responsiveness of the system, character motion, and depth
+cues are more important than photorealism to achieve higher presence. Simple worlds with basic structures
+that provide a sense of spatial stability can be extremely compelling, and making worlds more photorealistic
+does not necessarily increase presence [114]. An abstract world can feel as real as a world captured by 3D
+scanners.</p>
+
+<figure data-name="f6">
+    <img src="/assets/images/03-virtual-reality-and-game-design-factors/p043-1.png" alt="Visual Fidelity (Pong &amp; Real Tennis match)." loading="lazy" />
+    <figcaption>Visual Fidelity (Pong &amp; Real Tennis match).</figcaption>
+</figure>
+
+<p>High fidelity would be photorealistic immersive film (<a class="xref" href="#figure-f6" data-xref-type="figure" data-xref-name="f6" data-xref-label="Fig.">Fig.</a>), capturing the real world with depth cameras
+and microphones then recreated in VR. Low fidelity, by contrast, would be a purely abstract or nonobjective world. Blobs or colours or strange sounds may have no reference to the real world, simply
+conveying emotions, exploring pure visuals, or presenting other non-narrative qualities [105].
+When we hear a sound, it originates from a location in space; it is an unnatural sensation to identify a sound
+without a visual indication. Spatial audio may dramatically increase immersion. Real-world sounds originate
+from a source. It’s crucial to properly blend audio values so that other noises do not obscure the spatial
+audio. The design of haptics, which is the feeling of touch, first depends on the input method and the
+availability of equipment that can provide vibrational sensations. If the application is based on a specific
+place, employing a suitable ambient fragrance or having a fan operate as the force of the wind while being
+linked to the direction of the wind in-game are other subtle possibilities [105].</p>
+
+<p>Interaction fidelity is the degree to which physical actions for the virtual task correspond to physical actions
+for the equivalent real-world task. Low interaction fidelity risks negative training effects, as the action does
+not translate correctly due to motor learning principles [115]. Interaction techniques may only require
+minimal physical motion, such as pressing a button. Magical techniques are when patients can interact in
+ways not possible in the world, such as grabbing objects at the distance[105].</p>
+
+<p>Experiential fidelity is the degree to which the patient’s personal experience matches the intended
+experience of the system creator. High experiential fidelity is when the application closely conveys what the
+creator intended. Low experiential fidelity would be a free-roaming world where endless possibilities exist,
+and every usage results in a different experience [105]. Various media that influence presence (<a class="xref" href="#table-media-presence" data-xref-type="table" data-xref-name="media-presence" data-xref-label="Table">Table</a> ), it
+is possible to view each human sense and deconstruct into elements. Each element can have a low or high
+representation. Experiments[116] have been conducted on the effects of media on presence.</p>
+
+<figure data-name="f7">
+    <img src="/assets/images/03-virtual-reality-and-game-design-factors/p044-1.png" alt="Safety hazard of displaying a stable surface in VR which does not exist in reality." loading="lazy" />
+    <figcaption>Safety hazard of displaying a stable surface in VR which does not exist in reality.</figcaption>
+</figure>
+
+<p>In regard to a potential risk of the user being highly immersed in the virtual environment with high presence
+it is worth noting there can be risks. Presenting a virtual table within VR is a potential safety hazard (<a class="xref" href="#figure-f7" data-xref-type="figure" data-xref-name="f7" data-xref-label="Fig.">Fig.</a>), especially if there is a high presence, as the patient may forget that the object is not real and will put their
+weight on the virtual object expecting it to support them.</p>
+
+<table data-caption="Effects of media on presence (Modified with fidelity Scale example)" data-name="media-presence">
+  <thead>
+    <tr>
+      <th>Media</th>
+      <th>Key</th>
+      <th>Lowest</th>
+      <th>Mid</th>
+      <th>Highest</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Audio</strong></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Audio Cues</td>
+      <td>A</td>
+      <td>Off</td>
+      <td> </td>
+      <td>On</td>
+    </tr>
+    <tr>
+      <td>Audio Sources, nature of</td>
+      <td>A</td>
+      <td>Wrong Sound</td>
+      <td> </td>
+      <td>Correct Sound</td>
+    </tr>
+    <tr>
+      <td>Audio Sources, number of</td>
+      <td>B</td>
+      <td>Mono</td>
+      <td> </td>
+      <td>Stereo</td>
+    </tr>
+    <tr>
+      <td>Aural rendering quality</td>
+      <td>A</td>
+      <td>Low</td>
+      <td> </td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Collision dection, audio</td>
+      <td>B</td>
+      <td>None</td>
+      <td> </td>
+      <td>Sound</td>
+    </tr>
+    <tr>
+      <td>HRTF</td>
+      <td>B</td>
+      <td>no change</td>
+      <td> </td>
+      <td>translation / rotation <br /> relative to source</td>
+    </tr>
+    <tr>
+      <td>Sound rotation, direction</td>
+      <td>A</td>
+      <td>no change</td>
+      <td> </td>
+      <td>Doppler Effect</td>
+    </tr>
+    <tr>
+      <td>Sound rotation, veloctiy</td>
+      <td>A</td>
+      <td>no change</td>
+      <td> </td>
+      <td>Doppler Effect</td>
+    </tr>
+    <tr>
+      <td>Spatialized audio</td>
+      <td>C</td>
+      <td>None</td>
+      <td> </td>
+      <td>localised</td>
+    </tr>
+    <tr>
+      <td><strong>Olfactory</strong></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Olfactory cues</td>
+      <td>B</td>
+      <td>None</td>
+      <td>“Enviroment” Smell</td>
+      <td>Object / Event</td>
+    </tr>
+    <tr>
+      <td><strong>Tactile</strong></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Collision dection, haptic</td>
+      <td>B</td>
+      <td>None</td>
+      <td> </td>
+      <td>Feel force of collision</td>
+    </tr>
+    <tr>
+      <td>Collision dection, tactile</td>
+      <td>B</td>
+      <td>None</td>
+      <td> </td>
+      <td>Feel texture of collision</td>
+    </tr>
+    <tr>
+      <td>Haptic force feedback</td>
+      <td>B</td>
+      <td>None</td>
+      <td> </td>
+      <td>Appropriate amount of force returned</td>
+    </tr>
+    <tr>
+      <td>Tactile cues</td>
+      <td>B</td>
+      <td>None</td>
+      <td> </td>
+      <td>correct texture of relatable external object</td>
+    </tr>
+    <tr>
+      <td><strong>Visual detail</strong></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Colour</td>
+      <td>B</td>
+      <td>Monochrome</td>
+      <td> </td>
+      <td>Full Colour</td>
+    </tr>
+    <tr>
+      <td>Dynamic shadows</td>
+      <td>A</td>
+      <td>off</td>
+      <td> </td>
+      <td>Realistic</td>
+    </tr>
+    <tr>
+      <td>Rendering quality</td>
+      <td>A</td>
+      <td>low</td>
+      <td> </td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Scene realism</td>
+      <td>C</td>
+      <td>Abstract / Cartoon</td>
+      <td> </td>
+      <td>Photorealistic</td>
+    </tr>
+    <tr>
+      <td>Texture mapping, use of</td>
+      <td>B</td>
+      <td>None (single Colour)</td>
+      <td> </td>
+      <td>Mapping</td>
+    </tr>
+    <tr>
+      <td>Texture mapping, quality</td>
+      <td>B</td>
+      <td>Low Res</td>
+      <td> </td>
+      <td>High Res</td>
+    </tr>
+    <tr>
+      <td><strong>Visual display</strong></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Latency, visual</td>
+      <td>B</td>
+      <td>Lag</td>
+      <td> </td>
+      <td>Minimal</td>
+    </tr>
+    <tr>
+      <td>Device, CAVE-HMD-monitor</td>
+      <td>C</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Device, HMD- monitor</td>
+      <td>C</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Device, projector-screen-monitor</td>
+      <td>B</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Device, other</td>
+      <td>B</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Field of View</td>
+      <td>B</td>
+      <td>Too extreme (wide or narrow)</td>
+      <td> </td>
+      <td>Appropriate</td>
+    </tr>
+    <tr>
+      <td>Frame Rate</td>
+      <td>B</td>
+      <td>low</td>
+      <td> </td>
+      <td>90+</td>
+    </tr>
+    <tr>
+      <td>Resolution</td>
+      <td>B</td>
+      <td>lower</td>
+      <td> </td>
+      <td>high</td>
+    </tr>
+    <tr>
+      <td>Stereopsis</td>
+      <td>B</td>
+      <td>None (Bi-ocular)</td>
+      <td> </td>
+      <td>Yes (Binocular)</td>
+    </tr>
+    <tr>
+      <td>Update rate</td>
+      <td>C</td>
+      <td>slow</td>
+      <td> </td>
+      <td>fast</td>
+    </tr>
+    <tr>
+      <td><strong>Visual representation</strong></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Behavioral realism</td>
+      <td>B</td>
+      <td>acting “weird”</td>
+      <td> </td>
+      <td>Normal</td>
+    </tr>
+    <tr>
+      <td>Fidelity of body</td>
+      <td>B</td>
+      <td>simple</td>
+      <td> </td>
+      <td>complex</td>
+    </tr>
+    <tr>
+      <td>Fidelity of hand</td>
+      <td>B</td>
+      <td>Capsule</td>
+      <td> </td>
+      <td>Animated</td>
+    </tr>
+    <tr>
+      <td>Moving between worlds</td>
+      <td>B</td>
+      <td>“Freezing”</td>
+      <td> </td>
+      <td>Smooth transitioning</td>
+    </tr>
+    <tr>
+      <td>Navigation method</td>
+      <td>C</td>
+      <td>“Forced” movement via controller etc</td>
+      <td> </td>
+      <td>Room Scale Movement</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>There is a relationship between presence and performance [117]. Therefore, much of the design is to
+maximise presence to present the best system possible for the MT illusion to work. It could be possible
+that VRMT could have a higher ceiling in the potential than traditional MT box. However, this needs to be
+tested and designed around the best-known principles. Stevens and Kincaid [117] state “Higher visual
+immersion was proven to increase the trainee’s presence as well as their performance”. The paper by Stevens and Kincaid
+[117] involved an experiment to examine the relationship between presence and performance. The sample
+size was 96 male United States Army soldiers who were all qualified using the M240 machine gun. They
+were put into two groups, novice and expert, and the treatment was HMD or LCD. The results
+demonstrated that “higher immersive visual display resulted in both higher performance and presence. Expertise” [117].
+Conversely in “Immersion of virtual reality for rehabilitation – Review” by Rose et al. [118] makes the statement
+that “no distinct correlation can be outlined between increased immersion and improved user performance/motor recovery”.
+Since adherence is a challenge with VRMT that this virtual reality project is attempting to solve. It is crucial
+to make the most of how VR can create positive habits and eliminate negative ones. A succinct overview
+of “atomic habits”, which is about forming good habits an breaking bad habits is given by Clear which may
+be used by the patient to achieve discipline [119] (<a class="xref" href="#table-habits" data-xref-type="table" data-xref-name="habits" data-xref-label="Table">Table</a>).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th># Law</th>
+      <th>How to create a good habit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>The 1st Law</td>
+      <td>Make it obvious</td>
+    </tr>
+    <tr>
+      <td>1.1</td>
+      <td>Fill out Habits Scorecard. Write down your current habits to become aware of them.</td>
+    </tr>
+    <tr>
+      <td>1.2</td>
+      <td>Use implementation intentions: “I will [BEHAVIOUR] at [TIME] in [LOCATION]”</td>
+    </tr>
+    <tr>
+      <td>1.4</td>
+      <td>Design your environment. Make the cues of good habits obvious and visible</td>
+    </tr>
+    <tr>
+      <td>The 2nd Law</td>
+      <td>Make it Attractive</td>
+    </tr>
+    <tr>
+      <td>2.1</td>
+      <td>Use temptation bundling. Pair an action you want to do with an action you need to do.</td>
+    </tr>
+    <tr>
+      <td>2.2</td>
+      <td>Join a culture where your desired behaviour is the normal behaviour.</td>
+    </tr>
+    <tr>
+      <td>2.3</td>
+      <td>Create a motivation ritual. Do something you enjoy immediately before a difficult habit.</td>
+    </tr>
+    <tr>
+      <td>The 3rd Law</td>
+      <td>Make it Easy</td>
+    </tr>
+    <tr>
+      <td>3.1</td>
+      <td>Reduce friction. Decrease the number of steps between you and your good habits.</td>
+    </tr>
+    <tr>
+      <td>3.2</td>
+      <td>Prime the environment. Prepare your environment to make future actions easier.</td>
+    </tr>
+    <tr>
+      <td>3.3</td>
+      <td>Master the decisive moment. Optimise the small choices that deliver outsized impact.</td>
+    </tr>
+    <tr>
+      <td>3.4</td>
+      <td>Use the two-minute rule. Downscale your habits until they can be done in two minutes or less</td>
+    </tr>
+    <tr>
+      <td>3.5</td>
+      <td>Automate your habits. Invest in technology and onetime purchases that lock in future behaviour.</td>
+    </tr>
+    <tr>
+      <td>The 4th Law</td>
+      <td>Make it Satisfying</td>
+    </tr>
+    <tr>
+      <td>4.1</td>
+      <td>Use reinforcement. Give yourself immediate reward when you complete your habit.</td>
+    </tr>
+    <tr>
+      <td>4.2</td>
+      <td>Make “doing nothing” enjoyable. When avoiding a bad habit, design a way to see the benefits.</td>
+    </tr>
+    <tr>
+      <td>4.3</td>
+      <td>Use a habit tracker. Keep track of your habits streak and “don’t break the chain.”</td>
+    </tr>
+    <tr>
+      <td>4.4</td>
+      <td>Never miss twice. When you forget to do a habit, make sure you get back on track immediately.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table data-caption="Atomic Habits, how to create a good habit and how to break a bad habit." data-name="habits">
+  <thead>
+    <tr>
+      <th>Inversion of # Law</th>
+      <th>How to break a bad habit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1st Law</td>
+      <td>Make it invisible</td>
+    </tr>
+    <tr>
+      <td>1.5</td>
+      <td>Reduce exposure. Remove the cues of your bad habits from your environment</td>
+    </tr>
+    <tr>
+      <td>2nd Law</td>
+      <td>Make it Unattractive</td>
+    </tr>
+    <tr>
+      <td>2.4</td>
+      <td>Reframe your mind-set. Highlight the benefits of avoiding your bad habits</td>
+    </tr>
+    <tr>
+      <td>3rd Law</td>
+      <td>Make it Difficult</td>
+    </tr>
+    <tr>
+      <td>3.6</td>
+      <td>Increase Friction. Increase the number of steps between you and your bad habits.</td>
+    </tr>
+    <tr>
+      <td>3.7</td>
+      <td>Use a commitment device. Restrict your future choices to the ones that benefit you.</td>
+    </tr>
+    <tr>
+      <td>4th Law</td>
+      <td>Make it Unsatisfying</td>
+    </tr>
+    <tr>
+      <td>4.5</td>
+      <td>Get an accountability partner. Ask someone to watch your behaviour.</td>
+    </tr>
+    <tr>
+      <td>4.6</td>
+      <td>Create a habit contract. Make the costs of your bad habits public and painful.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A simple mathematical example demonstrates the power of compound interest. If you improved by 1 per
+cent every day for a year, the improvement is 37 times better (1.01 365=37.78), while a decline of 1 per cent
+every day for a year the value is close to 0 (0.99 365=00.03) [119]. This is an example of why adherence is so
+important to the rehabilitation process. When the patient is consistent, that progression can occur. Habits
+are a double-edged sword, so by designing and crafting good habits, it is possible to avoid the negative edge
+of the sword.
+The system itself cannot determine the success of patients. A patient’s perception and attitude will affect
+the outcome. If possible, the system should attempt to promote the patient to perceive appropriately and
+act suitably.</p>
+
+<h2 id="game-elements">Game Elements</h2>
+
+<p>It is essential to keep an open mind to benefit from the input provided by psychology, coaches, physios,
+nursing staff and other experts. Prototyping is important and needs testing so that it works before rolling
+out (fit for purpose). The public should not be in the testing field as people’s health is at stake. The computer
+developer should be technically capable, but as game design is an art, it requires an erudite mind to obtain
+the knowledge required. The design can be deconstructed into its elements, Schell has 100 lenses to view
+the game design through [120] (<a class="xref" href="#table-game-lens" data-xref-type="table" data-xref-name="game-lens" data-xref-label="Table">Table</a>). Game design is an art, although it each element is taken into
+consideration, the game element “Flow” (Lense 18 out of 100) is an important element to consider for
+design of a game for stroke rehabilitation. Flow is an optimal state of consciousness and is a peak state
+where we both feel and perform at our best. It is a transformation available to anyone, anywhere, provided
+that certain initial conditions are met [121]. There are nine possible mental states according to
+Csikszentmihalyi’s flow model in terms of challenge level and skill level, which are; apathy, boredom,
+relaxation, worry, control, anxiety, arousal and flow [121]. Flow is the position where high challenge
+matches high ability.</p>
+
+<table data-caption="The Art of Game Design, 100 Lenses." data-name="game-lens">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Lens</th>
+      <th>#</th>
+      <th>Lens</th>
+      <th>#</th>
+      <th>Lens</th>
+      <th>#</th>
+      <th>Lens</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Essential Experience</td>
+      <td>26</td>
+      <td>Rules</td>
+      <td>51</td>
+      <td>the Pyramid</td>
+      <td>76</td>
+      <td>Character Function</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Surprise</td>
+      <td>27</td>
+      <td>Skill</td>
+      <td>52</td>
+      <td>the Puzzle</td>
+      <td>77</td>
+      <td>Character Traits</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Fun</td>
+      <td>28</td>
+      <td>Expected Value</td>
+      <td>53</td>
+      <td>Control</td>
+      <td>78</td>
+      <td>the Interpersonal Circumplex</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Curiosity</td>
+      <td>29</td>
+      <td>Chance</td>
+      <td>54</td>
+      <td>Physical Interface</td>
+      <td>79</td>
+      <td>the Character Web</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Endogenous Value</td>
+      <td>30</td>
+      <td>Fairness</td>
+      <td>55</td>
+      <td>Virtual Interface</td>
+      <td>80</td>
+      <td>Status</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Problem Solving</td>
+      <td>31</td>
+      <td>Challenge</td>
+      <td>56</td>
+      <td>Transparency</td>
+      <td>81</td>
+      <td>Character Transformation</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>the Elemental Tetrad</td>
+      <td>32</td>
+      <td>Meaningful Choices</td>
+      <td>57</td>
+      <td>Feedback</td>
+      <td>82</td>
+      <td>Inner Contradiction</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Holographic Design</td>
+      <td>33</td>
+      <td>Triangularity</td>
+      <td>58</td>
+      <td>Juiciness</td>
+      <td>83</td>
+      <td>The Nameless Quality</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Unification</td>
+      <td>34</td>
+      <td>Skill vs Chance</td>
+      <td>59</td>
+      <td>Channels and Dimensions</td>
+      <td>84</td>
+      <td>Friendship</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Resonance</td>
+      <td>35</td>
+      <td>Head and Hands</td>
+      <td>60</td>
+      <td>Modes</td>
+      <td>85</td>
+      <td>Expression</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Infinite Inspirationm</td>
+      <td>36</td>
+      <td>Competition</td>
+      <td>61</td>
+      <td>the Interest Curve</td>
+      <td>86</td>
+      <td>Community</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>the Problem Statement</td>
+      <td>37</td>
+      <td>Cooperation</td>
+      <td>62</td>
+      <td>Inherent Interest</td>
+      <td>87</td>
+      <td>Griefing</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>the Eight Filters</td>
+      <td>38</td>
+      <td>Competition vs Cooperation</td>
+      <td>63</td>
+      <td>Beauty</td>
+      <td>88</td>
+      <td>Love</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>Risk Mitigation</td>
+      <td>39</td>
+      <td>Time</td>
+      <td>64</td>
+      <td>Projection</td>
+      <td>89</td>
+      <td>the Team</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>the Toy</td>
+      <td>40</td>
+      <td>Reward</td>
+      <td>65</td>
+      <td>the Story Machine</td>
+      <td>90</td>
+      <td>Documentation</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>the Player</td>
+      <td>41</td>
+      <td>Punishment</td>
+      <td>66</td>
+      <td>the Obstacle</td>
+      <td>91</td>
+      <td>Playtesting</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>Pleasure</td>
+      <td>42</td>
+      <td>Simplicity/Complexity</td>
+      <td>67</td>
+      <td>Simplicity and Transcendence</td>
+      <td>92</td>
+      <td>Technology</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>Flow</td>
+      <td>43</td>
+      <td>Elegance</td>
+      <td>68</td>
+      <td>the Hero’s Journey</td>
+      <td>93</td>
+      <td>the Crystal Ball</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>Needs</td>
+      <td>44</td>
+      <td>Character</td>
+      <td>69</td>
+      <td>the Weirdest Thing</td>
+      <td>94</td>
+      <td>the Client</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>Judgment</td>
+      <td>45</td>
+      <td>Imagination</td>
+      <td>70</td>
+      <td>Story</td>
+      <td>95</td>
+      <td>the Pitch</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>Functional Space</td>
+      <td>46</td>
+      <td>Economy</td>
+      <td>71</td>
+      <td>Freedom</td>
+      <td>96</td>
+      <td>Profit</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>Dynamic State</td>
+      <td>47</td>
+      <td>Balance</td>
+      <td>72</td>
+      <td>Indirect Control</td>
+      <td>97</td>
+      <td>Transformation</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>Emergence</td>
+      <td>48</td>
+      <td>Accessibility</td>
+      <td>73</td>
+      <td>Collusion</td>
+      <td>98</td>
+      <td>Responsibility</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>Action</td>
+      <td>49</td>
+      <td>Visible Progress</td>
+      <td>74</td>
+      <td>the World</td>
+      <td>99</td>
+      <td>the Raven</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>Goals</td>
+      <td>50</td>
+      <td>Parallelism</td>
+      <td>75</td>
+      <td>the Avatar</td>
+      <td>100</td>
+      <td>Your Secret Purpose</td>
+    </tr>
+  </tbody>
+</table>
+
+<figure data-name="f8">
+    <img src="/assets/images/03-virtual-reality-and-game-design-factors/p050-1.png" alt="Game elements and relationships." loading="lazy" />
+    <figcaption>Game elements and relationships.</figcaption>
+</figure>
+
+<p>A prototype developed, addressed the need for game elements (<a class="xref" href="#figure-f8" data-xref-type="figure" data-xref-name="f8" data-xref-label="Fig.">Fig.</a>) [120], but the vision of the system
+and game elements themselves await development. Previous research in the field suggests game
+development is complex, and many factors need consideration. The omission of an element can
+compromise the overall solution.</p>
+
+<h2 id="development-tools-sensors-and-controllers">Development tools, sensors, and controllers</h2>
+
+<p>There are several development tools that may mostly be divided into hardware and software. Every
+instrument has benefits and drawbacks, just like other tools. For MINERVA, particular tools were chosen
+for particular features.</p>
+
+<h3 id="hardware">Hardware</h3>
+
+<p>Hardware selection will have a significant impact on what can be achieved. The hardware capability gives a
+context to what is possible in the current period. The current hardware specifications will become dated
+when viewed in the future, as there are areas to be improved, and advancement continues. Different
+implementations have different features (<a class="xref" href="#table-input-devices" data-xref-type="table" data-xref-name="input-devices" data-xref-label="Table">Table</a>), and it is up to the designer to decide which input devices
+are most suitable for the application.</p>
+
+<table data-caption="Input devices" data-name="input-devices">
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Proprioception</th>
+      <th>Consistent</th>
+      <th>Usable in Lap <br />or the Side</th>
+      <th>Haptics <br />Capable</th>
+      <th>Unencumbered</th>
+      <th>Physical <br />Buttons</th>
+      <th>Hands-free to interact <br />with Real World</th>
+      <th>General <br />Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Hand Input Device Class</strong></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>World-Grounded Devices</td>
+      <td>x</td>
+      <td>x</td>
+      <td> </td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Non-Tracked Hand-held Controllers</td>
+      <td> </td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td> </td>
+      <td>x</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Bare Hands</td>
+      <td>x</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>x</td>
+      <td> </td>
+      <td>x</td>
+      <td>x</td>
+    </tr>
+    <tr>
+      <td>Tracked Hand-held Controllers</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td> </td>
+      <td>x</td>
+      <td> </td>
+      <td>x</td>
+    </tr>
+    <tr>
+      <td>Hand Worn</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td> </td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+    </tr>
+    <tr>
+      <td><strong>Non-Hand Input Device Class</strong></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Head Tracking</td>
+      <td>x</td>
+      <td>x</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>x</td>
+      <td>x</td>
+    </tr>
+    <tr>
+      <td>Eye Tracking</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>x</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Microphone</td>
+      <td> </td>
+      <td> </td>
+      <td>x</td>
+      <td> </td>
+      <td>x</td>
+      <td> </td>
+      <td>x</td>
+      <td>x</td>
+    </tr>
+    <tr>
+      <td>Full-Body Tracking</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td>x</td>
+      <td> </td>
+      <td> </td>
+      <td>x</td>
+      <td>x</td>
+    </tr>
+    <tr>
+      <td>Treadmills</td>
+      <td>x</td>
+      <td>x</td>
+      <td> </td>
+      <td> </td>
+      <td>x</td>
+      <td> </td>
+      <td>x</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The type of display is probably the most restrictive element; deciding on what this is first will make other
+decisions easier.</p>
+
+<p>There could be several ways to set up a VRMT with a traditional screen set in front of the patient. Even
+with rendering the reflected movement correctly, the arm could appear displaced relative to where the
+patient’s arm is, which could appear odd. A potential solution would be for the screen to appear like a
+portal, and anything within the viewport would offer a higher presence. However, this small viewport would
+limit appropriate available exercises. Another implementation of a traditional screen possibility would be a
+screen facing upwards on top of a mirror-box-like structure, limiting all exercises within the box area. 3D
+depth perception is possible, but it would require the usage of a 3D viewer. Passive 3D viewers filter for a
+stereoscopic effect, but these would be part of VR, not standard screen anymore.</p>
+
+<p>Virtual Reality displays have different configurations.
+A Cave Automatic Virtual Environment (CAVE)[122] is a room featuring three to six walls with images
+projected onto them and the patient wearing 3D viewer glasses for the stereoscopic effect. CAVE set-up is
+not that practical for the mirror therapy illusion. The patient’s mirrored arm is difficult to link to their body
+in the environment because, particularly if they pan their vision, they would see the impaired arm and the
+illusion would break.
+Head Mounted Display (HMD)
+A stereoscopic HMD [105] presents two different images viewed in parallel by each eye, and the brain fuses
+these two images as a single image having depth. A VR HMD VE can display a fully immersive virtual
+world, both an advantage and a disadvantage. For virtual Mirror Therapy, this is positive as it can present
+the impaired arm moving without external interference; also, the image presented is clear when a real mirror
+could affect the quality of the image with things such as scratches, warping or dirt. The main disadvantage
+is the patient has no reference to the real-world environment when they are in the Virtual Environment
+using a VR HMD.</p>
+
+<figure data-name="f9">
+    <img src="/assets/images/03-virtual-reality-and-game-design-factors/p052-1.png" alt="Same scene, Modifying FOV on a display of a fixed size and aspect ratio." loading="lazy" />
+    <figcaption>Same scene, Modifying FOV on a display of a fixed size and aspect ratio.</figcaption>
+</figure>
+
+<p>VR HMDs do not match the human Field of View (FOV) currently due to technological limitations. The
+larger the FOV, the more of the VE must be rendered. Distortion can occur from the lens itself.
+Artificially trying to increase the FOV will result in distortions that can be disorientating (<a class="xref" href="#figure-f9" data-xref-type="figure" data-xref-name="f9" data-xref-label="Fig.">Fig.</a>).
+There are many options for VR HMD available. Mobile wireless headsets currently only have 3 degrees of
+freedom which are axis of rotation (pitch, yaw, roll), the rotation axis can be calculated using an
+accelerometer and gyroscope or a wired 6 DoF headset. Some are dedicated headsets, and others involve
+the use of a mobile phone like the Samsung Gear VR. Mobile devices have more limitations such as heat
+and battery life due to their design goals of wearable technology emphasising lightweight and compactness
+in a single package. The connection to other interaction device can be more challenging (e.g hand tracking).
+VR devices can be connected to a desktop or be a standalone mobile device. Desktop computers can
+connect to a power supply, so do not have power supply considerations like a mobile device. Desktops
+themselves are not restricted by weight or size as they are static and not wearable, allowing the rendering
+by the computer, and the HMD can focus on the visual display and relevant sensors. VR HMD devices
+made for the desktop environment are often designed to use 6 DoF tracking, as expected usage is to be in
+a room with a static base station. The relative distance calculates the headset location on each of the
+translation axes (Forward/Back, Sideways, Up/Down).
+Controllers
+Depending on what the goal of the system, such as gross or fine motor movement will help decide what
+the most appropriate type of input controller is required. A controller using the hand movement as input
+is usually the primary input device that is used to interact with the VR system. The type of controller used
+will determine the range and limits of exercises performed. It is worth deciding on the intended exercises
+early in the process. Are they gross motor skills using larger muscles or fine motor skills? As they are
+different skills and different muscles, designs for them are different. Gross movement may cover a large
+area, so the tracking range is important, but hand representation would not be as important since it is not
+the focus. The avatar should still be modelled grasping the controller correctly for congruence. Fine
+motor skill needs more precision in the sensors to detect fine differences in movement. Designing for
+gross motor movement is different, from fine motor movement, also the selection of technology impacts
+exercise choices and their effectiveness.</p>
+
+<figure data-name="f10">
+    <img src="/assets/images/03-virtual-reality-and-game-design-factors/p054-1.png" alt="HTC Vive HMD and Controllers (2016)" loading="lazy" />
+    <figcaption>HTC Vive HMD and Controllers (2016)</figcaption>
+</figure>
+
+<p>Initial development was for gross motor skills, and this used the HTC Vive controllers (<a class="xref" href="#figure-f10" data-xref-type="figure" data-xref-name="f10" data-xref-label="Fig.">Fig.</a>). The
+tracked handheld controllers possess multiple positive aspects, the main one being its reliability in
+tracking, but also ease of use is intuitive, and the controller can be used to point and click for interactions.
+Controllers provide a congruent real-world reference. Vive controllers have a vibration function, and it
+would be interesting to test whether this additional layer of haptic feedback could stimulate and enhance
+the illusion of presence.</p>
+
+<figure data-name="f11">
+    <img src="/assets/images/03-virtual-reality-and-game-design-factors/p054-2.png" alt="Leap Motion Controller" loading="lazy" />
+    <figcaption>Leap Motion Controller</figcaption>
+</figure>
+
+<p>The Leap Motion Controller (LMC) (<a class="xref" href="#figure-f11" data-xref-type="figure" data-xref-name="f11" data-xref-label="Fig.">Fig.</a>) can be classified as hand input device that uses “bare hands”,
+meaning the hands themselves are not constrained or need to hold anything. Bare hands are capable of
+proprioception, unencumbered, and able to interact with real world and are general purpose. Bare hands
+are not consistent as they rely on tracking in comparison to a button press. Bare hands cannot be use in the
+lap or to the side. No haptic feedback can occur. There is physical button to press. Smeragliuolo [123]
+describes the LMC as:
+“The Leap Motion Controller (LMC) is a low-cost, markerless motion capture device that tracks hand, wrist and forearm
+position. Integration of this technology into healthcare applications has begun to occur rapidly, making validation of the LMC’s
+data output an important research goal” [123]</p>
+
+<figure data-name="f12">
+    <img src="/assets/images/03-virtual-reality-and-game-design-factors/p055-1.png" alt="Problems of using a Head-mounted Leap Controller for a VRMT system." loading="lazy" />
+    <figcaption>Problems of using a Head-mounted Leap Controller for a VRMT system.</figcaption>
+</figure>
+
+<p>Fundamentally the Leap Motion Controller is not suitable for mirror therapy when mounted on HMD.
+Problems of using LEAP for VRMT (<a class="xref" href="#figure-f12" data-xref-type="figure" data-xref-name="f12" data-xref-label="Fig.">Fig.</a>). In this example, hand [L] is the reflected image, and hand
+[R] is the non-impaired input. When it comes to motor skill reaching tasks, the patients focus on the target.
+As the FoV of the Leap Motion rotates, and the input is at the extremities, it reduces the quality and
+precision of the input or loses tracking altogether, breaking presence, which is unacceptable for Mirror
+Therapy. Loss of tracking is a high risk for breaking presence.</p>
+
+<figure data-name="f13">
+    <img src="/assets/images/03-virtual-reality-and-game-design-factors/p056-1.png" alt="Example set up of Leap Motion controller on a table top for VR stroke rehabilitation. " loading="lazy" />
+    <figcaption>Example set up of Leap Motion controller on a table top for VR stroke rehabilitation. </figcaption>
+</figure>
+
+<p>The Leap Motion can be mounted upright on a desk, the advantage being the patient’s head movement has
+no impact on the out-hand detection, but the disadvantage is the play area is restricted. The experimental
+set-up in (<a class="xref" href="#figure-f13" data-xref-type="figure" data-xref-name="f13" data-xref-label="Fig.">Fig.</a>) is suitable for its intended purpose but is not suitable for VRMT. Evaluation of the Leap
+Motion controller as a new contact-free pointing device [123] states:
+“This study discussed the Leap Motion Controller’s functionality as a pointing device in a one-dimensional Fitts’ law-based test
+setup. With an overall ER of 7.2%, the error rate of the LMC is three-times higher than the error rate achieved with a standard
+mouse device.”
+There are potential ways to handle the loss of tracking, such as having the hand freeze at the last known
+location or having them return to a default position. However, neither option is suitable as there will be a
+visual mismatch for the duration of the loss, this can break presence; the primary concern for VRMT design.
+Gesture recognition and ease of use can be more difficult and frustrating to use in comparison to the Vive
+tracked controllers.
+The ideal solution would be to acquire Valve Index controllers, giving the benefit of tracked handheld
+controllers but without tracking becoming an issue. It can track finger movement like the Leap Motion
+controller to allow for higher presence although it uses a different method. It also has pressure sensors that
+could open more game design opportunities; also, the distinction between fine motor tasks and gross motor
+tasks would not be as constrained by the technological input device.
+Integrating multiple different technologies can cause unnecessary problems. It would be simpler just to use
+the whole VR rig, which includes VR HMD with integrated headphones and tracked handheld controllers
+with the ability to detect finger positions. Full Valve index kit [125] appears to be a good technical choice.
+Additional sensors
+There is a design consideration on full-body motion precision. A full-body suit would be extremely accurate
+but is that level required of accuracy required, and how suitable is it for the end-user? For an impaired
+patient, a full-body suit would be awkward even with the help of another person. Additional sensors can
+be considered invasive as it adds unnecessary friction in allowing the patient to access the system. The
+system should aim to be as smooth as possible to make adherence easier.
+To have more stable tracking, full-body motion tracking is possible, but the set-up time would deter
+patients, therefore a reasonable number of sensors is necessary. It is possible to do mirroring without any
+additional trackers. However, this causes the mirroring rig to become unstable. For the mirroring solution,
+the rig requires positional data from both shoulders to calculate the sternum position and orientation.</p>
+
+<figure data-name="f14">
+    <img src="/assets/images/03-virtual-reality-and-game-design-factors/p057-1.png" alt="HTC Vive pucks" loading="lazy" />
+    <figcaption>HTC Vive pucks</figcaption>
+</figure>
+
+<p>Having mirroring based on the sternum, allows head movement to be independent and does not impact
+any mirroring. Stability is a fundamental aspect of the mirroring system. If the sensor has data on rotation,
+it can map the correct location of the elbow which may allow for greater presence. MINERVA used HTC
+Vive pucks (<a class="xref" href="#figure-f14" data-xref-type="figure" data-xref-name="f14" data-xref-label="Fig.">Fig.</a>), as they are additional sensors that have 6 DoF, and are the most suitable device for
+this purpose (<a class="xref" href="#table-vive" data-xref-type="table" data-xref-name="vive" data-xref-label="Table">Table</a>) and was able to be used as an input device to calculate the elbow position for the
+inverse kinematics. In regard to presence no formal testing was done on patient so cannot be confirmed.</p>
+
+<table data-caption="Vive Specs" data-name="vive">
+  <thead>
+    <tr>
+      <th>SPECS</th>
+      <th>IN THE BOX</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tracking: Support for SteamVR BS1.0 and BS2.0</td>
+      <td>VIVE Tracker 2018</td>
+    </tr>
+    <tr>
+      <td>Status indicator: LED</td>
+      <td>Micro-USB Cable</td>
+    </tr>
+    <tr>
+      <td>Input: Pogo pin</td>
+      <td>USB dongle</td>
+    </tr>
+    <tr>
+      <td>Charging: Micro-USB</td>
+      <td>Dongle cradle</td>
+    </tr>
+    <tr>
+      <td>Attachment: 1/4-inch UNC threaded mount <br />(standard tripod mount)</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The prototype used traditional wired headphones for sound. Having headphones can eliminate certain
+environmental sound signals, allowing for spatial audio. At present, no specifications come to mind on the
+design as it is an experimental prototype. Certain VR headsets possess integrated headphones.
+The mirroring system requires no further technology. Some additions that could be interesting if included
+are low priority. For Olfactory Display, the introduction of a specific aroma that is relevant to the theme
+of the game might further enhance. If was set in nature like a forest, it would use a single aroma to represent
+a forest. Another minor detail with the function of providing an additional layer of any in-game wind for
+effect would only be suitable if the aesthetic were in an environment expecting wind. Gustatory display in
+the context of upper limb stroke rehabilitation is not relevant, and therefore, not the best area to expend
+effort.</p>
+
+<h3 id="software">Software</h3>
+
+<p>The development of the VRMT system required 3D creation software. Unity3D was selected because of
+prior experience and familiarity with the tool. Also, Unity3D has good support for Virtual Reality. This
+choice is to reduce friction to speed up development.</p>
+
+<h2 id="virtual-reality-suitability">Virtual Reality Suitability</h2>
+
+<p>VR has many benefits, and by exploiting its strengths, it is possible to construct a tool that will assist UL
+stroke rehabilitation. Virtual Reality is adaptable. The software and hardware can be upgraded and extend
+its lifespan to avoid become obsolete. Technology is becoming more modular as seen in the steam survey
+[127] and the sheer variety of hardware used. VR can exploit motor learning principles [115], [55] if designed
+properly. VR by itself is just a tool; it requires crafting. Poor design will deliver poor results.
+Figure 15: The cone of experience, VR uses many levels of abstraction.</p>
+
+<figure data-name="f15">
+    <img src="/assets/images/03-virtual-reality-and-game-design-factors/p059-1.png" alt="The cone of experience, VR uses many levels of abstraction. " loading="lazy" />
+    <figcaption>The cone of experience, VR uses many levels of abstraction. </figcaption>
+</figure>
+
+<p>The reason VR has more potential than other mediums is that it can provide a more concrete experience
+[105] (<a class="xref" href="#figure-f15" data-xref-type="figure" data-xref-name="f15" data-xref-label="Fig.">Fig.</a>) than more abstract media like text or pictures. This is because VR is a more immersive media
+than video or text and has more potential due to the extensiveness of media VR can use by comparison.
+The key experience to seek is direct and purposeful. VR is a great tool for the treatment of phobias [116],
+[128] as a phobia can be removed instantly by shutting off the system, while a real application may be unsafe
+or unfeasible.
+Unlike other mediums, poorly designed VR can make the patient sick. Cybersickness is not completely
+understood and is an issue that needs careful design to reduce the potential impact. Motion sickness and
+cybersickness produce the same types of symptoms but are not necessarily the same thing. Symptoms that
+can occur due to cyber sickness and motion sickness include: eye strain, headache, pallor, sweating, dryness
+of mouth, fullness of stomach, disorientation, vertigo, ataxia, nausea, and vomiting. [129],[130]. Genetic
+factors that make individuals more propitious to experience motion sickness[131],[132] .
+To summarise the factors that contribute to adverse effects [105] (<a class="xref" href="#table-adverse" data-xref-type="table" data-xref-name="adverse" data-xref-label="Table">Table</a>), there are three main categories
+ranked by importance. There are 58 items listed, critical for a developer as it can prioritise design goals. For
+example, when considering system factors, it would be more important to prioritise latency (rank 1) over
+weight and centre of mass (rank 16).</p>
+
+<table data-caption="Summary of Factors That Contribute to Adverse Effects" data-name="adverse">
+  <thead>
+    <tr>
+      <th style="text-align: right">#</th>
+      <th style="text-align: left">System Factors</th>
+      <th style="text-align: right">#</th>
+      <th style="text-align: left">Individual User Factors</th>
+      <th style="text-align: right">#</th>
+      <th style="text-align: left">Application Design Factors</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">1</td>
+      <td style="text-align: left">Latency</td>
+      <td style="text-align: right">1</td>
+      <td style="text-align: left">Prior history of Motion sickness</td>
+      <td style="text-align: right">1</td>
+      <td style="text-align: left">Locus of control</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">2</td>
+      <td style="text-align: left">Calibration</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: left">Health</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: left">Visual acceleration</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">3</td>
+      <td style="text-align: left">Tracking accuracy</td>
+      <td style="text-align: right">3</td>
+      <td style="text-align: left">VR Experience</td>
+      <td style="text-align: right">3</td>
+      <td style="text-align: left">Physical head motion</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">4</td>
+      <td style="text-align: left">Tracking precision</td>
+      <td style="text-align: right">4</td>
+      <td style="text-align: left">Thinking about sickness</td>
+      <td style="text-align: right">4</td>
+      <td style="text-align: left">Duration</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">5</td>
+      <td style="text-align: left">Lack of position tracking</td>
+      <td style="text-align: right">5</td>
+      <td style="text-align: left">Gender</td>
+      <td style="text-align: right">5</td>
+      <td style="text-align: left">Vection</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">6</td>
+      <td style="text-align: left">Field of View</td>
+      <td style="text-align: right">6</td>
+      <td style="text-align: left">Age</td>
+      <td style="text-align: right">6</td>
+      <td style="text-align: left">Binocular-occlusion conflict</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">7</td>
+      <td style="text-align: left">Refresh Rate</td>
+      <td style="text-align: right">7</td>
+      <td style="text-align: left">Mental model / expectations</td>
+      <td style="text-align: right">7</td>
+      <td style="text-align: left">Virtual rotation</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">8</td>
+      <td style="text-align: left">Judder</td>
+      <td style="text-align: right">8</td>
+      <td style="text-align: left">Interpupillary distance</td>
+      <td style="text-align: right">8</td>
+      <td style="text-align: left">Gorilla arm</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">9</td>
+      <td style="text-align: left">Display response time\ and persistence</td>
+      <td style="text-align: right">9</td>
+      <td style="text-align: left">Not knowing what looks correct</td>
+      <td style="text-align: right">9</td>
+      <td style="text-align: left">Rest Frames</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">10</td>
+      <td style="text-align: left">Flicker</td>
+      <td style="text-align: right">10</td>
+      <td style="text-align: left">Sense of balance</td>
+      <td style="text-align: right">10</td>
+      <td style="text-align: left">Standing/walking vs</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">11</td>
+      <td style="text-align: left">Vergence / accommodation conflict</td>
+      <td style="text-align: right">11</td>
+      <td style="text-align: left">Flicker-fusion frequency threshold</td>
+      <td style="text-align: right">11</td>
+      <td style="text-align: left">Height above the ground</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">12</td>
+      <td style="text-align: left">Binocular Images</td>
+      <td style="text-align: right">12</td>
+      <td style="text-align: left">Real-world task experience</td>
+      <td style="text-align: right">12</td>
+      <td style="text-align: left">Excessive binocular disparity</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">13</td>
+      <td style="text-align: left">Eye separation</td>
+      <td style="text-align: right">13</td>
+      <td style="text-align: left">Migraine history</td>
+      <td style="text-align: right">13</td>
+      <td style="text-align: left">VR entrance and exit</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">14</td>
+      <td style="text-align: left">Real-world peripheral vision</td>
+      <td style="text-align: right"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: right">14</td>
+      <td style="text-align: left">Luminance</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">15</td>
+      <td style="text-align: left">Headset fit</td>
+      <td style="text-align: right"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: right">15</td>
+      <td style="text-align: left">Repetitive strain</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">16</td>
+      <td style="text-align: left">Weight and center of mass</td>
+      <td style="text-align: right"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: right"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: right">17</td>
+      <td style="text-align: left">Motion platforms</td>
+      <td style="text-align: right"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: right"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: right">18</td>
+      <td style="text-align: left">Hygiene</td>
+      <td style="text-align: right"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: right"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: right">19</td>
+      <td style="text-align: left">Temperature</td>
+      <td style="text-align: right"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: right"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: right">20</td>
+      <td style="text-align: left">Dirty Screens</td>
+      <td style="text-align: right"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: right"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>System factors are technological problems that contribute to Cybersickness. Cybersickness may result from
+even slight visual misalignments and distortions. [105]. Individual User Factors, VR sickness is polygenic,
+including multiple genes, even though certain genes contribute to it. Sensitivity to provocative motion, the
+pace of adaptation, and the decay period of provoked symptoms all appear to have a significant impact on
+how ill people get. [105] Application Design Factors, VR sickness can still be brought on by content, even
+if all technological problems were completely resolved (e.g., zero latency, perfect calibration, and infinite
+processing resources) [105]. This means developers of the VR application still need to be both
+knowledgeable on how cybersickness can occur and be careful in their design decision implementation so
+they can avoid making potential patients sick though usage.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>VR when designed poorly can make the patient sick. It is important to get a better understanding of how
+humans and computers interact with each other so it can be designed properly to reduce adverse effects.
+Vision is the most important sense for VR and is the main emphasis for design consideration, haptics is
+second. Other senses like smell or taste are less important in this specific case of research. More types of
+immersive technology that are implemented correctly can heighten perceived presence. Presence is a major
+factor for MT to work, therefore a lot of work goes into the design to heighten presence or to make sure it
+will not break presence. There is a lot of variety for hardware and software selection, depending on the
+design goals the developer must make calculated choices on what to implement into the system. VR appears
+to be suitable to not break presence for VRMT if it crafted appropriately by taking system, application and
+individual user factors into consideration.</p>
+
+<details class="bibliography">
+    <summary>References (34)</summary>
+    <ul>
+        
+        
+        <li id="ref-55">
+            <b>[55]</b>&emsp;R. Schmidt, Motor Control and Learning 6th Edition with Web Resource: A Behavioral Emphasis, 6th ed. Human Kinetics Publishers, 2018.
+            <a href="#citation-55">↩</a>
+        </li>
+        
+        <li id="ref-100">
+            <b>[100]</b>&emsp;T. D. Parsons, Clinical Neuropsychology and Technology: What’s New and How We Can Use It, 1st ed. Springer, 2016.
+            <a href="#citation-100">↩</a>
+        </li>
+        
+        <li id="ref-101">
+            <b>[101]</b>&emsp;P. Milgram, H. Takemura, A. Utsumi, and F. Kishino, “Augmented reality: a class of displays on the reality-virtuality continuum,” vol. 2351, pp. 282–292, 1995, doi: 10.1117/12.197321.
+            <a href="#citation-101">↩</a>
+        </li>
+        
+        <li id="ref-102">
+            <b>[102]</b>&emsp;M. Slater and S. Wilbur, “A framework for immersive virtual environments (FIVE): Speculations on the role of presence in virtual environments,” Presence Teleoperators Virtual Environ., vol. 6, no. 6, pp. 603–616, 1997, doi: 10.1162/pres.1997.6.6.603.
+            <a href="#citation-102">↩</a>
+        </li>
+        
+        <li id="ref-103">
+            <b>[103]</b>&emsp;R. Riener, Virtual Reality in Medicine, 1st ed. Springer;, 2012.
+            <a href="#citation-103">↩</a>
+        </li>
+        
+        <li id="ref-104">
+            <b>[104]</b>&emsp;S. Schwartz, Visual Perception: A Clinical Orientation, 4th ed. McGraw-Hill Education / Medical, 2009.
+            <a href="#citation-104">↩</a>
+        </li>
+        
+        <li id="ref-105">
+            <b>[105]</b>&emsp;J. Jerald, The VR Book: human-centered design for Virtual Reality (ACM Books). 2016.
+            <a href="#citation-105">↩</a>
+        </li>
+        
+        <li id="ref-106">
+            <b>[106]</b>&emsp;C. W. Pan, D. Ramamurthy, and S. M. Saw, “Worldwide prevalence and risk factors for myopia,” Ophthalmic Physiol. Opt., vol. 32, no. 1, pp. 3–16, 2012, doi: 10.1111/j.1475-1313.2011.00884.x.
+            <a href="#citation-106">↩</a>
+        </li>
+        
+        <li id="ref-107">
+            <b>[107]</b>&emsp;F. L. Kooi and A. Toet, “Visual comfort of binocular and 3D displays,” Displays, vol. 25, no. 2–3, pp. 99–108, 2004, doi: 10.1016/j.displa.2004.07.004.
+            <a href="#citation-107">↩</a>
+        </li>
+        
+        <li id="ref-108">
+            <b>[108]</b>&emsp;M. S. Banks, J. C. A. Read, R. S. Allison, and S. J. Watt, “Stereoscopy and the Human Visual System,” SMPTE Motion Imaging J., vol. 121, no. 4, pp. 24–43, 2012, doi: 10.5594/j18173.
+            <a href="#citation-108">↩</a>
+        </li>
+        
+        <li id="ref-109">
+            <b>[109]</b>&emsp;P. Žiak, A. Holm, J. Halička, P. Mojžiš, and D. P. Piñero, “Amblyopia treatment of adults with dichoptic training using the virtual reality oculus rift head mounted display: preliminary results,” BMC Ophthalmol., vol. 17, no. 1, p. 105, 2017, doi: 10.1186/s12886-017-0501-8.
+            <a href="#citation-109">↩</a>
+        </li>
+        
+        <li id="ref-110">
+            <b>[110]</b>&emsp;“The ultimate guide to virtual reality headsets,” 2022. https://www.vrs.org.uk/the-ultimate-guide-to-virtual-realityheadsets/.
+            <a href="#citation-110">↩</a>
+        </li>
+        
+        <li id="ref-111">
+            <b>[111]</b>&emsp;K. Salen and E. Zimmerman, Rules of play: Game Design Fundamentals. MIT Press, 2003.
+            <a href="#citation-111">↩</a>
+        </li>
+        
+        <li id="ref-112">
+            <b>[112]</b>&emsp;M. Lorenz et al., “Presence and User Experience in a Virtual Environment under the Influence of Ethanol: An Explorative Study,” Sci. Rep., vol. 8, no. 1, pp. 1–16, 2018, doi: 10.1038/s41598-018-24453-5.
+            <a href="#citation-112">↩</a>
+        </li>
+        
+        <li id="ref-113">
+            <b>[113]</b>&emsp;J. M. A. Seibert, “An exploratory study on virtual reality Head Mounted Displays amd Their impact on Player presence.,” Igarss 2014, no. 1, pp. 1–5, 2014, doi: 10.1007/s13398-014-0173-7.2.
+            <a href="#citation-113">↩</a>
+        </li>
+        
+        <li id="ref-114">
+            <b>[114]</b>&emsp;P. Zimmons and A. Panter, “The influence of rendering quality on presence and task performance in a virtual environment,” Proc. - IEEE Virtual Real., vol. 2003-Janua, pp. 293–294, 2003, doi: 10.1109/VR.2003.1191170.
+            <a href="#citation-114">↩</a>
+        </li>
+        
+        <li id="ref-115">
+            <b>[115]</b>&emsp;M. F. Levin, P. L. Weiss, and E. A. Keshner, “Emergence of Virtual Reality as a Tool for Upper Limb Rehabilitation: Incorporation of Motor Control and Motor Learning Principles,” Phys. Ther., vol. 95, no. 3, pp. 415–425, 2015, doi: 10.2522/ptj.20130579.
+            <a href="#citation-115">↩</a>
+        </li>
+        
+        <li id="ref-116">
+            <b>[116]</b>&emsp;B. K. Wiederhold and S. Bouchard, Advances in virtual reality and anxiety disorders, 2014 editi. Springer, 2014.
+            <a href="#citation-116">↩</a>
+        </li>
+        
+        <li id="ref-117">
+            <b>[117]</b>&emsp;J. A. Stevens and J. P. Kincaid, “The Relationship between Presence and Performance in Virtual Simulation Training,” Open J. Model. Simul., vol. 03, no. 02, pp. 41–48, 2015, doi: 10.4236/ojmsi.2015.32005.
+            <a href="#citation-117">↩</a>
+        </li>
+        
+        <li id="ref-118">
+            <b>[118]</b>&emsp;T. Rose, C. S. Nam, and K. B. Chen, “Immersion of virtual reality for rehabilitation - Review,” Appl. Ergon., vol. 69, no. February 2017, pp. 153–161, 2018, doi: 10.1016/j.apergo.2018.01.009.
+            <a href="#citation-118">↩</a>
+        </li>
+        
+        <li id="ref-119">
+            <b>[119]</b>&emsp;J. Clear, Atomic Habits. Random House Business, 2018.
+            <a href="#citation-119">↩</a>
+        </li>
+        
+        <li id="ref-120">
+            <b>[120]</b>&emsp;J. Schell, The Art of Game Design: A Book of Lenses, 2nd ed. A K Peters/CRC Press, 2014.
+            <a href="#citation-120">↩</a>
+        </li>
+        
+        <li id="ref-121">
+            <b>[121]</b>&emsp;S. Kotler, The Rise of Superman: Decoding the Science of Ultimate Human Performance. Quercus, 2015.
+            <a href="#citation-121">↩</a>
+        </li>
+        
+        <li id="ref-122">
+            <b>[122]</b>&emsp;C. Cruz-Neira, D. Sandin, T. DeFanti, R. Kenyon, and J. Hart, “The CAVE: audio visual experience automatic virtual environment,” Commun. ACM, vol. 35, no. 6, pp. 64–72, 1992, doi: 10.1145/129888.129892.
+            <a href="#citation-122">↩</a>
+        </li>
+        
+        <li id="ref-123">
+            <b>[123]</b>&emsp;D. Bachmann, F. Weichert, and G. Rinkenauer, “Evaluation of the leap motion controller as a new contact-free pointing device,” Sensors (Switzerland), vol. 15, no. 1, pp. 214–233, 2014, doi: 10.3390/s150100214.
+            <a href="#citation-123">↩</a>
+        </li>
+        
+        <li id="ref-124">
+            <b>[124]</b>&emsp;D. E. Holmes, D. K. Charles, P. J. Morrow, S. I. Mcclean, and S. Mcdonough, “Usability and performance of Leap Motion and Oculus Rift for upper arm virtual reality stroke rehabilitation,” Int. Conf. Disabil. Virtual Real. Assoc. Technol., no. January 2017, pp. 217–226, 2016.
+            <a href="#citation-124">↩</a>
+        </li>
+        
+        <li id="ref-125">
+            <b>[125]</b>&emsp;“Valve Index VR Kit on Steam,” 2020. https://store.steampowered.com/sub/354231/.
+            <a href="#citation-125">↩</a>
+        </li>
+        
+        <li id="ref-126">
+            <b>[126]</b>&emsp;“VIVETM | VIVE Tracker,” 2020. https://www.vive.com/us/vive-tracker/.
+            <a href="#citation-126">↩</a>
+        </li>
+        
+        <li id="ref-127">
+            <b>[127]</b>&emsp;“Steam Hardware &amp; Software Survey: July 2020,” 2020. https://store.steampowered.com/hwsurvey/.
+            <a href="#citation-127">↩</a>
+        </li>
+        
+        <li id="ref-128">
+            <b>[128]</b>&emsp;P. M. G. Emmelkamp, M. Krijn, A. M. Hulsbosch, S. de Vries, M. J. Schuemie, and C. A. P. G. van der Mast, “Virtual reality versus exposure in vivo: A Comparative Evaluation in Acrophobia,” Behav. Res. Ther., vol. 40, no. 5, pp. 509–516, 2002, doi: 10.1016/S0005-7967(01)00023-7.
+            <a href="#citation-128">↩</a>
+        </li>
+        
+        <li id="ref-129">
+            <b>[129]</b>&emsp;J. J. LaViola, “A discussion of cybersickness in virtual environments,” ACM SIGCHI Bull., vol. 32, no. 1, pp. 47–56, 2000, doi: 10.1145/333329.333344.
+            <a href="#citation-129">↩</a>
+        </li>
+        
+        <li id="ref-130">
+            <b>[130]</b>&emsp;J. Barrett, “Side effects of virtual environments: A review of the literature.” pp. 1–58, 2004, [Online]. Available: http://oai.dtic.mil/oai/oai?verb=getRecord&amp;metadataPrefix=html&amp;identifier=ADA426109.
+            <a href="#citation-130">↩</a>
+        </li>
+        
+        <li id="ref-131">
+            <b>[131]</b>&emsp;B. S. Hromatka, J. Y. Tung, A. K. Kiefer, C. B. Do, D. A. Hinds, and N. Eriksson, “Genetic variants associated with motion sickness point to roles for inner ear development, neurological processes and glucose homeostasis,” Hum. Mol. Genet., vol. 24, no. 9, pp. 2700–2708, 2015, doi: 10.1093/hmg/ddv028.
+            <a href="#citation-131">↩</a>
+        </li>
+        
+        <li id="ref-132">
+            <b>[132]</b>&emsp;L. et al G. Farkas, M. J. Katic, and C. R. Forrest, “International Anthropometric Study of Facial Morphology in Various Ethnic Groups/Races,” J. Craniofac. Surg., vol. 16, no. 4, pp. 615–646, 2005, doi: 10.1097/01.scs.0000171847.58031.9e.
+            <a href="#citation-132">↩</a>
+        </li>
+        
+    </ul>
+</details>
+
+
+                
+                
+                <span class="previous-link">
+                    <a rel="prev" href="/documents/books/vr-research/chapters/02-stroke-rehabilitation.html">Previous: Chapter 2. Stroke Rehabilation</a>
+                  </span>
+                
+
+                
+                <span class="next-link pull-right">
+                    <a rel="next" href="/documents/books/vr-research/chapters/04-technology-enhanced-stroke-rehabilitation.html">Next: Chapter 4. Technology Enhanced Stroke Rehabilitation</a>
+                </span>
+                
+
+                <hr>
+            </div>
+            
+            </div>
+        </div>
+    </div>
+</article>
+  
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <footer class="footer">
+  <hr>
+  <nav class="footer__menu">
+    <ul class="footer__menu-list">
+      <li class="footer__menu-item"><a class="footer__menu-link" href="/contact.html">Contact</a></li>
+      <li class="footer__menu-item"><a class="footer__menu-link" href="/support.html">Support</a></li>
+      <li class="footer__menu-item"><a class="footer__menu-link" href="/terms.html">Terms</a></li>
+    </ul>
+  </nav>
+</footer>
+<a href="/xyz-assets-cache/" style="display:none" aria-hidden="true" tabindex="-1" rel="nofollow">.</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    
+  
+    </body>
+</html>

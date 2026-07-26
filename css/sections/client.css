@@ -1,0 +1,8 @@
+/* ------ Clients Logo ------ */
+/* FIX: file previously contained this exact block twice — deduplicated */
+#clients-logo-section {
+    padding: 30px 0 75px 0;
+}
+#clients-logo-section .clients-logo-img {
+    padding: 0 50px;
+}

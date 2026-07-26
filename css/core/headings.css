@@ -1,0 +1,25 @@
+/* ======================
+   Section Heading Styles
+======================= */
+/* FIX: this file previously re-declared the entire header/nav block
+   (duplicating header.css). Nav rules now live only in header.css;
+   this file keeps only the .heading styles. */
+
+.heading {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.heading h2 {
+    line-height: 40px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.heading p {
+    font-size: 18px;
+    line-height: 40px;
+    font-weight: 300;
+    margin: 0;
+    color: var(--text-secondary);
+}

@@ -1,0 +1,40 @@
+/*--
+    Feature Start 
+--*/
+#feature {
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: visible;
+    background: #fff url("/img/feature-bg-bw.jpg") no-repeat fixed center center;
+    background-size: cover;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    padding: 100px 0;
+    /* height: 100vh;    // Uncomment if you want a full viewport section */
+}
+#feature h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: var(--overlay-titleText);
+}
+#feature p {
+    margin-bottom: 20px;
+}
+#feature .btn-view-works {
+    padding: 10px 20px;
+}
+.feature-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--overlay-transparent);
+    z-index: 0;
+}
+.feature-overlay-content {
+    position: relative;
+    z-index: 1;
+    /* Optional: add some padding if desired */
+}
+
+

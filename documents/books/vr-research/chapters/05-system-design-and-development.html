@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta name="robots" content="noai, noimageai">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+      
+        VRMT Research – Chapter 5. System Design and Development
+      
+    </title>
+    <meta name="description" content="Intrepid Toad, Game Studio from Ireland">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <link rel="stylesheet" href="/css/owl.carousel.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/ionicons.min.css">
+<link rel="stylesheet" href="/css/animate.css">
+<link rel="stylesheet" href="/css/responsive.css">
+
+
+<link rel="stylesheet" href="/css/themes/pijove.css">
+
+<script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/min/waypoints.min.js"></script>
+<script src="/js/jquery.counterup.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="/js/main.js"></script>
+
+
+<script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+    };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+<script src="/js/post-lists.js"></script>
+
+
+  </head>
+  <body>
+  
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+    <img src="/img/icons/logo-40-intrepid-toad.png" alt="Intrepid Toad">
+</a>
+<a class="navbar-brand" href="/alt-kreation">
+    <img src="/img/icons/logo-40-alt-kreation.png" alt="alt-kreation">
+</a>
+<a class="navbar-brand" href="/pijove">
+    <img src="/img/icons/logo-40-pijove.png" alt="Pijove">
+</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-center nav-black">
+        <li class="">
+          <a href="/pijove/">Home</a>
+        </li><li class="">
+          <a href="/pijove/portfolio.html">Releases</a>
+        </li><li class="">
+          <a href="/pijove/articles.html">Articles</a>
+        </li><li class="">
+          <a href="/pijove/contact.html">Contact</a>
+        </li>
+      </ul>
+      <div class="nav navbar-nav navbar-right">
+        <form action="/intrepid-toad/articles/search.html" method="get">
+    <input
+            type="text"
+            id="searchInput"
+            name="q"
+            placeholder="Search articles...">
+    <button
+            type="submit"
+            id="searchButton">
+        Search
+    </button>
+</form>
+      </div>
+    </div>
+  </div>
+</nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <section id="global-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h1>VRMT Research</h1>
+          
+              <h2 class="header-subtitle">Chapter 5. System Design and Development</h2>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<article id="post">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                
+                
+<details class="post-nav">
+  <summary class="post-nav-summary">Navigation</summary>
+
+  <h4 class="no_toc">Contents</h4>
+<ul id="markdown-toc">
+  <li><a href="#system-design-and-development" id="markdown-toc-system-design-and-development">System Design and Development</a></li>
+  <li><a href="#requirements-and-development-approach" id="markdown-toc-requirements-and-development-approach">Requirements and Development Approach</a>    <ul>
+      <li><a href="#scope" id="markdown-toc-scope">Scope</a>        <ul>
+          <li><a href="#initial-design" id="markdown-toc-initial-design">Initial design</a></li>
+        </ul>
+      </li>
+      <li><a href="#software-tools-and-hardware" id="markdown-toc-software-tools-and-hardware">Software Tools and Hardware</a>        <ul>
+          <li><a href="#hardware" id="markdown-toc-hardware">Hardware</a>            <ul>
+              <li><a href="#htc-vive" id="markdown-toc-htc-vive">HTC VIVE</a></li>
+              <li><a href="#vive-pucks" id="markdown-toc-vive-pucks">VIVE Pucks</a></li>
+              <li><a href="#leap-controller" id="markdown-toc-leap-controller">Leap Controller</a></li>
+            </ul>
+          </li>
+          <li><a href="#software" id="markdown-toc-software">Software</a></li>
+        </ul>
+      </li>
+      <li><a href="#tools-for-metrics-and-information-analysis" id="markdown-toc-tools-for-metrics-and-information-analysis">Tools for Metrics and Information Analysis</a></li>
+      <li><a href="#design-and-development-iterations" id="markdown-toc-design-and-development-iterations">Design and Development iterations</a>        <ul>
+          <li><a href="#technology" id="markdown-toc-technology">Technology</a></li>
+          <li><a href="#reflection" id="markdown-toc-reflection">Reflection</a></li>
+          <li><a href="#551-modes" id="markdown-toc-551-modes">5.5.1 Modes</a></li>
+          <li><a href="#versions-created" id="markdown-toc-versions-created">Versions Created</a></li>
+          <li><a href="#proposed-sessions-flow" id="markdown-toc-proposed-sessions-flow">Proposed Sessions flow</a></li>
+          <li><a href="#rigging-avatar" id="markdown-toc-rigging-avatar">Rigging Avatar</a></li>
+          <li><a href="#minerva-final" id="markdown-toc-minerva-final">MINERVA (Final)</a></li>
+        </ul>
+      </li>
+      <li><a href="#summary" id="markdown-toc-summary">Summary</a></li>
+    </ul>
+  </li>
+</ul>
+
+  <nav id="lof" class="post-list-nav"></nav>
+
+  <nav id="lot" class="post-list-nav"></nav>
+
+</details>
+
+<h1 id="system-design-and-development">System Design and Development</h1>
+
+<p>This chapter focuses on what was designed for the project, starting with the requirements for the scope of
+design, the hardware and software used and the reasons. The system developed in this thesis was developed
+in 2018 (1st Iteration 2017) <sup id="citation-181"><a href="#ref-181">[181]</a></sup>. Compared to other systems; MINERVA has 6DoF (Unique) (standing/
+dynamic), Asymmetric Mirroring Mode (Unique), Capable of suppressing of the nonparetic upper limb
+within the enriched virtual environment. The main technology used for the stable set-up was the HTC Vive,
+Controllers and two HTC Vive Trackers. Steam hardware statistics are included as they give a historical
+reference of current typical computer specifications. As the MINERVA is a prototype it discusses the main
+iterations of design including unused content. The research methodology used was exploratory as the
+solution developed is unique, a 6DOF system does not exist, and intents to provide further insight into
+how it works. Early development lead to the discovery of the asymmetric mirroring mode which can only
+be done in VRMT and not MT.</p>
+
+<h1 id="requirements-and-development-approach">Requirements and Development Approach</h1>
+
+<h2 id="scope">Scope</h2>
+
+<p>A current problem in stroke rehabilitation is adherence to the rehabilitation program, a complex topic with
+many factors. On the premise that using technology, and rehabilitation exercises will be more attractive in
+their presentation, VRMT leads to greater adherence to the rehabilitation program. Feedback from
+clinicians assisted in the scope defining for what exercises are appropriate for patients and what issues they
+may face. Prototypes at different stages where presented the clinical staff to provide informal feedback on,
+which was used to drive design decisions.
+The goal of the system is to provide appropriate functional rehabilitation exercises. Beyond this, presenting
+the exercises more attractively should engage the patient more. Underpinning this approach is the
+encouragement to change habits, to promote a healthy lifestyle to assist the rehabilitation effort.
+The intended audience is stroke survivors with severe upper limb impairment as MT can work on patients
+without the ability to move the impaired limb. MINERVA may not be suitable for patients with eyesight
+problems as they may not be able to maximise the VR experience required.
+The type of skill acquisition to be gained from MINERVA would initially be a gross motor skill, though
+the design could change to include fine motor skills with suitable technology. MINERVA is a 6DOF
+system, and it would need an appropriate playing area. Home or Hubs (hospital, care homes) would be
+most suitable. The technology of MINERVA was designed for acceptable gaming computer specs (2017)
+by current standards, so if distributed, it could reach a mass audience without being extremely expensive to
+acquire the necessary hardware.</p>
+
+<h3 id="initial-design">Initial design</h3>
+
+<p>Simply putting words together only makes them understandable, not real. Stating that the system is a Virtual
+Reality Mirror Therapy Game, does not mean that game is fun or that the therapy works. For the system
+to function, a complex balance of design factors must be achieved.
+The prototype is a proof of concept of the feasibility of the VRMT system from a technological perspective.
+The game element is supposed to be a concept to illustrate its potential. Initial thoughts regarding the assets
+available are for the patient to be a superhero-like avatar defending the city from an attacker.
+Ignoring the aesthetics, it is similar to the classic arcade game “Pong”. The focus of the movement is gross
+motor; the AI will aim at a predetermined location relative to the patient, this scripting was to keep its
+adaptable form when data values would be normalised by patient parameters. The game featured multiple
+levels of the same game but with different mirroring modes to demonstrate the difference (none, symmetric,
+asymmetric).</p>
+
+<p>For the system to rehabilitate people, the correct exercise program needs to be selected, requiring help and
+collaboration from physiotherapists and the team involved. Software developers are qualified to consider
+what exercises could be done, but not qualified to prescribe it. Appropriate stroke rehabilitation experts
+would know which compromises to the execution of the exercises or programme are acceptable in effort
+to increase a different design goal such as adherence. The project did receive feedback from clinicians, an
+early version was demonstrated in front of hospital staff which included physiotherapists, occupational
+therapists, and other members, with the main criticism in the form of informal verbal feedback being a lack
+of a tutorial or explanation of how the mirroring works. This is understandable but is a reminder that it is
+a prototype. Very early on there was more happening in the game scene but it was suggested that it was
+removed as it could be distracting for the stroke patient. There were recommendations on how to build
+difficulty into the game, such as restricting gaming to one axis and increasing it to two as players advance.
+Types of exercises were suggested, which were noted for game design.</p>
+
+<figure data-name="f16">
+    <img src="/assets/images/05-system-design-and-development/p075-1.png" alt="Prototype concept sketch and prototype of the game." loading="lazy" />
+    <figcaption>Prototype concept sketch and prototype of the game.</figcaption>
+</figure>
+
+<p>Beyond the initial prototype (<a class="xref" href="#figure-f16" data-xref-type="figure" data-xref-name="f16" data-xref-label="Fig.">Fig.</a>) of the potential full system, sports and martial arts seem like a natural
+fit for the theme of the VRMT system. No formal guidance was provided for developer on what the game
+should be. The game loop developed for the prototype as proof of concept for exploratory research. Martial
+arts <sup id="citation-186"><a href="#ref-186">[186]</a></sup> teach students to persevere in difficult conditions to attain a goal. Martial arts was considered as
+it enables many game opportunities that could be modified into rehabilitation exercise but it would require
+much more development time to be implemented. Coaches, especially for children’s classes, modify
+exercises to make them more enjoyable yet retain functional transfer relevant to the sport.</p>
+
+<p>Many physiotherapists are very passionate about helping others; they understand that comprising the
+exercise, but achieving adherence is better than the optimal exercise with no adherence. If they do not
+adhere, they are not progressing the rehabilitation. Telling physiotherapists, ‘make exercises more enjoyable,
+and you resolve adherence,’ does not answer the problem. It is like saying to win the 100m Olympic gold
+medal, you need to run faster than all the other athletes. Exercises are selected because they are functional
+to the rehabilitation. Qualified staff would know which exercise modifications are acceptable.
+Communication and collaboration are essential to establish what is suitable for the VRMT system, as there
+are so many sensitive design considerations.</p>
+
+<figure data-name="f17">
+    <img src="/assets/images/05-system-design-and-development/p076-1.png" alt="Brainstorm ideas for the system." loading="lazy" />
+    <figcaption>Brainstorm ideas for the system.</figcaption>
+</figure>
+
+<p>The author created a visual (<a class="xref" href="#figure-f17" data-xref-type="figure" data-xref-name="f17" data-xref-label="Fig.">Fig.</a>) that was created to express ideas. The drawing of the simple skeleton
+was to visualise the rig set-up, placement of sensors, and IK targets. A Virtual Dojo was considered for the
+game’s design as it contains a wide range of techniques. The patient could do high repetitions of a technique
+before moving on to a game where they implement the skill they have been learning in a fun environment.
+Before any actual training, a suggested session schedule advised basic familiarisation with the mirroring and
+breathing exercises to assist the patient to relax to optimise time. “Boring” necessary aspects like high
+repetition would come first before meeting the “Fun” game. The logic behind this is the patient has
+something to look forward to, and the session can end positively. If necessary, a cool down before leaving
+MINERVA. Whether this is feasible would be guided by literature such as the mirror therapy protocol and
+advice from experts.</p>
+
+<p>To give a fair distribution of difficulty, and to make data collection and analysis clearer, the system would
+map targets relative to the patient’s parameters. For example, if the difficulty was not mapped, a tall patient
+may do better. Since they do not need to exert as much movement to reach the extreme ranges in-game,
+they gain an advantage over players with a shorter reach who may not be able to reach it regardless of their
+ability. When patient parameters are known, i.e., reach and range of motion (RoM), the system can assign
+targets based on these values. Given a hypothetical example of two patients, patient1(Reach:100 RoM:90^)
+and patient2 (Reach:80, RoM:60) the system presents a target of Reach:0.5 and RoM:0.5, so the target would
+be different for each patient, patient1(Reach:50 RoM:45), patient2(Reach:40, RoM:30) but should require
+the same relative effort as the difficulty is mapped on their ability.</p>
+
+<h2 id="software-tools-and-hardware">Software Tools and Hardware</h2>
+
+<h3 id="hardware">Hardware</h3>
+
+<p>HMD was integral to the design of the 6 DoF system. The specific HMD itself for the 6 DoF to be used
+was not as important, as hardware is improving rapidly, and the system could adapt if it was a significant
+upgrade. Note the Oculus DK2 (2014) and the Oculus CV1 (2016) are only two years apart, yet the CV1 is
+significantly better. Unity3D software supports both the Oculus and HTC Vive.</p>
+
+<h4 id="htc-vive">HTC VIVE</h4>
+<p>The HTC Vive was selected as the HMD for use on MINERVA for two main reasons. The first reason is
+the HTC Vive, at the time of writing, was the current generation of VR HMD available. There are minor
+differences between the HTC Vive and Oculus Rift CV1. The second reason is for the consistency of
+technology used, as the Vive pucks were required for MINERVA’s stable 6DoF rig.</p>
+
+<h4 id="vive-pucks">VIVE Pucks</h4>
+<p>To create a stable mirroring plane, additional sensors are required. Two additional sensors are the minimum
+for a stable set-up. The 2 additional trackers add stability to the tracking which was used for the main
+version of the system developed.</p>
+
+<figure data-name="f18">
+    <img src="/assets/images/05-system-design-and-development/p078-1.png" alt="Potential Tracker placements for Mirroring Plane and Elbow IK Target. A) High Deltoid, B) " loading="lazy" />
+    <figcaption>Potential Tracker placements for Mirroring Plane and Elbow IK Target. A) High Deltoid, B) </figcaption>
+</figure>
+
+<p>Low Deltoid, c) Lapels D) Tie.
+The mirroring plane can be worked out in all four configurations (<a class="xref" href="#figure-f18" data-xref-type="figure" data-xref-name="f18" data-xref-label="Fig.">Fig.</a>). However, only the first two on
+the deltoids give additional information on the direction of the arm, which gives data to be used for the
+elbow inverse kinematic target location.</p>
+
+<figure data-name="f19">
+    <img src="/assets/images/05-system-design-and-development/p079-1.png" alt="Deltoid tracker placement." loading="lazy" />
+    <figcaption>Deltoid tracker placement.</figcaption>
+</figure>
+
+<p>Location of the deltoid tracker (<a class="xref" href="#figure-f19" data-xref-type="figure" data-xref-name="f19" data-xref-label="Fig.">Fig.</a>) <sup id="citation-187"><a href="#ref-187">[187]</a></sup>: the elbow direction may be determined by the tracker as long
+as it is parallel to the ‘B’ side of the humerus. Since the tracker is not on the joint itself, the offset needs to
+be calculated for improving the precision of the rig.
+Figure 20: Wearable technology design consideration for tracker placement.</p>
+
+<figure data-name="f20">
+    <img src="/assets/images/05-system-design-and-development/p080-1.png" alt="Wearable technology design consideration for tracker placement." loading="lazy" />
+    <figcaption>Wearable technology design consideration for tracker placement.</figcaption>
+</figure>
+
+<p>Because the trackers are wearable technology, weight is a design consideration when deciding where to
+place them on people with various body types (<a class="xref" href="#figure-f20" data-xref-type="figure" data-xref-name="f20" data-xref-label="Fig.">Fig.</a>) <sup id="citation-187"><a href="#ref-187">[187]</a></sup>. Placing the trackers on the shoulders seems
+to have the least impact; as long as offsets are computed, accuracy will persist.
+Controllers
+VIVE</p>
+
+<figure data-name="f21">
+    <img src="/assets/images/05-system-design-and-development/p080-2.png" alt="Vive controller." loading="lazy" />
+    <figcaption>Vive controller.</figcaption>
+</figure>
+
+<p>The majority of the work was done with the Vive controller (<a class="xref" href="#figure-f21" data-xref-type="figure" data-xref-name="f21" data-xref-label="Fig.">Fig.</a>) <sup id="citation-188"><a href="#ref-188">[188]</a></sup> which was used from the start.
+The 6DoF is the most significant component. Base stations used to identify the play area are used to track
+the controllers. The controller can vibrate to offer tactile feedback, and input can be made by selecting
+buttons. The portable Vive controller proved dependable and steady during testing. A 3D model of the
+controller was used as it added both a real-world reference to the VE and was also congruent to tactile
+feedback of holding the controller and expectations of the position and rotation of the controller. However,
+if the hand modelled in the VE holding the controller is significantly different to how the patient is holding
+the controller this can lower presence. An attempt was made to make the avatar naturally hold the
+controllers and suggest patients mimic the grip in the game also.</p>
+
+<h4 id="leap-controller">Leap Controller</h4>
+
+<figure data-name="f22">
+    <img src="/assets/images/05-system-design-and-development/p081-1.png" alt="Leap Motion controller with hands displayed in VE. " loading="lazy" />
+    <figcaption>Leap Motion controller with hands displayed in VE. </figcaption>
+</figure>
+
+<p>The Leap Motion controller works by tracking near-infrared within the interaction area. The patient uses a
+non-invasive interface meaning the patient does not hold a controller but does gestures within the
+interaction area. Note the yellow border region on the Leap Motion controller (<a class="xref" href="#figure-f22" data-xref-type="figure" data-xref-name="f22" data-xref-label="Fig.">Fig.</a>) <sup id="citation-189"><a href="#ref-189">[189]</a></sup> in a virtual
+world that is for the range of motion. The rationale to use the Leap Controller was to heighten presence by
+seeing the movements of the hand. Although this is a benefit, there were many disadvantages which are
+now discussed.</p>
+
+<h3 id="software">Software</h3>
+
+<p>The software was developed to be able to run on common VR-capable computer specs. Steam hardware
+survey <sup id="citation-127"><a href="#ref-127">[127]</a></sup> is a good indicator as it has a large dataset of patients that use a computer for gaming.
+Unity was used in the creation of MINERVA. Since Unity is well-known and would reduce development
+time compared to learning a new engine like the Unreal Engine, it was initially chosen. Unity releases many
+versions of the software which can make implementation difficult as certain asset packages such as the Leap
+iteration would only work on older versions. In contrast, inverse kinematics assets would only work on later
+versions of Unity.</p>
+
+<p>Blender which is 3D modelling software was used to create some specific 3D assets like an early version of
+low-poly hands and 3D text. Majority of the 3D assets were free from the unity store such as the
+environment. The selection of free assets available limits game design decisions but allowed for rapid
+development.</p>
+
+<h2 id="tools-for-metrics-and-information-analysis">Tools for Metrics and Information Analysis</h2>
+
+<p>Statistical analysis is a key element of the project. One major problem is the lack of using common
+appropriate assessment tools. The Fugl-Meyer Assessment of Motor Recovery after Stroke (FMA) assesses
+Activities of Daily Living (ADL), Functional Mobility (FM) and pain and is a widely used quantitative
+measure for motor impairment. Results from an assessment like this are very useful for comparison with
+other studies.</p>
+
+<p>Take, for example, a sporting event like sprinting. To claim to be the fastest runner, the person needs to
+prove it in similar conditions. Specialised/unique/local measures do have a function, like a system’s game
+score. However, they should not be the only measurement; their purpose is to give context to and identify
+a relationship such as: is there a relationship between the patients’ system game score and the assessment
+score?</p>
+
+<p>Some results from studies are just misleading; motor learning principles explain many of these results<sup id="citation-55"><a href="#ref-55">[55]</a></sup>.
+Games often forget to mention learned behaviour whereby having more exposure to trials <sup id="citation-190"><a href="#ref-190">[190]</a></sup> to
+understand it better can improve the outcome of the trial being performed. This does not mean you are
+smarter, stronger, faster or better. Boasting about a high score means nothing out of context, if patients are
+hitting 100%, they have reached a ceiling, and it is not possible for them to improve within the scope of
+the trial.</p>
+
+<figure data-name="f23">
+    <img src="/assets/images/05-system-design-and-development/p083-1.png" alt="Simplified Conceptual Measurement Model of the SEM for VRMT." loading="lazy" />
+    <figcaption>Simplified Conceptual Measurement Model of the SEM for VRMT.</figcaption>
+</figure>
+
+<p>The purpose of the SEM (<a class="xref" href="#figure-f23" data-xref-type="figure" data-xref-name="f23" data-xref-label="Fig.">Fig.</a>) is to address the research questions and the logical flow (Note directional
+arrows). The primary objective of the novel 6DoF system developed is to match its intended purpose. It
+must be able to rehabilitate patients successfully to earn the right to be called a rehabilitation system and
+achieved through system testing with a difference in performance scores from pre-and post-testing.
+The researcher needs to be transparent about the fitness of the model. As Marcus Aurelius <sup id="citation-191"><a href="#ref-191">[191]</a></sup> said “Just
+that you do the right thing. The rest does not matter.” If the model does not fit well, this means there could be
+more significant variables that are not accounted for and need to be identified or else there could be a
+finding that contradicts findings literature. The results will help sculpt future research as they identify the
+strength of relationships of the variables modelled using the VRMT system.</p>
+
+<p>Overfitting a model is dishonest and should not occur. Values such as Chi-square, Degrees of Freedom
+(DF), Probability (P), Minimum Discrepancy, Goodness-of-Fit Index (GFI), Adjusted GFI (AGFI),
+Normative Fit Index (NFI), and Root Mean Square Error (RMSE) are provided to show the integrity of
+the model. In AMOS (software for SEM) the codes are: \cmin, \df, \p, \cmindf, \gfi, \agfi, \nfi, \rmsea.</p>
+
+<p>The primary question that MINERVA was attempting to address was the relationship between
+presence perceived and performance. It is hypothesized that increasing presence would improve
+performance for VRMT as Mirror protocol suggests a vivid illusion <sup id="citation-35"><a href="#ref-35">[35]</a></sup> and training performance improved
+in a virtual simulator <sup id="citation-117"><a href="#ref-117">[117]</a></sup>. Experiments are required to provide evidence that this is true for VRMT stroke
+rehabilitation but using regression analysis does not tell the full story.</p>
+
+<p>Performance is ultimately the focus of the project as there is no point in a rehabilitation system if it does
+not rehabilitate the patient. Depending on the exercise selected, multiple appropriate physio-approved
+testing measurements (<a id="appendix-citation-appendix-h" href="#appendix-appendix-h">Appendix H</a>) would evaluate whether the patient has improved throughout the
+intervention. The research community can use this information to see how it compares to other
+interventions and be more useful for acceptance into systemic reviews. The usage of EEG is for reading
+the MEP signals and providing supporting evidence<sup id="citation-192"><a href="#ref-192">[192]</a></sup>, and as a TMS elicited MEP is not a learnt behaviour,
+trial repetition will not affect it. Games scores are useful to see how the patient engages with the system
+and layered with the other measurements could offer insight into its impact. VR has a significant advantage
+in that it can be used to record lots of data. With plans to record the 3D transforms and timestamps of the
+patient’s body position, the data can be analysed from multiple perspectives for motor control and learning,
+depending on the goal.</p>
+
+<p>External factors can influence the outcome. As stroke patients would likely receive support from the
+rehabilitation team, they may have an individual exercise program they do in addition to the study. It would
+be disrespectful and misleading to attribute success to the VRMT system if it were due to external factors
+like this. External factors can give context to a situation. For example, if a patient is on a trajectory to do
+well, but unexpectedly does not, why did it occur? It could be something relatively simple if a record
+identified it. Not having this data leads to speculation, not recording it means this detail does not get
+communicated to the reader.</p>
+
+<p>Presence is psychological, so patient factors influence presence too. Presence itself can be hard to measure.
+The presence questionnaire is subjective, and it would be preferable to use multiple measures to give
+confidence to the measurements.</p>
+
+<p>Immersion is a technological factor; it is the VRMT system. The immersive technology used and how it
+presents information to the patient influences the potential presence to be perceived. It is worth identifying
+the current state of the system. Simulation Sickness Questionnaire (SSQ) will measure the system’s impact
+on the patient. User Experience Questionnaire (UEQ) will measure the experience of the system. How
+attitude was going to be measure was not confirmed.</p>
+
+<p>The user is such a significant factor concerning the system. Having a variety of users can help identify who
+is most suitable for this type of rehabilitation. There are two main categories of user factors: controllable
+and uncontrollable. As expressed in the literature review, lifestyle has an impact on performance. Something
+as simple as sleep is a major factor in the outcomes <sup id="citation-37"><a href="#ref-37">[37]</a></sup>, <sup id="citation-38"><a href="#ref-38">[38]</a></sup>, <sup id="citation-193"><a href="#ref-193">[193]</a></sup>.</p>
+
+<h2 id="design-and-development-iterations">Design and Development iterations</h2>
+
+<p>To understand why MINERVA was developed in this way within this work we must first understand the
+questions asked and how they were answered. What is the goal of a mirror box? The goal of a traditional
+mirror box is to present an illusion that the impaired arm is doing the exercises. Why is the mirror in MT
+placed where it is? Humans have bilateral symmetry down the sagittal plane. Where would be the best place
+to place the origin for mirroring? Upper torso (sternum), so lumbar lateral flexion does not affect the
+mirroring of the arm.</p>
+
+<figure data-name="f25">
+    <img src="/assets/images/05-system-design-and-development/p086-1.png" alt="Examples of VRMT Systems developed. " loading="lazy" />
+    <figcaption>Examples of VRMT Systems developed. </figcaption>
+</figure>
+
+<p>MINERVA is not designed as other previously discussed VRMT systems in Chapter 4.3 (<a class="xref" href="#figure-f25" data-xref-type="figure" data-xref-name="f25" data-xref-label="Fig.">Fig.</a>), as no
+other system uses 6DoF. With 6DoF and the mirror plane staying stable to the patient, MINERVA offers
+a more congruent representation of the avatar, which may allow for greater presence which is essential for
+the mirroring illusion to work. So fundamentally, the design could be considered more useful.
+Systems that do not use VR HMD are limited in the games they can do due to restrictions to a small game
+arena in a specific position. For example, in the VRMT mentioned (Chapter 4.3) with a screen, catching or
+throwing a ball is unnatural and does not align well with motor learning principles. These systems just
+appear to be attempting to make a digital copy of the traditional mirror box, which is not maximising the
+potential of the technology.</p>
+
+<figure data-name="f26">
+    <img src="/assets/images/05-system-design-and-development/p087-1.png" alt="In World Fixed Mirroring, only 3 of 6 Degrees of freedom work (2/3 translational, 1/3" loading="lazy" />
+    <figcaption>In World Fixed Mirroring, only 3 of 6 Degrees of freedom work (2/3 translational, 1/3</figcaption>
+</figure>
+
+<p>rotational).
+Other VRMT systems developed so far, are world-fixed like a cabinet (<a class="xref" href="#figure-f26" data-xref-type="figure" data-xref-name="f26" data-xref-label="Fig.">Fig.</a>). The problem here is
+displacement off the sagittal plane. If the patient moves towards the mirror plane, their shoulder will
+shorten, and moving away would cause their shoulder to lengthen. This distortion is critical when it comes
+to the design decisions of congruence required for presence. Having a world-fixed system requires the
+patient to face forward; even rotation could cause distortions (although pitch only would be ok). The six
+DoF system developed for MINERVA uses a sagittal plane that originates from the patient, so the patient
+can move and rotate freely without any distortion.</p>
+
+<figure data-name="f27">
+    <img src="/assets/images/05-system-design-and-development/p088-1.png" alt="Snippet of code used to make the 6 Degrees of Freedom mirroring work in the VRMT" loading="lazy" />
+    <figcaption>Snippet of code used to make the 6 Degrees of Freedom mirroring work in the VRMT</figcaption>
+</figure>
+
+<p>developed.
+MINERVA Mirroring system (<a class="xref" href="#figure-f27" data-xref-type="figure" data-xref-name="f27" data-xref-label="Fig.">Fig.</a>) uses local coordinates calculated from the mirroring plane which
+ensures that the mirroring is always correct regardless of the orientation of the mirroring plane. If the
+mirroring plane is stable then everything works well, which is why additional trackers are used as they are
+reliable regardless of how the patient moves or rotates, guaranteeing a stable plane for the system to mirror.</p>
+
+<figure data-name="f28">
+    <img src="/assets/images/05-system-design-and-development/p089-1.png" alt="Computation elapsed time comparison: i*-1, Math.Sin(i). " loading="lazy" />
+    <figcaption>Computation elapsed time comparison: i*-1, Math.Sin(i). </figcaption>
+</figure>
+
+<p>It is possible to calculate the position and location of objects in 3D space using trigonometry; however, this
+is more computationally intensive than swapping signs. <a class="xref" href="#figure-f28" data-xref-type="figure" data-xref-name="f28" data-xref-label="Fig.">Fig.</a> illustrates how the usage of ‘Math.Sin(i)’
+increases the computational time in comparison to multiplying by a negative value ‘i*-1’. The math function
+ranges from 2.5 – 11.3 times slower. The above example demonstrates a design chosen to reduce system
+latency. Refactoring the code to increase maintainability and extensibility would be worthwhile once the
+system’s external functions had been satisfactorily tested.</p>
+
+<h3 id="technology">Technology</h3>
+
+<p>Stability is essential for the system, but why were two sensors chosen? This was a conscious design choice.
+For the number of sensors and stability, a Motion Capture (Mocap) suit would be best as every point is
+known, so nothing needs to be estimated. However, it is impractical to expect an impaired patient to do
+this, as they would struggle, which is a conflicting design goal where inhibitors to exercise are to be reduced.
+There are no extra sensors (tracked controllers plus HMD). The HMD position and input from one
+controller are used to estimate the positions of additional joints in this experimental version, which is the
+most unstable and incorrect. This created problems for the stability of the display of the inverse kinematics
+of the avatar. One additional sensor placed inline on the sagittal plane works fine in theory. However,
+practically it is prone to misalignment due to patients’ physical stature and clothes worn to add to the
+potential problem. To use one sensor, it must be secured well. With two additional sensors, this was the
+most stable version of the VRMT system developed. For the position of the sagittal plane, the position of
+the sensors was bisected. The rotation data of the sensor is not required calculation only positional, this
+adds stability as patient movement has minimal impact if the sensor’s placement lies at appropriate
+locations. The optimal position of the 2 addition trackers is on each deltoid.
+For the number of sensors and inverse kinematics, as stated, Mocap suits have many points, so the position
+and rotation of a joint can be known with little error in estimation. Two more sensors are used; one is
+attached to the deltoid and used to determine the position of the shoulder. This is significant since a known
+location does not require input from the tracking controllers. In this way it allows the hands to move freely
+without any detrimental impacts. Using two additional sensors was a conscious design decision as it
+attempts to balance the issue of having too many sensors which is considered invasive and could make set
+up for the patient difficult and having too few sensors which would affect tracking stability which would
+be more likely to break potential presence. With 0 additional sensors (tracked controllers + HMD), the
+only data input is from the tracked controller in the non-impaired arm and HMD. Many attempts were
+made during development to reduce instability, such as only rotating the patient by calculating the elbow
+position, similar to guiding a blind person when walking with them. Wrist rotations cause distortion, as the
+only shortcut to estimate the elbow is to assume the hand is in a fixed position like a boxer wearing wraps.
+One additional sensor means the sagittal plane is known, so the mirroring plane itself is fine but suffers the
+same problems as having 0 additional sensors in the calculation of the elbow position for the system.</p>
+
+<h3 id="reflection">Reflection</h3>
+<p>The rationale for trying to build a system with minimal additional sensors is to reduce the amount of
+complexity required to set up the system. A long setup time could deter a potential patient from engaging
+with the system. It is possible to construct a mirroring system with just the tracked hand and head input.
+However, it is too unstable, especially considering how presence is one of the most important design
+decisions for VRMT; instability might potentially disrupt the congruence required for a believable illusion,
+this is supported by previous research the “MT: Practical protocol for stroke rehabilitation” by Genius et al. which
+states “The mirror image has to match with the perception of the affected limb in order to facilitate an intense mirror
+illusion.”<sup id="citation-35"><a href="#ref-35">[35]</a></sup>.</p>
+
+<figure data-name="f29">
+    <img src="/assets/images/05-system-design-and-development/p091-1.png" alt="Novel idea of having a fixed mirroring target that the patient can orbit around." loading="lazy" />
+    <figcaption>Novel idea of having a fixed mirroring target that the patient can orbit around.</figcaption>
+</figure>
+
+<p>Adapting a world-fixed mirror plane concept: One early idea as to include a play table with the mirroring
+plane always directed toward a point, i.e., the centre of the table (<a class="xref" href="#figure-f29" data-xref-type="figure" data-xref-name="f29" data-xref-label="Fig.">Fig.</a>), which opens game opportunities
+as the patient can rotate around the play arena if they intend to, the patient still has locus of control, and
+fundamentally it still has issues with a mirroring that is fixed to the world.
+To allow the patient to walk about securely, the play area must be a smaller specified VR area. By providing
+a virtual table for interaction, there is a chance that the patient will try to lean on it and fall which is a safety
+concern. A circular play area would be desirable, as the patient can rotate around the origin, where,
+hopefully, the mirroring plane remains congruent to the patient. In a rectangular play area, it is harder to
+determine this, as the patient would rotate their body at certain points, especially at corners.
+An advantage of MINERVA in comparison to a world-fixed mirroring solution is that independent head
+movement does not influence the mirror plane. This means MINERVA is less likely to break the mirroring
+illusion required for presence.</p>
+
+<h3 id="551-modes">5.5.1 Modes</h3>
+
+<p>VR is not just about replicating reality - if it were, would there be much point in selecting a VRMT system
+instead of traditional MT? If deciding to use technology, the advantages should be exploited. One significant
+advantage of VRMT over MT is the fact the laws of reality do not apply in the VE. Due to the way lights
+and reflections work, it is not possible to create an asymmetric mirroring mode using a traditional mirror
+box.</p>
+
+<figure data-name="f30">
+    <img src="/assets/images/05-system-design-and-development/p092-1.png" alt="A) Symmetrical mirroring, B) Asymmetrical mirroring, C) visual overlay of the same input of" loading="lazy" />
+    <figcaption>A) Symmetrical mirroring, B) Asymmetrical mirroring, C) visual overlay of the same input of</figcaption>
+</figure>
+
+<p>the different modes.
+The potential mirror treatment movement shown in <a class="xref" href="#figure-f30" data-xref-type="figure" data-xref-name="f30" data-xref-label="Fig.">Fig.</a> (asymmetric) and developed modes is not
+physically possible with a mirror box which is a unique contribution by the MINERVA prototype. The
+book by Schmidt et al. <sup id="citation-55"><a href="#ref-55">[55]</a></sup> shows the advantages and disadvantages of various modes. Certain modes are
+simpler than others depending on the objective of the assignment<a class="xref" href="#figure-f194" data-xref-type="figure" data-xref-name="f194" data-xref-label="Fig.">Fig.</a>.</p>
+
+<h3 id="versions-created">Versions Created</h3>
+
+<figure data-name="f31">
+    <img src="/assets/images/05-system-design-and-development/p092-2.png" alt="Evolution of the IK model to enhance the presence of the controller input system. " loading="lazy" />
+    <figcaption>Evolution of the IK model to enhance the presence of the controller input system. </figcaption>
+</figure>
+
+<p>Iterations of the prototype had an emphasis on increasing presence. (<a class="xref" href="#figure-f31" data-xref-type="figure" data-xref-name="f31" data-xref-label="Fig.">Fig.</a>) These versions all used the
+same hardware, but it can be seen how the fidelity of the avatar representation has improved.</p>
+
+<figure data-name="f32">
+    <img src="/assets/images/05-system-design-and-development/p093-1.png" alt="Calculating Shoulder position with 2 inputs (Green). " loading="lazy" />
+    <figcaption>Calculating Shoulder position with 2 inputs (Green). </figcaption>
+</figure>
+
+<p>During system development there were multiple variants of the system which included a system that had
+No trackers (Vive Pucks) and Vive controllers for hand input device; this variant was not stable and used
+trigonometry to stabilise the shoulder for the inverse kinematics. Although it did work it did have issues
+which are now detailed (<a class="xref" href="#figure-f32" data-xref-type="figure" data-xref-name="f32" data-xref-label="Fig.">Fig.</a>). The input positions are fine (green) as the location of an input device is
+near, and it is possible to do a rough estimate of the neck base from the VR HMD, whereas the elbow
+position is calculated from the controller input (Orange). As bones are fixed in length, if the neck base and
+elbow position is accurate then the shoulder position can be calculated using trigonometry from where they
+intersect. Because of how the rigging was set up, head rotation had no influence on it (which was an issue
+with other potential designs). The problems occur if the patient is not standing straight; as the patient leans
+and the angle increases, the accuracy of the neck base increases because the position is displaced vertically.
+An issue calculating the elbow position from the controllers is the orientation of the hand, where rotating
+the hand can cause the virtual elbow to move. If the patient had their hand strapped up like a boxer which
+limited wrist movement this would not be an issue. For the shoulder joint itself, limiting the clavicle to a
+plane reduces the location from a sphere to a circle, and then the intersection mathematics is calculated
+from the elbow and neck base position to allow the shoulders to rotate correctly with the patient. It is
+possible to use only the VR HMD and input controller for IK, however, it is not stable enough.</p>
+
+<h3 id="proposed-sessions-flow">Proposed Sessions flow</h3>
+
+<p>The lack of feedback on the suggested session flow delayed development, especially in areas which
+ultimately resulted in their removal from the final version. There are many design goals with some in
+conflict; therefore, it is difficult to get the balance right.
+Example potential session flow:</p>
+<ul>
+  <li>Warm-up (including getting familiar with the Mirroring illusion)</li>
+  <li>Breathing exercises</li>
+  <li>Skill-based practice (repetitions) or components</li>
+  <li>The ‘game’</li>
+  <li>Strength training (Isometrics)</li>
+  <li>Cool-down</li>
+</ul>
+
+<p>One of the measurement tools proposed for the system is the use of TMS. TMS readings can get better
+signal reading depending on the muscles used and the exercise performed. An understanding of this is
+important as when looking at the physio exercises available, they can be read well by TMS. An additional
+layer is, can this exercise by enhanced using VR? If VR cannot enhance the exercises, is it worth using the
+technology? Essentially, the design is a careful balance of optimising a physio-viable exercise, enhanced
+through VR, and shows a good reading on TMS.</p>
+
+<h3 id="rigging-avatar">Rigging Avatar</h3>
+
+<p>Most of the complexity of MINERVA is in the rigging of the avatar. Understanding the anatomical
+mechanism is essential<sup id="citation-195"><a href="#ref-195">[195]</a></sup>. To represent it as a rig for the system to use; first, we need to observe how the
+human body moves in reality. The skeleton gives the body structure and depending on how the bone is
+attached, it will rotate in a specific way. Specific muscles move these bones and not all patients have the
+same mobility for joint range of motion, so the system needs to be aware of this for assigning difficulty.</p>
+
+<figure data-name="f33">
+    <img src="/assets/images/05-system-design-and-development/p095-1.png" alt="sketch used to assist the solving of mirroring issues." loading="lazy" />
+    <figcaption>sketch used to assist the solving of mirroring issues.</figcaption>
+</figure>
+
+<p>An early sketch of development for Inverse Kinematics (<a class="xref" href="#figure-f33" data-xref-type="figure" data-xref-name="f33" data-xref-label="Fig.">Fig.</a>) shows that the elbow can be determined
+two ways, either from the controller being the hand and the direction of the forearm, but if the patient
+bends their wrist, this can cause inaccurate representation as the wrist is not fixed. A better way to
+determine elbow IK is to have the additional tracker orientated from shoulder down the humerus; this
+allows the hand controller to move independently without effect the IK representation.</p>
+
+<figure data-name="f34">
+    <img src="/assets/images/05-system-design-and-development/p095-2.png" alt="shows the rigging of the avatar model. This is necessary so that the mesh of the model can " loading="lazy" />
+    <figcaption>shows the rigging of the avatar model. This is necessary so that the mesh of the model can </figcaption>
+</figure>
+
+<p>deform correctly.
+Rigging in avatar (<a class="xref" href="#figure-f34" data-xref-type="figure" data-xref-name="f34" data-xref-label="Fig.">Fig.</a>) in Unity3D requires a rig that can deform the mesh to create an accurate
+representation. Inverse Kinematics can be computationally intensive so it is worth seeing how to address
+the issue; “Execution performance tables of the proposed algorithm show significant improvement on all tested platforms.
+Compared to OpenSim’s Inverse Kinematics tool, 50–15,000x speedup is achieved while maintaining numerical accuracy.”
+[196].</p>
+
+<h3 id="minerva-final">MINERVA (Final)</h3>
+
+<p>The final stable version used a desktop computer capable of rendering VR graphics. VR hardware used was
+a HTC Vive HMD, 2x hand held controllers, 2x Vive Pucks, 2x Base Stations. Headphones were also used
+for spatial audio. To demonstrate the technology, a simple game using gross motor movement to intercept
+a flying 3D object was used. The same level is repeated but the mirroring mode changes. MINERVA also
+had the option to display the input arm as resting or active.</p>
+
+<p>Experimental development did continue but had too much emphasis on removing trackers and trying to
+make the LMC work when there were more important aspects of the system to be developed. The project
+also changed from PhD to MPhil which essentially terminated further development. The final version of
+MINERVA is not a polished product but should be viewed as an experimental prototype.</p>
+
+<p>To recreate MINERVA, focus should be on the rigging of the avatar so the sagittal mirror plane’s origin is
+from the sternum. The two additional trackers allow the sternum position to be calculated. With the two
+additional trackers it enables 6DoF without disrupting the mirror origin.
+Once the mirroring origin has been established creating the traditional mode, the local X-axis is reflected
+(multiple by minus 1). The asymmetric was informally known as “offset” as it used the patient ’s shoulder
+width to determine the distance (on the X-axis).</p>
+
+<figure data-name="f35">
+    <img src="/assets/images/05-system-design-and-development/p097-1.png" alt="Unity3D Game object structure of the rigging for MINERVA." loading="lazy" />
+    <figcaption>Unity3D Game object structure of the rigging for MINERVA.</figcaption>
+</figure>
+
+<p>The structure of the rigging looked like this <a class="xref" href="#figure-f35" data-xref-type="figure" data-xref-name="f35" data-xref-label="Fig.">Fig.</a>:</p>
+<ul>
+  <li>Step 0, was a game object to contain the main script parameters:
+    <ul>
+      <li>Which hand is the input (Left or right)</li>
+      <li>Mirroring mode (Symmetrical or Asymmetrical)</li>
+      <li>Visual rest hand (display by side or be mirrored)
+Step 1, was related to what VR hardware was being used and how to interact with it.</li>
+    </ul>
+  </li>
+  <li>Step 2, used the VR hardware as inputs for the mirroring Rig and outputted to appropriate mirrored
+position.</li>
+  <li>Step 3, the mirrored game objects were used for the IK model.</li>
+</ul>
+
+<h2 id="summary">Summary</h2>
+
+<p>The design and development of a 6 DoF VRMT were successfully achieved from a technological
+perspective. A 6 DoF system has many advantages in comparison to the way other “fixed” VRMT systems
+are developed, with the main advantage being removing distortion caused by the movement and rotation
+of the user. A new mirroring mode was developed (asymmetric) which cannot exist using a traditional
+mirror box. Design principles are more important as technology capabilities can change but ignoring the
+fundamentals will cause issues regardless of the hardware selected. The proposed measurement model is of
+interest for future experiments investigating performance and presence. So too is a design brief and
+protocol for future work conceptually, whereby a VRMT system might be built using the current generation
+of VR. Text is currently enlarged and exaggerated in the present implementation to make it easier to read
+without straining since minor features like the resolution of the screen used by the VR HMD make it
+difficult to create readable text. An illustration of how it affects the design is this expanded text. Future
+hardware is anticipated to have a higher resolution, eliminating this restriction. Focusing on the specifics of
+the technology being used now is less significant than understanding the underlying processes and ideas on
+why it was developed the way it was. Technology, specifically, will not be able to overcome poor design
+principles.</p>
+
+<details class="bibliography">
+    <summary>References (18)</summary>
+    <ul>
+        
+        
+        <li id="ref-35">
+            <b>[35]</b>&emsp;J. Genius, S. Roß, S. Uhr, S. Braun, A. Rothgangel, and P. Verlag, “Practical protocol for stroke rehabilitation,” Pain Pract., vol. 16, no. 4, pp. 422–434, 2013, doi: 10.12855/ar.sb.mirrortherapy.e2013.
+            <a href="#citation-35">↩</a>
+        </li>
+        
+        <li id="ref-37">
+            <b>[37]</b>&emsp;A. Pincherle, M. Pace, S. Sarasso, L. Facchin, J. P. Dreier, and C. L. Bassetti, “Sleep, preconditioning and stroke,” Stroke, vol. 48, no. 12, pp. 3400–3407, 2017, doi: 10.1161/STROKEAHA.117.018796.
+            <a href="#citation-37">↩</a>
+        </li>
+        
+        <li id="ref-38">
+            <b>[38]</b>&emsp;H. A. . Pilcher JJ, “Effects of sleep deprivation on performance : a meta-analysis .,” Sleep, vol. 19, no. JUNE 1996, pp. 318–326, 2015.
+            <a href="#citation-38">↩</a>
+        </li>
+        
+        <li id="ref-55">
+            <b>[55]</b>&emsp;R. Schmidt, Motor Control and Learning 6th Edition with Web Resource: A Behavioral Emphasis, 6th ed. Human Kinetics Publishers, 2018.
+            <a href="#citation-55">↩</a>
+        </li>
+        
+        <li id="ref-117">
+            <b>[117]</b>&emsp;J. A. Stevens and J. P. Kincaid, “The Relationship between Presence and Performance in Virtual Simulation Training,” Open J. Model. Simul., vol. 03, no. 02, pp. 41–48, 2015, doi: 10.4236/ojmsi.2015.32005.
+            <a href="#citation-117">↩</a>
+        </li>
+        
+        <li id="ref-127">
+            <b>[127]</b>&emsp;“Steam Hardware &amp; Software Survey: July 2020,” 2020. https://store.steampowered.com/hwsurvey/.
+            <a href="#citation-127">↩</a>
+        </li>
+        
+        <li id="ref-181">
+            <b>[181]</b>&emsp;J. McKinney, S. Mcdonough, P. J. Morrow, and N. C. Kennedy, “Reflections on the Design and Development of a Virtual Reality Mirror Therapy System for Upper Limb Stroke Rehabilitation,” ICDVRAT2018, 2018.
+            <a href="#citation-181">↩</a>
+        </li>
+        
+        <li id="ref-186">
+            <b>[186]</b>&emsp;S. Origua Rios, J. Marks, I. Estevan, and L. M. Barnett, “Health benefits of hard martial arts in adults: a systematic review,” J. Sports Sci., vol. 36, no. 14, pp. 1614–1622, 2018, doi: 10.1080/02640414.2017.1406297.
+            <a href="#citation-186">↩</a>
+        </li>
+        
+        <li id="ref-187">
+            <b>[187]</b>&emsp;U. Zarins and S. Kondrats, Anatomy for Sculptors. Exonicus LLC (1726), 2014.
+            <a href="#citation-187">↩</a>
+        </li>
+        
+        <li id="ref-188">
+            <b>[188]</b>&emsp;“VIVE | Controller,” 2020. https://www.vive.com/us/accessory/controller/.
+            <a href="#citation-188">↩</a>
+        </li>
+        
+        <li id="ref-189">
+            <b>[189]</b>&emsp;“Device Settings Leap Motion Controller.” https://manual.reallusion.com/Motion_LIVE_2D_Plugin/Resources/CTA_4/Plugins/Motion_Live_2D/Leap_Motio n_for_CTA.htm.
+            <a href="#citation-189">↩</a>
+        </li>
+        
+        <li id="ref-190">
+            <b>[190]</b>&emsp;R. Geometry and G. Analysis, Human Factors in Simulation and Training, Illustrate. CRC Press, 2008.
+            <a href="#citation-190">↩</a>
+        </li>
+        
+        <li id="ref-191">
+            <b>[191]</b>&emsp;M. Aurelius, Meditations. CreateSpace Independent Publishing Platform, 2018.
+            <a href="#citation-191">↩</a>
+        </li>
+        
+        <li id="ref-192">
+            <b>[192]</b>&emsp;A. Schlögl, M. Slater, and G. Pfurtscheller, “Presence research and EEG,” Proc. 5th Int. Work. Presence, p. 154ñ160, 2002, [Online]. Available: http://www-dept.cs.ucl.ac.uk/research/equator/papers/Documents2002/Mel_presence_2002.pdf.
+            <a href="#citation-192">↩</a>
+        </li>
+        
+        <li id="ref-193">
+            <b>[193]</b>&emsp;J. J. Pilcher and A. I. Huffcutt, “Effects of sleep deprivation on performance,” Sleep, vol. 19, no. 2, pp. 318–326, 1996, doi: 10.2466/pr0.1975.37.2.479.
+            <a href="#citation-193">↩</a>
+        </li>
+        
+        <li id="ref-194">
+            <b>[194]</b>&emsp;W. Kunde and M. Weigelt, “Goal congruency in bimanual object manipulation,” J. Exp. Psychol. Hum. Percept. Perform., vol. 31, no. 1, pp. 145–156, 2005, doi: 10.1037/0096-1523.31.1.145.
+            <a href="#citation-194">↩</a>
+        </li>
+        
+        <li id="ref-195">
+            <b>[195]</b>&emsp;T. W. Myers, Anatomy Trains: Myofascial Meridians for Manual and Movement Therapists, 3 edition. Churchill Livingstone, 2013.
+            <a href="#citation-195">↩</a>
+        </li>
+        
+        <li id="ref-196">
+            <b>[196]</b>&emsp;B. J. Borbély and P. Szolgay, “Real-time inverse kinematics for the upper limb: A model-based algorithm using segment orientations,” Biomed. Eng. Online, vol. 16, no. 1, pp. 1–29, 2017, doi: 10.1186/s12938-016-0291-x.
+            <a href="#citation-196">↩</a>
+        </li>
+        
+    </ul>
+</details>
+
+<details class="appendices">
+
+    <summary>
+        Appendices (1)
+    </summary>
+
+    
+
+    
+
+    
+
+    <h4 id="appendix-appendix-h">
+        Appendix H. Measurements
+        <a href="#appendix-citation-appendix-h">↩</a>
+    </h4>
+    
+    
+
+    <p>Physical Upper Extremity Measurements</p>
+<ul>
+  <li>ABILHAND, Action Research Arm Test (ARAT)</li>
+  <li>Box and Block Test (BBT)</li>
+  <li>Chedoke Arm and Hand Activity Inventory (CAHAI)</li>
+  <li>Chedoke-McMaster Stroke Assessment, Disabilities of the Arm</li>
+  <li>Shoulder and Hand (DASH)</li>
+  <li>Frenchay Arm Test (FAT)</li>
+  <li>Leeds Adult Spasticity Impact Scale (LASIS)</li>
+  <li>Motor Evaluation Scale for Upper Extremity in Stroke Patients (MESUPES)</li>
+  <li>Nine Hole Peg Test (NHPT)</li>
+  <li>Purdue Pegboard Test (PPT)</li>
+  <li>Stroke Arm Ladder, Stroke Impact Scale (SIS)</li>
+  <li>Upper Extremity Function Test (UEFT)</li>
+  <li>Wolf Motor Function Test (WMFT)</li>
+</ul>
+
+<p>Stroke Severity Measurements</p>
+<ul>
+  <li>Canadian Neurological Scale (CNS)</li>
+  <li>Charlson Comorbidity Index (CCI)</li>
+  <li>Modified Rankin Scale (MRS)</li>
+</ul>
+
+<p>Activities of Daily Living Measurements</p>
+<ul>
+  <li>ADL Profile, Assessment of Motor and Process Skills (AMPS)</li>
+  <li>Barthel Index (BI)</li>
+  <li>Frenchay Activities Index (FAI)</li>
+  <li>Functional Independence Measure (FIM)</li>
+  <li>Multiple Errands Test (MET)</li>
+  <li>Reintegration to Normal Living Index (RNLI)</li>
+  <li>Screening for Self-Medication Safety Post-Stroke Scale (S-5)</li>
+  <li>Stroke Impact Scale (SIS)</li>
+</ul>
+
+<p>Cognition Measurements</p>
+<ul>
+  <li>Cambridge Cognition Examination (CAMCOG)</li>
+  <li>Clock Drawing Test (CDT), Color Trails Test (CTT)</li>
+  <li>Executive Function Performance Test, Kettle Test (KT)</li>
+  <li>Mini-Mental State Examination (MMSE)</li>
+  <li>Montreal Cognitive Assessment (MoCA)</li>
+  <li>Multiple Errands Test (MET), Trail Making Test (TMT)</li>
+</ul>
+
+<p>Mood/ Depression Measurements</p>
+<ul>
+  <li>Aphasic Depression Rating Scale (ADRS)</li>
+  <li>Beck Depression Inventory (BDI, BDI-II)</li>
+  <li>General Health Questionnaire (GHQ- 28)</li>
+  <li>Geriatric Depression Scale (GDS)</li>
+  <li>Hospital Anxiety and Depression Scale (HADS)</li>
+  <li>Montgomery Asberg Depression Rating Scale (MADRS)</li>
+  <li>Patient Health Questionnaire (PHQ-9)</li>
+  <li>Stroke Aphasic Depression Questionnaire (SADQ)</li>
+</ul>
+
+<p>Quality of Life Measurements</p>
+<ul>
+  <li>Medical Outcomes Study Short Form 36 (SF-36)</li>
+  <li>Stroke Specific Quality of Life Scale (SS-QOL)</li>
+  <li>Stroke-Adapted Sickness Impact Profile (SA-SIP30)</li>
+</ul>
+
+<p>System Measurements</p>
+<ul>
+  <li>Immersive Tendencies Questionnaire (ITQ)</li>
+  <li>Presence Questionnaire (PQ), Simulator Sickness Questionnaire (SSQ)</li>
+  <li>User Experience Questionnaire (UEQ)</li>
+</ul>
+
+
+    
+
+    
+
+</details>
+
+
+                
+                
+                <span class="previous-link">
+                    <a rel="prev" href="/documents/books/vr-research/chapters/04-technology-enhanced-stroke-rehabilitation.html">Previous: Chapter 4. Technology Enhanced Stroke Rehabilitation</a>
+                  </span>
+                
+
+                
+                <span class="next-link pull-right">
+                    <a rel="next" href="/documents/books/vr-research/chapters/08-references.html">Next: References</a>
+                </span>
+                
+
+                <hr>
+            </div>
+            
+            </div>
+        </div>
+    </div>
+</article>
+  
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <footer class="footer">
+  <hr>
+  <nav class="footer__menu">
+    <ul class="footer__menu-list">
+      <li class="footer__menu-item"><a class="footer__menu-link" href="/contact.html">Contact</a></li>
+      <li class="footer__menu-item"><a class="footer__menu-link" href="/support.html">Support</a></li>
+      <li class="footer__menu-item"><a class="footer__menu-link" href="/terms.html">Terms</a></li>
+    </ul>
+  </nav>
+</footer>
+<a href="/xyz-assets-cache/" style="display:none" aria-hidden="true" tabindex="-1" rel="nofollow">.</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    
+  
+    </body>
+</html>

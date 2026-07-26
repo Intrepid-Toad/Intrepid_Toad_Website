@@ -1,0 +1,50 @@
+/* ======================
+   11. Footer (BEM refactor)
+======================= */
+
+.footer {
+    background: var(--background);
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer__menu {
+    padding-bottom: 25px;
+}
+
+.footer__menu-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer__menu-item {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.footer__menu-link {
+    display: inline-block;
+    color: var(--primary);
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.footer__menu-link:hover,
+.footer__menu-link:focus {
+    color: var(--tertiary);
+    outline: none;
+}
+
+.footer__text {
+    font-size: 13px;
+    line-height: 25px;
+    color: var(--primary);
+    margin: 0;
+}
+
+footer hr {
+    border: none;
+    border-top: 4px solid var(--primary);
+    margin-bottom: 1.5em;
+}

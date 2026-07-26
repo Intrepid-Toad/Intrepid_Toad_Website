@@ -1,0 +1,34 @@
+:root {
+    /* Ordered neutral scale (lightest to darkest) */
+    --neutral-0:   #fff;
+    --neutral-10:  #f2f0ef;
+    --neutral-40:  #999;
+    --neutral-70:  #404040;
+    --neutral-90:  #212424;
+    --neutral-100: #000;
+
+    /* Accent Colors */
+    --primary:   #0191ff;
+    --secondary: #01ff6d;
+    --tertiary:  #ff8c01;
+
+    --primaryBgContrast:   #ffffff;
+    --secondaryBgContrast: #000000;
+    --tertiaryBgContrast:  #333333;
+    
+    --background:    var(--neutral-90);
+    --foreground:    var(--neutral-0);
+    --text-primary:  var(--neutral-10);
+    --text-secondary: var(--neutral-40);
+    --link:          var(--primary);
+
+    --h1-color: var(--neutral-10);
+    --h2-color: var(--neutral-10);
+    --h3-color: var(--neutral-40);
+
+    --header-bg:     var(--neutral-90);
+    --form-bg:       var(--neutral-90);
+    --border-color:  var(--neutral-70);
+    --button-bg:     var(--primary);
+    --button-hover:  var(--tertiary);
+}

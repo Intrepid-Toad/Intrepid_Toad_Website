@@ -1,0 +1,95 @@
+/* ======================
+   Header & Navigation
+======================= */
+/* FIX: header/nav rules were duplicated across header.css and
+   headings.css with two small conflicts (navbar padding-top and
+   active-hover color). Consolidated here using the values that
+   actually won the cascade, so the rendered result is unchanged.
+   headings.css now contains only the .heading section styles. */
+
+header {
+    background: var(--header-bg);
+    padding: 20px 0;
+}
+
+header .navbar {
+    margin-bottom: 0;
+    border: 0;
+}
+
+header .navbar-brand {
+    padding-top: 5px;
+}
+
+header .navbar-default {
+    background: none;
+    border: 0;
+}
+
+header .navbar-default .navbar-nav {
+    padding-top: 10px;
+}
+
+/* Navigation Links */
+header .navbar-default .navbar-nav li a {
+    background-color: var(--primary);
+    color: var(--foreground);
+    padding: 10px 26px;
+    font-size: 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+header .navbar-default .navbar-nav li a:hover,
+header .navbar-default .navbar-nav li a:focus {
+    background-color: var(--tertiary);
+    color: var(--foreground);
+    /* outline: 2px solid var(--secondary);  For keyboard navigation */
+    outline-offset: 2px;
+}
+
+/* Selected (Active) Page Link */
+header .navbar-default .navbar-nav > .active > a,
+header .navbar-default .navbar-nav > .active > a:focus {
+    background-color: var(--secondary);
+    color: var(--foreground);
+}
+
+header .navbar-default .navbar-nav > .active > a:hover {
+    background-color: var(--tertiary);
+    color: var(--foreground);
+}
+
+/* Pressed/click state */
+header .navbar-default .navbar-nav li a:active {
+    background-color: var(--primary);
+    color: var(--foreground);
+}
+
+/* Standalone nav button */
+.nav-button {
+    background-color: var(--primary);
+    color: var(--foreground);
+    padding: 10px 26px;
+    font-size: 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-right: 0.5em;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.nav-button:hover,
+.nav-button:focus {
+    background-color: var(--tertiary);
+    color: var(--foreground);
+    outline: none;
+}
+
+.nav-button:active {
+    background-color: var(--primary);
+    color: var(--foreground);
+}

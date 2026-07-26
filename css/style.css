@@ -1,0 +1,27 @@
+/* ======================
+   Main Stylesheet
+======================= */
+
+/* Import order matters! */
+@import url('/css/core/fonts.css'); 
+@import url('/css/core/variables.css'); 
+@import url('/css/core/base.css'); 
+@import url('/css/core/components.css'); 
+@import url('/css/core/header.css'); 
+@import url('/css/core/hero.css'); 
+@import url('/css/core/headings.css'); 
+@import url('/css/core/footer.css'); 
+
+/* Sections & Features */
+@import url('/css/sections/sections.css');
+@import url('/css/sections/testimonials.css');
+@import url('/css/sections/contact.css');
+@import url('/css/sections/portfolio.css');
+@import url('/css/sections/intro.css');
+@import url('/css/sections/service.css');
+@import url('/css/sections/slider.css');
+@import url('/css/sections/calltoaction.css');
+@import url('/css/sections/client.css');
+@import url('/css/sections/articlespost.css');
+@import url('/css/sections/social.css');
+@import url('/css/sections/odd.css');

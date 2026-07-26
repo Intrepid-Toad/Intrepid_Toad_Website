@@ -1,0 +1,19 @@
+/* ------ Call to Action Section ------ */
+#call-to-action {
+    padding: 80px 0;
+}
+#call-to-action .block p {
+    margin-bottom: 32px;
+}
+#call-to-action .btn-call-to-action {
+    border: none;
+    padding: 14px 38px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 4px;
+    transition: background .2s, color .2s;
+}
+#call-to-action .btn-call-to-action:hover,
+#call-to-action .btn-call-to-action:focus {
+    text-decoration: none;
+}

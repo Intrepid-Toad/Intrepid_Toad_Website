@@ -1,0 +1,676 @@
+/* ================================================================
+   ARTICLES & POSTS
+   Sections:
+     1. Base
+     2. Generic lists
+     3. Images & figures (legacy .articles-figure)
+     4. details/summary marker (generic)
+     5. Articles tree
+     6. Spoilers
+     7. Article card rows (feeds)
+     8. Search results
+     9. Post navigation block
+    10. Navigation lists: contents / figures / tables
+    11. Callouts
+    12. Definition lists
+    13. Post figures
+    14. Post tables
+    15. Footnotes
+    16. Math
+    17. Embeds
+    18. Print
+   ================================================================ */
+
+
+/* ---------------- 1. Base ---------------- */
+#articles,
+#post {
+    padding: 50px 0 40px;
+}
+
+
+/* ---------------- 2. Generic lists ----------------
+   NOTE: these are (1 ID + 1 element) selectors. Anything that needs to
+   override them inside #post must be at least as specific — see §10. */
+#articles ul,
+#post ul {
+    padding-left: 2em;
+    margin: 1em 0;
+    list-style: disc inside;
+}
+
+#articles ol,
+#post ol {
+    padding-left: 2em;
+    margin: 1em 0;
+    list-style: decimal inside;
+}
+
+
+/* ---------------- 3. Images & figures (legacy) ---------------- */
+.articles-image-preview {
+    max-width: 100%;      /* Responsive: never exceeds the container width */
+    height: auto;         /* Maintain aspect ratio */
+    display: block;
+    margin: 2em auto;     /* Center the image and add space */
+    cursor: zoom-in;      /* Visual cue for clickable image */
+}
+
+.articles-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.articles-figure img {
+    max-width: 100%;
+    height: auto;
+}
+
+.articles-figure figcaption {
+    font-size: 1em;
+    text-align: center;
+}
+
+
+/* ---------------- 4. details/summary marker (generic) ----------------
+   Applies to every <details> on the site: trees, spoilers, post nav. */
+details > summary {
+    list-style: none;            /* remove native triangle */
+    cursor: pointer;
+    user-select: none;
+}
+
+details > summary::-webkit-details-marker { display: none; }  /* Safari */
+
+details > summary::before {
+    content: "▶";
+    display: inline-block;
+    width: 1em;
+    margin-right: 0.4em;
+    font-size: 0.8em;
+    color: var(--primary);
+}
+
+details[open] > summary::before { content: "▼"; }
+
+/* Guard: if a summary still contains a hand-placed .expand-icon span
+   (older tree include), suppress the generic marker so there is only
+   one arrow. Remove this rule once no include emits .expand-icon. */
+details > summary:has(.expand-icon)::before {
+    content: none;
+}
+
+.expand-icon {
+    display: inline-block;
+    width: 1em;
+    margin-right: 0.4em;
+}
+
+.expand-icon::before {
+    content: "▶";
+    font-size: 0.8em;
+    color: var(--primary);
+}
+
+details[open] > summary .expand-icon::before { content: "▼"; }
+
+
+/* ---------------- 5. Articles tree ---------------- */
+.articles-tree {
+    margin: 0.25em 0;
+}
+
+/* Indent + guide line per depth (nesting does the work) */
+.articles-tree .articles-tree {
+    margin-left: 1.25em;
+    padding-left: 0.75em;
+    border-left: 1px solid var(--border-color);
+}
+
+.articles-tree > summary {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    padding: 0.3em 0.5em;
+    border-radius: 4px;
+    font-weight: 600;
+    outline: none;
+    transition: background 0.2s;
+}
+
+.articles-tree > summary:hover {
+    background: var(--button-hover);
+}
+
+.articles-tree-title {
+    display: inline;
+    font-size: inherit;
+    margin: 0;
+}
+
+.articles-tree[open] > summary .articles-tree-title {
+    color: var(--primary);
+    font-weight: bolder;
+}
+
+.articles-tree-count {
+    font-weight: 400;
+    font-size: 0.85em;
+    opacity: 0.7;
+}
+
+.articles-tree-leaves {
+    list-style: none;
+    margin: 0.25em 0 0.5em;
+    padding-left: 1.6em;
+}
+
+.articles-tree-leaves li {
+    padding: 0.2em 0;
+}
+
+
+/* ---------------- 6. Spoilers ---------------- */
+.articles-spoiler > summary {
+    display: flex;
+    align-items: center;
+    padding: 0.25em 0.5em;
+    font-weight: bold;
+    border-radius: 4px;
+    outline: none;
+    transition: background 0.2s;
+}
+
+.articles-spoiler > summary:hover,
+.articles-spoiler[open] > summary {
+    background: var(--button-hover);
+}
+
+.articles-spoiler-title {
+    display: inline;
+    font-size: inherit;
+    margin: 0;
+}
+
+
+/* ---------------- 7. Article card rows (feeds) ----------------
+   Card layout: centered, fixed max width, thumbnail left,
+   title + byline on the top row, excerpt + read-more below,
+   whole card clickable via stretched title link. */
+
+.articles-list {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* THE CARD — max-width and margin auto are what center and cap it. */
+.articles-row {
+    max-width: 900px;
+    margin: 0 auto 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px;
+    border: 4px solid var(--secondary);
+    border-radius: 8px;
+    position: relative;   /* anchor for the stretched click-target link */
+}
+
+.articles-row:hover {
+    border: 2px solid var(--tertiary);
+}
+
+/* Thumbnail column (left) */
+.articles-row-image {
+    flex: 0 0 220px;
+}
+
+.articles-feed-thumb {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+/* Text column (right) */
+.articles-row-text {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+/* Row 1: title + byline */
+.articles-row-head {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.articles-row-title {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.articles-row-by {
+    color: var(--tertiary);
+    font-size: 16px;
+}
+
+.articles-row-authors {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Byline: neutralize Bootstrap .lead output from dry/authors.html
+   (21px font + bottom margin would break the head row alignment) */
+.articles-row-authors .lead {
+    margin: 0;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.articles-row-authors img {
+    height: 40px;
+    width: auto;              /* keep the logo's natural proportions */
+    object-fit: contain;      /* fit inside, never crop */
+    border-radius: 0;         /* no circle mask */
+}
+
+/* Row 2: excerpt + read more */
+.articles-row-excerpt {
+    margin: 0;
+}
+
+/* Whole card clickable — the title link stretches over the card */
+.articles-row-link {
+    text-decoration: none;
+}
+
+.articles-row-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+/* Other links inside the card stay clickable above the stretched layer */
+.articles-row-more,
+.articles-row-authors a {
+    position: relative;
+    z-index: 2;
+}
+
+/* Guard: a card directly inside a card never draws a second border.
+   NOTE: applies to NESTED .articles-row elements only — the feed
+   wrapper divs must remain class="mix ..." WITHOUT articles-row, or
+   this guard will strip the inner card's sizing. */
+.articles-row .articles-row {
+    border: none;
+    padding: 0;
+    margin: 0;
+    max-width: none;
+}
+
+/* Small thumbnail variant (used outside the card rows) */
+.articles-thumb {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 1.5rem;
+    border-radius: 6px;
+}
+
+/* Responsive: stack card vertically on mobile */
+@media (max-width: 768px) {
+    .articles-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .articles-row-image {
+        flex: none;
+    }
+    .articles-thumb {
+        margin-bottom: 1rem;
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* ---------------- 8. Search results (article-row style) ---------------- */
+#searchResults .mix { display: none; }
+#searchResults .mix.show { display: block; }
+
+.search-message {
+    font-size: 15px;
+    padding: 10px 0 20px;
+}
+
+
+/* ---------------- 9. Post navigation block ----------------
+   The collapsible <details> from _includes/md/navigation.html.
+   This element is the box: the lists inside it draw no borders. */
+.post-nav {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 4px 12px;
+    margin: 1em 0 2em;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.post-nav-summary {
+    cursor: pointer;
+    font-weight: 700;
+    padding: 4px 0;
+}
+
+.post-nav h4 {
+    margin: 0.75em 0 0.25em;
+}
+
+/* Figure/table list containers, populated by js/post-lists.js.
+   Empty until the script runs — and stays empty (hidden) when a post
+   has no captioned figures or tables. */
+.post-list-nav:empty {
+    display: none;
+}
+
+.post-nav .post-list-nav {
+    border: 0;
+    padding: 0;
+    margin: 0.5em 0;
+    width: auto;
+}
+
+
+/* ---------------- 10. Navigation lists: contents / figures / tables ----
+   Scoped with #post DELIBERATELY. The generic rules in §2 are
+   (1 ID + 1 element) and out-specify a bare #id or .class selector.
+   Without the #post prefix you get doubled markers:
+     "• 1. Intro"  and  "1. Figure 1. Foo"
+
+   Contents  -> numbers generated by CSS counters: 1. / 1.1. / 1.2.1.
+   Figures   -> no marker; post-lists.js writes "Figure 1." into the text
+   Tables    -> no marker; post-lists.js writes "Table 1." into the text  */
+
+#post #markdown-toc,
+#post #markdown-toc ul {
+    counter-reset: toc;
+    list-style: none;
+    padding-left: 1.2em;
+    margin: 0.5em 0;
+}
+
+#post #markdown-toc li {
+    counter-increment: toc;
+}
+
+#post #markdown-toc li::before {
+    content: counters(toc, ".") ". ";
+    font-weight: 600;
+    margin-right: 0.3em;
+}
+
+#post .post-list-nav-items {
+    list-style: none;
+    padding-left: 1.2em;
+    margin: 0.5em 0;
+}
+
+#post #markdown-toc a,
+#post .post-list-nav-items a {
+    text-decoration: none;
+}
+
+#post #markdown-toc a:hover,
+#post .post-list-nav-items a:hover {
+    text-decoration: underline;
+}
+
+
+/* ---------------- 11. Callouts ----------------
+   Usage:  > **Note:** text
+           {:.callout-note}   */
+#post blockquote.callout-note,
+#post blockquote.callout-warning,
+#post blockquote.callout-danger {
+    border-left-width: 4px;
+    border-left-style: solid;
+    padding: 12px 16px;
+    margin: 1.5em 0;
+    border-radius: 0 6px 6px 0;
+    font-style: normal;         /* override the italic default blockquote */
+}
+
+#post blockquote.callout-note {
+    border-left-color: var(--primary);
+}
+
+#post blockquote.callout-warning {
+    border-left-color: #e0a800;
+}
+
+#post blockquote.callout-danger {
+    border-left-color: #c0392b;
+}
+
+
+/* ---------------- 12. Definition lists ---------------- */
+#post dl {
+    margin: 1.5em 0;
+}
+
+#post dt {
+    font-weight: 700;
+    color: var(--primary);
+    margin-top: 1em;
+}
+
+#post dd {
+    margin: 0.25em 0 0 1.5em;
+}
+
+
+/* ---------------- 13. Post figures ----------------
+   Emitted by _includes/md/figure.html */
+#post figure {
+    margin: 2em auto;
+    max-width: 100%;
+}
+
+#post figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 6px;
+}
+
+#post figcaption {
+    text-align: center;
+    font-size: 0.9em;
+    opacity: 0.8;
+    margin-top: 0.5em;
+}
+
+
+/* ---------------- 14. Post tables ----------------
+   display:block + overflow-x makes wide tables scroll instead of
+   bursting the layout on narrow screens. */
+#post table {
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+    width: fit-content;
+    margin: 1.5em auto;
+    border-collapse: collapse;
+}
+
+#post table caption {
+    caption-side: top;
+    text-align: left;
+    font-size: 0.9em;
+    opacity: 0.8;
+    padding-bottom: 0.4em;
+}
+
+#post th,
+#post td {
+    border: 1px solid var(--border-color);
+    padding: 6px 12px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+#post thead th {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+
+/* ---------------- 15. Footnotes (kramdown) ---------------- */
+#post .footnotes {
+    border-top: 1px solid var(--border-color);
+    margin-top: 3em;
+    padding-top: 1em;
+    font-size: 0.9em;
+}
+
+#post .footnotes ol {
+    padding-left: 1.5em;
+}
+
+#post .footnotes p {
+    font-size: 0.9em;
+    display: inline;
+}
+
+#post a.footnote,
+#post a.reversefootnote {
+    text-decoration: none;
+}
+
+
+/* ---------------- 16. Math (MathJax) ---------------- */
+#post mjx-container[display="true"] {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.5em 0;           /* long equations scroll, don't burst the card */
+}
+
+
+/* ---------------- 17. Embeds ----------------
+   _includes/md/youtube.html and _includes/md/itch.html */
+.video-embed {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    margin: 1.5em auto;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.video-embed iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Captioned YouTube wraps in <figure>; don't double the vertical margin */
+.video-figure {
+    margin: 2em auto;
+}
+
+.video-figure .video-embed {
+    margin: 0;
+}
+
+.itch-embed {
+    margin: 2em auto;
+}
+
+.itch-embed iframe {
+    max-width: 100%;
+    border-radius: 6px;
+    display: block;
+}
+
+.itch-embed-link {
+    margin: 0.5em 0 0;
+    font-size: 0.9em;
+}
+
+
+/* ---------------- 18. Print ---------------- */
+@media print {
+    header,
+    footer,
+    .portfolio-menu,
+    .post-nav {
+        display: none;
+    }
+
+    #post table {
+        display: table;         /* no scroll container on paper */
+    }
+
+    #post a[href^="http"]::after {
+        content: " (" attr(href) ")";   /* show URLs when links can't be clicked */
+        font-size: 0.85em;
+    }
+}
+
+#post .xref { text-decoration: none; font-weight: 600; }
+#post .xref:hover { text-decoration: underline; }
+#post .xref-missing { color: #c0392b; }
+
+
+/*---------Biblio------*/
+
+.bibliography {
+    margin-top: 3em;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1em;
+}
+
+.bibliography summary {
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.bibliography ol {
+    margin-top: 1em;
+}
+
+.bibliography li {
+    margin-bottom: 0.8em;
+}
+
+.appendices 
+{
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 0.8em;
+}
+
+.appendices img {
+    display: block;
+    max-width: 100%;
+    max-height: 600px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin: 1rem auto;
+}

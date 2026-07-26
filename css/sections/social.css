@@ -1,0 +1,13 @@
+/* Social Icons */
+.social-icons {
+    margin-top: 5px;
+}
+.social-icons li {
+    display: inline-block;
+    margin: 0 6px;
+}
+.social-icons i {
+    color: var(--primary);
+    margin-right: 25px;
+    font-size: 25px;
+}
