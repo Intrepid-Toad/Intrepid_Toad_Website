@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta name="robots" content="noai, noimageai">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+      
+        Burst Mode Rate of Fire – Testing, Examples, and Discussion
+      
+    </title>
+    <meta name="description" content="Intrepid Toad, Game Studio from Ireland">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <link rel="stylesheet" href="/css/owl.carousel.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/ionicons.min.css">
+<link rel="stylesheet" href="/css/animate.css">
+<link rel="stylesheet" href="/css/responsive.css">
+
+
+<link rel="stylesheet" href="/css/themes/pijove.css">
+
+<script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/min/waypoints.min.js"></script>
+<script src="/js/jquery.counterup.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="/js/main.js"></script>
+
+
+<script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+    };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+<script src="/js/post-lists.js"></script>
+
+
+  </head>
+  <body>
+  
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+    <img src="/img/icons/logo-40-intrepid-toad.png" alt="Intrepid Toad">
+</a>
+<a class="navbar-brand" href="/alt-kreation">
+    <img src="/img/icons/logo-40-alt-kreation.png" alt="alt-kreation">
+</a>
+<a class="navbar-brand" href="/pijove">
+    <img src="/img/icons/logo-40-pijove.png" alt="Pijove">
+</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-center nav-black">
+        <li class="">
+          <a href="/pijove/">Home</a>
+        </li><li class="">
+          <a href="/pijove/portfolio.html">Releases</a>
+        </li><li class="">
+          <a href="/pijove/articles.html">Articles</a>
+        </li><li class="">
+          <a href="/pijove/contact.html">Contact</a>
+        </li>
+      </ul>
+      <div class="nav navbar-nav navbar-right">
+        <form action="/intrepid-toad/articles/search.html" method="get">
+    <input
+            type="text"
+            id="searchInput"
+            name="q"
+            placeholder="Search articles...">
+    <button
+            type="submit"
+            id="searchButton">
+        Search
+    </button>
+</form>
+      </div>
+    </div>
+  </div>
+</nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <section id="global-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h1>Burst Mode Rate of Fire</h1>
+          
+              <h2 class="header-subtitle">Testing, Examples, and Discussion</h2>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<article id="post">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Burst Mode Rate of Fire</h1>
+                <h2>
+                    Testing, Examples, and Discussion
+                    
+                </h2>
+
+                <h3>
+                    
+    GUIDE
+    
+
+
+     > FPS
+    
+
+
+     > INSURGENCY-SANDSTORM
+    
+
+
+
+
+
+                </h3>
+                
+                <p class="lead">
+    by&nbsp;
+    
+    
+    
+    Pijove
+    <img src="/img/icons/logo-40-pijove.png" alt="pijove" />
+    
+</p>
+                <hr>
+                
+                <p><span class="glyphicon glyphicon-time"></span> Posted on October 03, 2022</p>
+
+                <hr>
+                
+                
+                <img class="img-responsive" src="/img/pijove/posts/insurgency-sandstorm/burst/f1.jpg" alt="/img/pijove/posts/insurgency-sandstorm/burst/f1.jpg">
+                
+                
+                <hr>
+                
+                
+
+                
+<details class="post-nav" open="">
+  <summary class="post-nav-summary">Navigation</summary>
+
+  <h4 class="no_toc">Contents</h4>
+<ul id="markdown-toc">
+  <li><a href="#testing" id="markdown-toc-testing">Testing</a>    <ul>
+      <li><a href="#rate-of-fire-formula" id="markdown-toc-rate-of-fire-formula">Rate of Fire Formula</a></li>
+      <li><a href="#summary-of-testing-results" id="markdown-toc-summary-of-testing-results">Summary of testing results</a></li>
+      <li><a href="#update" id="markdown-toc-update">Update</a></li>
+      <li><a href="#rate-of-fire-testing-comparison-video" id="markdown-toc-rate-of-fire-testing-comparison-video">Rate of Fire Testing comparison video</a></li>
+    </ul>
+  </li>
+  <li><a href="#video-examples-pvp-push" id="markdown-toc-video-examples-pvp-push">Video Examples (PvP Push)</a>    <ul>
+      <li><a href="#fire-mode-highlight" id="markdown-toc-fire-mode-highlight">Fire mode highlight</a>        <ul>
+          <li><a href="#semi-auto" id="markdown-toc-semi-auto">Semi-Auto</a></li>
+          <li><a href="#burst" id="markdown-toc-burst">Burst</a></li>
+          <li><a href="#auto" id="markdown-toc-auto">Auto</a></li>
+        </ul>
+      </li>
+      <li><a href="#capturing-objectives-in-pvp-push" id="markdown-toc-capturing-objectives-in-pvp-push">Capturing objectives in PvP Push</a>        <ul>
+          <li><a href="#aug-full-auto" id="markdown-toc-aug-full-auto">AUG (Full Auto)</a></li>
+          <li><a href="#m16a2-semi-auto" id="markdown-toc-m16a2-semi-auto">M16A2 (Semi-Auto)</a></li>
+          <li><a href="#m16a4-burst" id="markdown-toc-m16a4-burst">M16A4 (Burst)</a></li>
+          <li><a href="#g36k-burst" id="markdown-toc-g36k-burst">G36K (Burst)</a></li>
+          <li><a href="#famas-burst" id="markdown-toc-famas-burst">FAMAS (Burst)</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#firing-modes-discussion" id="markdown-toc-firing-modes-discussion">Firing modes Discussion</a>    <ul>
+      <li><a href="#firing-mode-specific" id="markdown-toc-firing-mode-specific">Firing Mode Specific</a>        <ul>
+          <li><a href="#how-it-works-game-mechanics" id="markdown-toc-how-it-works-game-mechanics">How it works (Game mechanics)</a></li>
+          <li><a href="#what-is-the-point-of-the-burst-mode" id="markdown-toc-what-is-the-point-of-the-burst-mode">What is the point of the burst mode?</a></li>
+          <li><a href="#typical-engagement-ranges-in-game" id="markdown-toc-typical-engagement-ranges-in-game">Typical Engagement ranges in-game.</a></li>
+          <li><a href="#ease-of-use-in-close-quarters" id="markdown-toc-ease-of-use-in-close-quarters">Ease of Use in Close quarters</a></li>
+        </ul>
+      </li>
+      <li><a href="#other-factors-to-consider" id="markdown-toc-other-factors-to-consider">Other Factors to consider</a>        <ul>
+          <li><a href="#fire-rate" id="markdown-toc-fire-rate">Fire rate</a></li>
+          <li><a href="#loadout-factors" id="markdown-toc-loadout-factors">Loadout Factors</a></li>
+        </ul>
+      </li>
+      <li><a href="#weapon-specific" id="markdown-toc-weapon-specific">Weapon Specific</a>        <ul>
+          <li><a href="#m16a2-1pt" id="markdown-toc-m16a2-1pt">M16A2 [1pt]</a></li>
+          <li><a href="#m16a4-2pts" id="markdown-toc-m16a4-2pts">M16A4 [2pts]</a></li>
+          <li><a href="#g36k-3pts" id="markdown-toc-g36k-3pts">G36K [3pts]</a></li>
+          <li><a href="#famas-6pts" id="markdown-toc-famas-6pts">FAMAS [6pts]</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+  <nav id="lot" class="post-list-nav"></nav>
+
+</details>
+
+<p>What started as a simple RoF test spiralled out of control into the discussion of the firing modes in Insurgency Sandstorm. 
+Hopefully, you find some of it informative.</p>
+
+<h1 id="testing">Testing</h1>
+
+<p>In-game stats the Rate of Fire (RoF) of the M16A2 is 296 RPM and the M16A4 is 316RPM. 
+Just looking at the values they appear a bit slow and was curious to see where that value comes from. 
+I’ll show the result upfront first then explain.</p>
+
+<h2 id="rate-of-fire-formula">Rate of Fire Formula</h2>
+
+<p>Given:</p>
+<ul>
+  <li>(S) = salvo length (shots)</li>
+  <li>(R) = time between consecutive shots (seconds)</li>
+  <li>(B) = additional delay after a salvo (seconds)</li>
+</ul>
+
+<p>Rate of Fire per Minute (60 seconds)</p>
+
+\[\text{RPM}
+=
+\frac{60 \times S}
+{((S - 1) \times R) + B}\]
+
+<h2 id="summary-of-testing-results">Summary of testing results</h2>
+
+<p>Calculating (<a class="xref" href="#table-stat-rpm" data-xref-type="table" data-xref-name="stat-rpm" data-xref-label="Table">Table</a>) the theoretical values based on the in-game stats without testing. I included the G3 on auto as a control, and it behaved as expected with no errors when I tested it.</p>
+
+<table data-caption="Games Stats RPM." data-name="stat-rpm">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th style="text-align: right">Stats RPM</th>
+      <th style="text-align: right">30 round time (s)</th>
+      <th style="text-align: right">Bullets per second</th>
+      <th style="text-align: right">1 Bullet time (s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>M16A2</td>
+      <td style="text-align: right">296</td>
+      <td style="text-align: right">6.08</td>
+      <td style="text-align: right">4.93</td>
+      <td style="text-align: right">0.20</td>
+    </tr>
+    <tr>
+      <td>M16A4</td>
+      <td style="text-align: right">316</td>
+      <td style="text-align: right">5.69</td>
+      <td style="text-align: right">5.26</td>
+      <td style="text-align: right">0.18</td>
+    </tr>
+    <tr>
+      <td>G36K</td>
+      <td style="text-align: right">741</td>
+      <td style="text-align: right">2.42</td>
+      <td style="text-align: right">12.35</td>
+      <td style="text-align: right">0.08</td>
+    </tr>
+    <tr>
+      <td>FAMAS</td>
+      <td style="text-align: right">1000</td>
+      <td style="text-align: right">1.80</td>
+      <td style="text-align: right">16.66</td>
+      <td style="text-align: right">0.06</td>
+    </tr>
+    <tr>
+      <td>G3</td>
+      <td style="text-align: right">500</td>
+      <td style="text-align: right">3.60</td>
+      <td style="text-align: right">8.33</td>
+      <td style="text-align: right">0.12</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>As you can see (<a class="xref" href="#table-results" data-xref-type="table" data-xref-name="results" data-xref-label="Table">Table</a>) the calculated results doesn’t match the displayed game stats, why?</p>
+
+<table data-caption="Testing results and calculations of weapons using the burst firing mode." data-name="results">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th style="text-align: right">Calc RPM</th>
+      <th style="text-align: right">30 Round Time (s)</th>
+      <th style="text-align: right">Bullets per Second</th>
+      <th style="text-align: right">1 Bullet time</th>
+      <th style="text-align: right">Delay time (s)</th>
+      <th>Delay RPM</th>
+      <th style="text-align: right">Shot time (s)</th>
+      <th style="text-align: right">Shot RPM</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>M16A2</td>
+      <td style="text-align: right">450</td>
+      <td style="text-align: right">4.00</td>
+      <td style="text-align: right">7.50</td>
+      <td style="text-align: right">0.133</td>
+      <td style="text-align: right">0.2</td>
+      <td>296</td>
+      <td style="text-align: right">0.986</td>
+      <td style="text-align: right">608</td>
+    </tr>
+    <tr>
+      <td>M16A4</td>
+      <td style="text-align: right">490</td>
+      <td style="text-align: right">3.67</td>
+      <td style="text-align: right">8.17</td>
+      <td style="text-align: right">0.122</td>
+      <td style="text-align: right">0.18</td>
+      <td>316</td>
+      <td style="text-align: right">0.88</td>
+      <td style="text-align: right">575</td>
+    </tr>
+    <tr>
+      <td>G36K</td>
+      <td style="text-align: right">575</td>
+      <td style="text-align: right">3.13</td>
+      <td style="text-align: right">9.58</td>
+      <td style="text-align: right">0.104</td>
+      <td style="text-align: right">0.127</td>
+      <td>469</td>
+      <td style="text-align: right">0.08</td>
+      <td style="text-align: right">741</td>
+    </tr>
+    <tr>
+      <td>FAMAS</td>
+      <td style="text-align: right">740</td>
+      <td style="text-align: right">2.43</td>
+      <td style="text-align: right">12.34</td>
+      <td style="text-align: right">0.081</td>
+      <td style="text-align: right">0.173</td>
+      <td>346</td>
+      <td style="text-align: right">0.06</td>
+      <td style="text-align: right">1000</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The 30-round time is from the recording of tests. From there it is easy to calculate the overall RoF. 
+I tried to discover both the shot and delay RoF from the recordings too but was not happy with the result as I think frame rounding could skew the results.</p>
+
+<p>When I initially tested the M16A2 it seems like the Shot RoF was about 600 and the delay was 300 RPM. 
+I was happy to discover that the ‘300’ is extremely close to the in-game stat RoF (296) for the M16. 
+So I think that the in-game value for the M16A2/4 is for the burst delay. By knowing the Overall RoF, and the delay RoF I was able to calculate the Shot RoF too.</p>
+
+<p>For both M16A2 &amp; M16A4, the actual RoF is higher than what is stated in-game which is an interesting finding. 
+I think these calculated values seem accurate.
+For the G36K / FAMAS, I am less certain about my calculated results. 
+Both weapons have a higher Automatic RoF than Burst RoF recorded, which is not surprising as a burst delay will just make the elapsed time longer, lowering the overall RoF.</p>
+
+<h2 id="update">Update</h2>
+
+<p>After this was posted I found a good <a href="https://www.insurgencytracker.com/armory">source (insurgencytracker.com)</a> of information,
+and learnt that the in-game displayed 296 RPM uses NWI’s convention of showing 40% of the cyclic rate for burst/semi-only weapons
+(741 × 0.4 ≈ 296).</p>
+
+<h2 id="rate-of-fire-testing-comparison-video">Rate of Fire Testing comparison video</h2>
+
+<div class="video-embed">
+    <iframe src="https://www.youtube-nocookie.com/embed/rt3dazfdTAM" title="RoF testing (G3, M16A2[S], M16A2[B], M16A4, G36K, FAMAS)" loading="lazy" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
+
+<p>Please note some of the limitations of my testing from user input, 
+frame rounding from recording and math calculated from data which make contain some errors and can lead to inaccuracy.</p>
+
+<p>I don’t use any scripts, macros, mods etc to modify my click rate. My guess is each weapon has a limiter on its Semi-Auto fire rate. 
+This was my attempt at clicking as fast as possible for 30 shots. I think the limiting factor here is me, so consider that. 
+The World Record for Clicks per second on this <a href="clickspeedtest.com">site</a> is 17.4, meaning when converted to Fire rate it would be 1,044RPM!
+My Semi-Auto RoF (557RPM) attempt is higher than the stated game stats (296RPM), the limit should be 741 RPM for the M16A2.</p>
+
+<h1 id="video-examples-pvp-push">Video Examples (PvP Push)</h1>
+
+<p>A couple of videos you may find interesting. The first is a demonstration of what I think the strengths of each firing mode are. The second video is me attempting to use the weapon in a specific mode to capture an objective in PvP Push.</p>
+
+<h2 id="fire-mode-highlight">Fire mode highlight</h2>
+
+<div class="video-embed">
+    <iframe src="https://www.youtube-nocookie.com/embed/ipNZzgvVr3w" title="YouTube video" loading="lazy" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
+
+<h3 id="semi-auto">Semi-Auto</h3>
+<p>Semi-Auto: Ranged Combat, Counter Sniping (0s)</p>
+
+<p>Full credit to my teammate, they gave excellent comms that informed me there was a sniper on the hill watching left which was giving them trouble. 
+After eliminating the sniper with a 190m headshot. I told the team the sniper was down and this allowed my team to push towards the objective where we captured ‘B’ shortly after.</p>
+
+<p>Semi-Auto: Precision preparation (9s)
+4 shots and 4 kills in preparation to capture the objective. Immediately after I go downstairs to help capture the objective successfully, eliminating a few more enemies with full auto at close range. (Note replay mode rendered the smoke differently from what I saw in-game at the time)</p>
+
+<h3 id="burst">Burst</h3>
+
+<p>Burst: Pre-Objective Controlled attack, 5/7 burst [37s]</p>
+
+<p>I initially use a lot of smoke to conceal my movement. To my surprise when the smoke clears, I wasn’t expecting to see 5 enemies immediately. I miss 2 bursts out of the 7 fired, the 1st miss was when the enemy crouched just before I fired at the location where they would have been, the 2nd miss I rushed the shot and wasn’t on target. The 5 bursts that hit eliminated 5 enemies.</p>
+
+<p>Burst: Objective attack [50s]</p>
+
+<p>A 2-shot burst, allows you to be confident to attack multiple enemies without reloading. I also included it as the fight over the door seemed funny.</p>
+
+<h3 id="auto">Auto</h3>
+
+<p>Full Auto: Triple Hip-fire counter ambush [1min 28s]</p>
+
+<p>A teammate ran out the door just before the clip and got ambushed. I suspected it was from the right, also there was pressure on me to defend the ‘A’ objective so I felt I had to move. I was surprised that 3 enemies were waiting. This is a good example of full auto in extremely close quarters where it was more of a reaction than “skill”.</p>
+
+<p>Full Auto 6-person ambush [1min25s]</p>
+
+<p>Full Auto &amp; Bipod, can create some very nasty ambushes. They didn’t throw their smoke correctly. I waited slightly so they were in the open before I started shooting to see how many enemies there were. If you shoot too early, you will get the 1st but the remaining enemies will likely choose a different path. The result was me eliminating 6 of them in a single full auto spray.</p>
+
+<h2 id="capturing-objectives-in-pvp-push">Capturing objectives in PvP Push</h2>
+
+<div class="video-embed">
+    <iframe src="https://www.youtube-nocookie.com/embed/Lv7jnI_doP0" title="Capturing objectives in PvP Push (AUG, M16A2, M16A4, G36K, FAMAS)" loading="lazy" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
+
+<p>To investigate this a bit further, I thought it would be good to test out the firing modes of the specific weapons in PvP Push matches as the attacking team, to illustrate some of the strengths and weaknesses. So when I discuss the specific weapons that I have experienced using all of them so I can make a more balanced less biased opinion.</p>
+
+<h3 id="aug-full-auto">AUG (Full Auto)</h3>
+
+<p>[0s] Hillside &gt; Security » B » AUG</p>
+
+<p>I use a couple of smoke launcher shots to conceal my movement. The grenade was thrown at the lower room as I suspect an enemy would be there. I planned to make it to the internal staircase and if it was calm then I would reload. When I use full auto I expect to eliminate an enemy within 7 shots (4 per magazine). I was very lucky that the 5th enemy with the shotgun messed up his opportunity, he should have killed me if he had better aim. Managed a few more kills when the enemies attempted to approach when we were capturing.</p>
+
+<h3 id="m16a2-semi-auto">M16A2 (Semi-Auto)</h3>
+
+<p>[1min26s] Power Plant » Insurgent » D » M16A2</p>
+
+<p>Initially, I take a flanking path and eliminate the 1st enemy. The enemy spawn wave caught me off guard, so I was not expecting kills 2 &amp; 3. I take a few seconds to compose myself and listen to any other enemies approaching, I wait for them to pass and get kill #4. This objective can be very awkward to take, so I use 2 grenades which get a kill each (5&amp;6). When I vaulted to the objective it was still contested and I was unsure if my 2nd grenade killed the person so that’s why I shot the corpse. Two enemies run into the room and didn’t check the corner and they get eliminated (7&amp;8). An enemy vaulted through the window I came through and also didn’t check the corner which was my final kill (9) before we captured the objective.</p>
+
+<h3 id="m16a4-burst">M16A4 (Burst)</h3>
+
+<p>[2min40s] Refinery » Security » B » M16A4</p>
+
+<p>Initially, when moving, I was pinned and didn’t know the origin of the enemy, also I had a feeling that there was an enemy high up (1st kill). I didn’t expect the person lying down (2nd kill). For some reason, I currently tend to double burst enemies (6 shots) to be certain they are dead, so I expect 5 kills per magazine. Kills 3 &amp; 4, were both eliminated with the first single burst but I still double burst them. I was still able to keep track of the ammo that I used 7 bursts up to this point. 5th kill was a single burst. With 2 bursts remaining I needed to reload but wanted cover also, fortunately, there were no enemies on the top floor and I was able to both reload and capture the objective.</p>
+
+<h3 id="g36k-burst">G36K (Burst)</h3>
+<p>[3min 15s] Prison» Security » A » G36K</p>
+
+<p>Sharp shot clip First kill was a single burst, second kill I was expecting it to also kill in a single burst but require a second. 3rd Kill was a headshot and the pre-objective attack only took less than 10 seconds. I make it into the building and eliminate the 4th person. Didn’t realise another enemy was behind and my teammate finishes that enemy off. The total number of bullets used was only 14.</p>
+
+<h3 id="famas-burst">FAMAS (Burst)</h3>
+
+<p>[3min 37s] Prison» Insurgent » A » FAMAS</p>
+
+<p>This clip I find interesting as shows a change in momentum, the initial attack was successful eliminating 5 enemies rapidly (3 enemies with 4 bursts) and was hoping my team was going to get on the objective shortly after so we could capture the objective swiftly. It seemed that my team were struggling to even get to the objective. I’m still lurking in the building and the enemy is clearly annoyed by my presence and I managed to eliminate both (6&amp;7). To make matters worse, during my attack we reach 0 waves. My dramatic entrance to the objective using an AT4 to clear a corner (no kill), and dropping in melting an enemy (final kill #8) was reckless, if I had more time or support, I would have been more methodical. I was unaware of the other enemy attempting to shoot me, fortunately, my teammate saves me from being eliminated. The teammate joined so the three of us capture the objective just before the main force of the next waves arrive. If the team was able to block the objective and hold for 10 more seconds, I think we would have lost.</p>
+
+<h1 id="firing-modes-discussion">Firing modes Discussion</h1>
+
+<h2 id="firing-mode-specific">Firing Mode Specific</h2>
+
+<h3 id="how-it-works-game-mechanics">How it works (Game mechanics)</h3>
+
+<p>Automatic will keep shooting while the trigger is pressed at an exact fire rate. Main Balancing factors in games include fire rate, damage and recoil. Playing around with these variables you get different styles of weapons. Metrics used are often Time to Kill (TTK) or Shots to Kill (STK).</p>
+
+<p>Semi-Auto only shoots 1 bullet at a time with each trigger press. Practically is you who determines the fire rate in this mode. Games tend to have limiters in case people try to exploit this mechanic. Semi-Auto weapons can be difficult to balance as they are often referred to as having a high skill ceiling and depending on how they are implemented by the game mechanics they can be trash or overpowered.</p>
+
+<p>Burst will shoot a specific number of bullets at a set fire rate which will have a delay before it can be shot again. To shoot again you need to press the trigger again when the weapon is ready. Burst Weapons can be hit or miss in how they are implemented in games. Its own distinction is how practical the spread of the shots in the burst and how long the burst delay is.</p>
+
+<h3 id="what-is-the-point-of-the-burst-mode">What is the point of the burst mode?</h3>
+
+<p>The tip in the game is “Use [button] to change a weapon’s fire mode if has more than one. Semi-Auto fire is effective at longer ranger where full auto is harder to control.”</p>
+
+<p>If a generalisation for the mode is; Semi-Auto is for precision and Automatic is for suppression. What is the point of burst and why does it exist? From my understanding, the main points are:</p>
+
+<ul>
+  <li>As an intermediate mode between Semi and Auto.</li>
+  <li>To not waste ammo (panicked full auto mag dump)</li>
+  <li>Recoil control (X bullets is enough for the target)</li>
+</ul>
+
+<h3 id="typical-engagement-ranges-in-game">Typical Engagement ranges in-game.</h3>
+
+<p>I think for the insurgency maps, there is a lot of medium-range combat, for the objectives themselves are located in close quarters.</p>
+
+<p>Some rough thresholds:</p>
+
+<ul>
+  <li>&lt;25m Close quarters</li>
+  <li>25-50m: Short</li>
+  <li>50-100m: Medium</li>
+  <li>100m+: Long</li>
+</ul>
+
+<p>When you play the tutorial ‘range’ level, the enemies that come over the ridge are about 50m away from the balcony. You can modify your playstyle to select engagements that you are comfortable with.</p>
+
+<h3 id="ease-of-use-in-close-quarters">Ease of Use in Close quarters</h3>
+
+<ul>
+  <li>Full auto: is the easiest to use as you just “fire” when on target and don’t when not on target. All you need to do is focus on recoil control and tracking the target.</li>
+  <li>Burst is slightly harder than full auto as it has a delay between bursts which means you must take a bit more care in your initial aim before you fire.</li>
+  <li>Single-shot is the hardest, as you control the fire rate. Even if you can spam the fire button at an insanely high rate can you do it precisely too? And can you do it consistently? For example, in the Semi-Auto clip kills 8&amp;9 were at a fire rate of about 375RPM (Slower than all automatic rifles).</li>
+</ul>
+
+<h2 id="other-factors-to-consider">Other Factors to consider</h2>
+
+<h3 id="fire-rate">Fire rate</h3>
+
+<p>I don’t consider fire rate that important in INS: SS. Mainly because the “Shot To Kill” (STK) is very low (2-3). If the STK was higher like 5-7, I would consider the fire rate more important since If more hits are required this extends the elapsed time (even with 100% accuracy) and a higher fire rate will also help compensate for inaccuracy too.</p>
+
+<p>For Example, if an AKM and FAMAS kill you in 2 shots, and AKM shoots every 0.1s and the FAMAS every 0.06s. If you both had 100% accuracy and shot at the exact same time (1st shot: 0s), the FAMAS will win by 0.04s with the 2nd shot. For a 60FPS user that is only 2.5 frames difference. I would rate positioning, awareness, and accuracy as more important.</p>
+
+<h3 id="loadout-factors">Loadout Factors</h3>
+
+<p>I often see “What is the best weapon?” I would say in INS:SS all rifleman choices are viable, and the distinctions are more to do with player preferences. 
+I don’t think there are “OP” weapons like in other games. When discussing “Best” there any many often factors left out. In short, 
+I don’t think there is a “best” unless you define the context of “best” first.</p>
+
+<ul>
+  <li>Are supply points considered?
+    <ul>
+      <li>If you are making an equipment-heavy loadout, you cannot spend as many points on your primary weapon, however, if you are making a very light loadout you can spend more, so the difference in supply points shifts the focus.</li>
+    </ul>
+  </li>
+  <li>Attachments?
+    <ul>
+      <li>Are certain attachments important to you? For example, FAL, G3, and QBZ-03 cannot equip a smoke/explosive launcher does this matter for your loadout?</li>
+    </ul>
+  </li>
+  <li>Specific maps?
+    <ul>
+      <li>The impact of maps is not often discussed. Typical engagement ranges in “Crossing” is very different to “Prison”. Certain attributes of a weapon may be more suited for specific map scenarios.</li>
+    </ul>
+  </li>
+  <li>Game mode?
+    <ul>
+      <li>“Push” is different to “Ambush”. And to split it further, being an “attacker” is different to a “defender” in push.</li>
+    </ul>
+  </li>
+  <li>Playstyle focus?
+    <ul>
+      <li>Certain tools are better suited for specific jobs. Even stating “versatile” hints toward a specification.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>In IN:SS you have 15 supply points to spend on a loadout in the game mode of PvP Push. 
+Primary weapons range from 1 to 6 points. I have multiple load-outs for different scenarios. 
+I choose both [PvP] and [as the attacking teams] as it helps constrain the scope and has interesting points to consider.</p>
+
+<p>For me, the gas mask is essential not just for chemical mortars but allows for not making a coughing sound when moving through the smoke. 
+Smoke is important for creating concealment so you can reach the objective. I personally like the smoke launcher as it is both cost-effective and keeps my equipment slots free. 
+I like to have at least 1 explosive to assist in clearing the objective. I like having a 4x-1x BUS optic as it keeps the weapon versatile for both long-range and short-range. A flash hider is important, so you don’t reveal your location visually when firing.</p>
+
+<h2 id="weapon-specific">Weapon Specific</h2>
+
+<h3 id="m16a2-1pt">M16A2 [1pt]</h3>
+
+<p>Objectively the M16A2 is the worst out of all the burst weapons due longest burst delay (0.2s). However, its main draw is that it is the cheapest primary weapon at 1 point, which is great as it allows to spend lots of points on equipment and attachments. Also, the main stats are very good, with a very high bullet velocity and low recoil. M16A2 is one of my favourite weapons in the game and it looks cool when it has that style of M203 grenade launcher attached.
+The delay isn’t too long, and if you don’t like it, you can switch it to semi so there is no delay, to overcome this. Naturally a lower RoF will be at a disadvantage against higher RoF weapon in a close quarters environment by comparison.
+An minor detail which is a nice bonus is the M16A2 uses STANAG magazines which means it can take the magazines from compatible weapons or if you swap weapons you can use your own reserve ammo. Weapons that share the same 5.56mm NATO magazines are: M16A2, M16A4, M4A1, Mk 18 CBR, L85A2, and QBZ-03.</p>
+
+<h3 id="m16a4-2pts">M16A4 [2pts]</h3>
+
+<p>Extremely similar to the M16A2, differences include costing 1 supply point extra and more variety in attachments (Optics), and slightly better fire rate.
+If you are looking to make the cheapest Security weapon with a 4x-1x optic the QTS-11 may be a better alternative even though the weapon itself is 4pts but the unique optic is only 1 point, and the weapon is full auto (550 RPM) for people who dislike the burst mode. Also since the M16A4 is 2 points, for 1 point extra you can access the G36K / AUG, so often people just use them instead.</p>
+
+<h3 id="g36k-3pts">G36K [3pts]</h3>
+
+<p>You can start off with G36K vs AUG debate.
+I have a sight personal preference for the AUG over the G36K for very minor reasons. Firstly I prefer Bullet velocity over rate of fire (main distinction between them). I like only having 2 firing modes for simplicity, It means I can toggle between Auto &amp; Semi instead of cycling between Auto, Burst, Semi. Being a Bullpup is a nice bonus so you are less likely to see a barrel poking round a corner.
+However you can argue that bullet velocity is not as important as how often do you target enemies 150m+, a higher RoF is better in close quarters, and the 2-round burst adds to the versatility. Overall I think both are good.
+Commenting specifically on the 2-Round burst aspect of the G36K. Initially I was unsure what to make of it, but I like it. It has the shortest burst delay out all the burst weapons so using the burst plays more like Semi-Auto as the delay is minimal. Having 2 bullets instead of 1 makes it feel more consistent. A single burst of 2 shots can kill a enemy. The 2 shot bursts allows you have a slower trigger finger yet keep a higher overall fire rate. The 2-round burst is a good intermediate choice between selecting auto and semi. You can use the burst cover that ranges you don’t like to use full auto but want more suppressing fire than semi.</p>
+
+<h3 id="famas-6pts">FAMAS [6pts]</h3>
+
+<p>Statistically, the FAMAS can be considered one the best weapons in the game due to Its full auto fire rate is extremely high at 1000 RPM (Joint 2nd in the game) with the next highest rifle being the VHS-2 at 857RPM, which means it can melt you faster then they can kill you.
+The weapon does have major drawbacks. It is the most expensive primary weapon and It only has 25 capacity magazine with no option to extend it. You can empty a 25-round magazine in 1.5s in full auto. If you intend to use full auto you need to have good trigger discipline.
+If you limit yourself to only use semi, you are wasting points as its primary advantage is the fire rate. An M16A2 would do the job better as it has better bullet velocity, better recoil, a larger magazine, and a much cheaper supply cost.
+So what about the 3 round burst for the FAMAS? The delay on the burst delay is shortest out of the 3 round burst weapons (M16A2/A4) and the shot delay is the shortest too. This makes it feel very sharp to use.
+The burst is good as you can mentally know you have 8 bursts (24 bullets) per magazine, meaning even if you double burst each enemy, you can still eliminate 4 enemies per magazine, which is acceptable. The gun itself is fun to use, feels like you are zapping them in each burst.
+However, being pragmatic, I struggle to justify picking it for my loadout. Considering it is the most expensive rifle it reduces my equipment/ attachment options. My performance with it is not exceptionally better than if I was using a different weapon. In the same scenarios, I think I could do the same job with AK-74 or M16A2. So, my main issue is not with the weapon itself but more in the context of how it fits into my playstyle for the game.</p>
+
+
+
+                <hr>
+                
+
+
+                
+
+                
+
+                
+                
+
+                
+                
+                
+                
+                
+                <span class="previous-link">
+                    <a rel="prev" href="/pijove/articles/ASF.html">Previous: Air Superiority Fighter (ASF) </a>
+                  </span>
+                
+
+                
+                <span class="next-link pull-right">
+                    <a rel="next" href="/pijove/articles/ins-strategy-and-tactics.html "> Next: Insurgency Sandstorm: Strategy & Tactics  </a>
+                  </span>
+                
+
+                <hr>
+            </div>
+        </div>
+    </div>
+</article>
+  
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <footer class="footer">
+  <hr>
+  <nav class="footer__menu">
+    <ul class="footer__menu-list">
+      <li class="footer__menu-item"><a class="footer__menu-link" href="/contact.html">Contact</a></li>
+      <li class="footer__menu-item"><a class="footer__menu-link" href="/support.html">Support</a></li>
+      <li class="footer__menu-item"><a class="footer__menu-link" href="/terms.html">Terms</a></li>
+    </ul>
+  </nav>
+</footer>
+<a href="/xyz-assets-cache/" style="display:none" aria-hidden="true" tabindex="-1" rel="nofollow">.</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    
+  
+    </body>
+</html>
