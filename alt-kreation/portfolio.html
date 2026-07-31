@@ -9,7 +9,7 @@
         alt-kreation – Portfolio
         
     </title>
-    <meta name="description" content="Intrepid Toad, Game Studio from Ireland">
+    <meta name="description" content="Intrepid Toad, Game Developers from Ireland">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     
@@ -37,8 +37,21 @@
 <script src="/js/main.js"></script>
 
 
+<script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+    };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
+
+
+<script src="/js/post-lists.js"></script>
 
 
 </head>
@@ -152,6 +165,8 @@
                 
                 <li class="filter" data-filter=".game-jams">Game jams</li>
                 
+                <li class="filter" data-filter=".tools">Tools</li>
+                
             </ul>
         </div>
         <div class="portfolio-contant">
@@ -210,9 +225,9 @@ The People have questions, but there's no one willing to answer them.</p>
                     
                     <div class="mix game-jams">
                         <a class="portfolio-card" href="https://intrepid-toad.itch.io/pigeons-arent-pests">
-                            <img class="portfolio-card-img" src="/img/alt-kreation/portfolio/pigeons-arent-pests.gif" alt="Pigeons aren't pests">
+                            <img class="portfolio-card-img" src="/img/alt-kreation/portfolio/pigeons-arent-pests.gif" alt="Pigeons Aren't Pests">
                             <div class="portfolio-card-text">
-                                <h3 class="portfolio-card-title">Pigeons aren't pests</h3>
+                                <h3 class="portfolio-card-title">Pigeons Aren't Pests</h3>
                                 <p class="portfolio-card-content">Global Game Jam 2025: Pigeons, once revered as symbols of peace, are now reviled as vermin.
 Learn about our feathered friends and burst the bubble of pigeon pest propaganda.</p>
                             </div>
@@ -225,6 +240,22 @@ Learn about our feathered friends and burst the bubble of pigeon pest propaganda
                             <div class="portfolio-card-text">
                                 <h3 class="portfolio-card-title">Maurice Bean Trippin</h3>
                                 <p class="portfolio-card-content">Global Game Jam 2024: Maurice ate a bad bakewell, got beat up by beans, and surpassed Solid Snake?!?! </p>
+                            </div>
+                        </a>
+                    </div>
+                    
+                </div>
+                
+                <div class="portfolio-group">
+                    <h1 class="portfolio-group-title">Tools</h1>
+                    
+                    
+                    <div class="mix tools">
+                        <a class="portfolio-card" href="/intrepid-toad/releases/platonic-solids.html">
+                            <img class="portfolio-card-img" src="/img/intrepid-toad/releases/platonic-1.jpg" alt="Platonic Solids">
+                            <div class="portfolio-card-text">
+                                <h3 class="portfolio-card-title">Platonic Solids</h3>
+                                <p class="portfolio-card-content">The tool allows you to add platonic solids into unity easily</p>
                             </div>
                         </a>
                     </div>
