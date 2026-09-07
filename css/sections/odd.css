@@ -172,3 +172,8 @@ blockquote footer
 {
     background: #ddd;
 }
+
+output {
+    color: var(--primary);
+    font-weight: bold;
+}

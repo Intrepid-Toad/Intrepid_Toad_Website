@@ -674,3 +674,51 @@ details[open] > summary .expand-icon::before { content: "▼"; }
     object-fit: contain;
     margin: 1rem auto;
 }
+
+
+.tools-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tools-list li {
+    margin: 0;
+    padding: 0;
+}
+
+.tool-header-center{
+    text-align: center;
+}
+
+.tool-image-center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%; 
+}
+
+:root {
+    --input-1: #ff0000;
+    --input-2: #00ff00;
+    --input-3: #00ffff;
+    --output:  #fff3b0;
+}
+
+.colour-a td:last-child {
+    background: var(--input-1);
+}
+
+.colour-b td:last-child {
+    background: var(--input-2);
+}
+
+.colour-c td:last-child {
+    background: var(--input-3);
+}
+
+.colour-d td:last-child {
+    font-weight: bold;
+}
+
+

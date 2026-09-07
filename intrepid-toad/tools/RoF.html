@@ -131,26 +131,29 @@
         <div class="row">
             <div class="col-lg-12">
 
-                <h1 id="rate-of-fire-calculator">Rate of Fire Calculator</h1>
+                <h1 class="tool-header-center">Rate of Fire Calculator</h1>
 
-<h2 id="calculator">Calculator</h2>
+<div id="rate-of-fire-app"></div>
 
-<div class="calculator">
+<p><img src="/img/intrepid-toad/releases/rof-visual.jpg" alt="Rate of Fire Visual" class="tool-image-center" /></p>
 
-<label for="length">Shot Length</label>
-<input id="length" type="number" min="0" step="1" value="1" />
+<h2 id="formula">Formula</h2>
 
-<label for="shot">Shot Reload</label>
-<input id="shot" type="number" min="0" step="0.1" value="0" />
+<p>The sustained rate of fire (RPM) is calculated using the following formula:</p>
 
-<label for="salvo">Salvo Reload</label>
-<input id="salvo" type="number" min="0" step="0.1" value="0.1" />
+\[\mathrm{RPM} =
+\frac{60 \times {\color{red}{L}}}
+{\left({\color{red}{L}} - 1\right) \times {\color{lime}{R_s}} + {\color{cyan}{R_v}}}\]
 
-<p>
-    Rate of Fire per Minute: <span id="result">0</span>
-</p>
+<p>Where:</p>
 
-</div>
+<ul>
+  <li>$\color{red}{L}$ = <strong>Shot Length</strong> (number of rounds fired in the salvo)</li>
+  <li>$\color{lime}{R_s}$ = <strong>Shot Reload</strong> (seconds between individual shots)</li>
+  <li>$\color{cyan}{R_v}$ = <strong>Salvo Reload</strong> (seconds before the next salvo begins)</li>
+</ul>
+
+<p>The denominator represents the total time required to complete one firing cycle. Multiplying the number of rounds fired by 60 converts the result into <strong>rounds per minute (RPM)</strong>.</p>
 
 <h2 id="automatic-and-burst-rate-of-fire-settings">Automatic and Burst Rate of Fire Settings</h2>
 
@@ -179,24 +182,6 @@
   </tbody>
 </table>
 
-<h2 id="formula">Formula</h2>
-
-<p>The sustained rate of fire (RPM) is calculated using the following formula:</p>
-
-\[\mathrm{RPM} =
-\frac{60 \times L}
-{\left(L - 1\right) \times R_s + R_v}\]
-
-<p>Where:</p>
-
-<ul>
-  <li>$L$ = <strong>Shot Length</strong> (number of rounds fired in the salvo)</li>
-  <li>$R_s$ = <strong>Shot Reload</strong> (seconds between individual shots)</li>
-  <li>$R_v$ = <strong>Salvo Reload</strong> (seconds before the next salvo begins)</li>
-</ul>
-
-<p>The denominator represents the total time required to complete one firing cycle. Multiplying the number of rounds fired by 60 converts the result into <strong>rounds per minute (RPM)</strong>.</p>
-
 
                 <hr>
                 
@@ -220,7 +205,13 @@
 </article>
 
 
-<script src="/js/tools/rof.js"></script>
+
+
+
+
+
+<script type="module" src="/assets/react/rof/index-Xkc75fhN.js"></script>
+
 
   
     <footer>
