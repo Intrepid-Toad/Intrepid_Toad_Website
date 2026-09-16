@@ -131,10 +131,99 @@
         <div class="row">
             <div class="col-lg-12">
 
-                <h1 class="tool-header-center">Composite Score Viewer</h1>
-
+                <h1 class="tool-header-center">Composite Score Tool </h1>
 <div id="composite-score-app"></div>
 
+<h1 class="tool-header-center">Composite Score Information</h1>
+<p>What is a composite score and why would I use it?</p>
+
+<p>A composite score is a single data point that combines information from multiple variables.
+An advantage of this is it is easier to analyse interpret than multiple variables.</p>
+
+<h2 id="how-to-use-the-tool">How to use the tool?</h2>
+
+<ol>
+  <li>Upload a valid .csv file</li>
+  <li>Apply scoring weights and direction</li>
+  <li>View Normalised Results</li>
+</ol>
+
+<h3 id="csv-file">.csv file?</h3>
+
+<p>A csv file stands for comma separated values. 
+It is a common format, and can be created of most software even a text editor.</p>
+
+<h3 id="score-weight">score weight?</h3>
+
+<p>Weight refers to how much a variable score contributes to the result. 
+As a designer you can decide what % of the total score that variable contributes.</p>
+
+<h3 id="score-direction">score direction?</h3>
+
+<p>Depending on what you are measuring, lower or higher value may be better.
+When calculate weight you must decide which direction scores higher.</p>
+
+<h2 id="normalised-data">Normalised Data</h2>
+
+<p>To be able to calculate the score, the data must be normalised.
+The result of the composite score will be displayed bot has Min-Max and Z-Score.</p>
+
+<h3 id="what-is-min-max">What is Min-Max?</h3>
+
+<p>In Min-Max every value is between 0-1, with 0 being the minumum and and 1 being the maximum.
+This rescales the data to a common range.</p>
+
+<p>The min-max normalization formula is:</p>
+
+\[x' = \frac{x - x_{\min}}{x_{\max} - x_{\min}}\]
+
+<p>where:</p>
+
+<ul>
+  <li>$x$ is the original value.</li>
+  <li>$x_{\min}$ is the minimum value of the feature.</li>
+  <li>$x_{\max}$ is the maximum value of the feature.</li>
+  <li>$x’$ is the normalized value.</li>
+</ul>
+
+<h3 id="what-is-z-score">What is Z-Score</h3>
+
+<p>Z-Score also know as standard score, measures the difference from the mean in standard deviations.</p>
+
+<p>Assuming the population mean and population standard deviation are known, 
+a raw score (x) is converted into a standard score (or <strong>z-score</strong>) by:</p>
+
+\[z = \frac{x - \mu}{\sigma}\]
+
+<p>where:</p>
+
+<ul>
+  <li>$\mu$ is the <strong>mean</strong> of the population.</li>
+  <li>$\sigma$ is the <strong>standard deviation</strong> of the population.</li>
+  <li>$x$ is the raw score.</li>
+  <li>$z$ is the standardized (z) score.</li>
+</ul>
+
+<h3 id="when-would-i-use-this">When would I use this?</h3>
+
+<p>I use this frequently when game balancing or optimisation mathmatically as the data tells a story.</p>
+
+<h2 id="exported-data">Exported data</h2>
+
+<p>The export .zip contains 6 files. 
+The notes contains the {Column, Direction, Weight, Percentage} for the score weights, so you know how to values were calculated.
+The other files are the spreadsheets including the original .csv so you can continue to use it.</p>
+
+<ol>
+  <li>notes</li>
+  <li>name_minmax</li>
+  <li>name_minmax_composite</li>
+  <li>name_original</li>
+  <li>name_zscore</li>
+  <li>name_zscore_composite</li>
+</ol>
+
+<p>Note the data uploaded is cilent-side so we at Intrepid Toad do not store or use your data.</p>
 
 
                 <hr>
