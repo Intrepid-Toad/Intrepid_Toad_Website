@@ -1,0 +1,232 @@
+﻿.app-scoring-section-title {
+    margin-top: 2rem;
+}
+
+.app-scoring-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.app-scoring-tab,
+.app-scoring-button {
+    cursor: pointer;
+}
+
+.app-scoring-tab {
+    padding: 0.6rem 1rem;
+}
+
+.app-scoring-tab-active {
+    font-weight: bold;
+}
+
+.app-scoring-export {
+    margin-top: 2rem;
+}
+
+.app-scoring-export-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.app-scoring-data-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.app-scoring-data-tabs button {
+    cursor: pointer;
+}
+
+.app-scoring-data-tab-active {
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   React Data Table - Dark Theme
+   ========================================================= */
+
+.app-scoring .rdt_Table {
+    background-color: #181818;
+    color: #d6d6d6;
+}
+
+.app-scoring .rdt_TableHead {
+    background-color: #101010;
+}
+
+.app-scoring .rdt_TableHeadRow {
+    background-color: #101010;
+    color: #d6d6d6;
+    border-bottom-color: #444444;
+}
+
+.app-scoring .rdt_TableCol {
+    color: #d6d6d6;
+}
+
+.app-scoring .rdt_TableCol_Sortable {
+    color: #d6d6d6;
+}
+
+.app-scoring .rdt_TableRow {
+    background-color: #181818;
+    color: #d6d6d6;
+    border-bottom-color: #333333;
+}
+
+.app-scoring .rdt_TableRow:nth-child(even) {
+    background-color: #222222;
+}
+
+.app-scoring .rdt_TableCell {
+    color: #d6d6d6;
+}
+
+
+/* =========================================================
+   Table Hover
+   ========================================================= */
+
+.app-scoring .rdt_TableBody .rdt_TableRow:hover {
+    background-color: #292929;
+    color: #d6d6d6;
+}
+
+.app-scoring .rdt_TableBody .rdt_TableRow:hover .rdt_TableCell {
+    background-color: #292929;
+    color: #d6d6d6;
+}
+
+
+/* =========================================================
+   Pagination
+   ========================================================= */
+
+.app-scoring .rdt_Pagination {
+    background-color: #101010;
+    color: #d6d6d6;
+    border-top: 1px solid #333333;
+}
+
+.app-scoring .rdt_Pagination button {
+    color: #d6d6d6;
+    background-color: transparent;
+}
+
+.app-scoring .rdt_Pagination button svg {
+    fill: #d6d6d6;
+}
+
+.app-scoring .rdt_Pagination button:hover {
+    background-color: #2a2a2a;
+}
+
+.app-scoring .rdt_Pagination button:disabled {
+    color: #666666;
+    background-color: transparent;
+}
+
+.app-scoring .rdt_Pagination button:disabled svg {
+    fill: #666666;
+}
+
+.app-scoring .rdt_Pagination select {
+    background-color: #181818;
+    color: #d6d6d6;
+    border: 1px solid #444444;
+}
+
+.app-scoring .rdt_Pagination option {
+    background-color: #181818;
+    color: #d6d6d6;
+}
+
+
+/* =========================================================
+   Filter Controls
+   ========================================================= */
+
+.app-scoring input,
+.app-scoring select {
+    color: #d6d6d6;
+    background-color: #181818;
+    border: 1px solid #444444;
+}
+
+.app-scoring input::placeholder {
+    color: #888888;
+}
+
+.app-scoring option {
+    color: #d6d6d6;
+    background-color: #181818;
+}
+
+
+/* =========================================================
+   App Buttons
+   ========================================================= */
+
+.app-scoring button {
+    color: #d6d6d6;
+    background-color: #181818;
+    border-color: #444444;
+}
+
+.app-scoring button:hover {
+    color: #ffffff;
+    background-color: #292929;
+}
+
+.app-scoring button:disabled {
+    color: #666666;
+    background-color: #181818;
+}
+
+/* =========================================================
+   React Data Table - Filter / Dropdown Panels
+   ========================================================= */
+
+.app-scoring [role="dialog"],
+.app-scoring [role="menu"],
+.app-scoring [role="listbox"] {
+    background-color: #242424;
+    color: #d6d6d6;
+    border: 1px solid #444444;
+}
+
+.app-scoring input,
+.app-scoring select {
+    background-color: #181818;
+    color: #d6d6d6;
+    border-color: #444444;
+}
+
+.app-scoring option {
+    background-color: #181818;
+    color: #d6d6d6;
+}
+
+.app-scoring .rdt_header {
+    background-color: #101010;
+    color: #d6d6d6;
+}
+
+.app-scoring .rdt_headerTitle {
+    color: #d6d6d6;
+}
+
+
+
+.app-scoring option {
+    background-color: #181818;
+    color: #d6d6d6;
+}
+
