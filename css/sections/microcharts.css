@@ -1,0 +1,349 @@
+﻿
+    /* =========================================================
+       Microcharts
+       ========================================================= */
+
+:root {
+
+    --mc-font: Arial, Helvetica, sans-serif;
+    --mc-font-numeric: Arial, Helvetica, sans-serif;
+    
+    /* Main colours */
+    --mc-stroke: #eae9e6;
+    --mc-positive: #45a385;
+    --mc-negative: #df7856;
+    --mc-neutral: #9a9a97;
+    --mc-accent: #5ea1cf;
+
+    /* Distribution / box fill */
+    --mc-band: color-mix(
+            in oklab,
+            var(--mc-stroke) 12%,
+            transparent
+    );
+
+    --mc-moon: #e0be6f;
+
+    /* Category colours */
+    --mc-cat-1: #e2b45c;
+    --mc-cat-2: #6fb0e0;
+    --mc-cat-3: #4fb08d;
+    --mc-cat-4: #6e9bd1;
+    --mc-cat-5: #e07e5e;
+    --mc-cat-6: #c486b0;
+
+    /* Text on category colours */
+    --mc-on-cat-1: #000000e6;
+    --mc-on-cat-2: #000000e6;
+    --mc-on-cat-3: #000000e6;
+    --mc-on-cat-4: #000000e6;
+    --mc-on-cat-5: #000000e6;
+    --mc-on-cat-6: #000000e6;
+
+    /* General settings */
+    --mc-stroke-width: 1.5;
+    --mc-gap: 0.25em;
+    --mc-density: 1;
+
+    /* Fonts */
+    --mc-font: inherit;
+    --mc-font-numeric: var(--mc-font);
+
+    --mc-label-size: 0.75em;
+    --mc-label-px: 0.75em;
+    --mc-label-weight: 400;
+
+    /* Active / selected elements */
+    --mc-active-stroke: var(--mc-accent);
+    --mc-active-fill: var(--mc-on-fill);
+    --mc-active-fill-opacity: 0.2;
+
+    /* Inline positioning */
+    --mc-inline-nudge: 0em;
+    --mc-glyph-nudge: 0em;
+
+    /* Tooltip */
+    --mc-surface: #1e1e1e;
+    --mc-surface-ink: #eae9e6;
+    --mc-surface-edge: rgba(234, 233, 230, 0.2);
+    --mc-surface-shadow: rgba(0, 0, 0, 0.45);
+
+    --mc-on-fill: #000000e6;
+    --mc-on-fill-dim: var(--mc-stroke);
+
+    /* Animation */
+    --mc-duration: 0.3s;
+    --mc-easing: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================================
+   Base
+   ========================================================= */
+
+.mc-root {
+    vertical-align: middle;
+    font-family: var(--mc-font);
+
+    --mc-sw: calc(
+            var(--mc-stroke-width) * var(--mc-density)
+    );
+
+    max-width: 100%;
+    height: auto;
+
+    display: inline-block;
+    overflow: visible;
+}
+
+
+/* SVG text */
+
+.mc-root text {
+    font-variant-numeric: tabular-nums;
+    font-family: var(--mc-font-numeric);
+    font-weight: var(--mc-label-weight);
+
+    font-size: calc(
+            var(--mc-label-px) *
+            min(1.25, var(--mc-density))
+    );
+
+    fill: var(--mc-stroke);
+}
+
+
+/* Focus */
+
+[data-mc-host]:focus-visible,
+.mc-root:focus-visible {
+    outline: 2px solid var(--mc-accent);
+    outline-offset: 2px;
+    border-radius: 0.2em;
+}
+
+
+/* Microchart host */
+
+[data-mc-host] {
+    touch-action: pan-y pinch-zoom;
+    width: fit-content;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   Chart drawing
+   ========================================================= */
+
+.mc-root [data-mc-ink="data"] {
+    fill: none;
+    stroke: var(--mc-stroke);
+    stroke-width: var(--mc-sw);
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+.mc-root [data-mc-ink="muted"] {
+    fill: none;
+    stroke: var(--mc-neutral);
+}
+
+.mc-root [data-mc-ink="band"] {
+    fill: var(--mc-band);
+    stroke: none;
+}
+
+.mc-root [data-mc-ink="accent"] {
+    fill: var(--mc-accent);
+    stroke: none;
+}
+
+.mc-root [data-mc-active] {
+    stroke: var(--mc-active-stroke);
+}
+
+
+/* =========================================================
+   Stroke weights
+   ========================================================= */
+
+.mc-root [data-mc-w="full"] {
+    stroke-width: var(--mc-sw);
+}
+
+.mc-root [data-mc-w="support"] {
+    stroke-width: calc(var(--mc-sw) * 2 / 3);
+}
+
+.mc-root [data-mc-w="tick"] {
+    stroke-width: calc(var(--mc-sw) / 2);
+}
+
+.mc-root [data-mc-w="hair"] {
+    stroke-width: calc(var(--mc-sw) / 3);
+}
+
+.mc-root [data-mc-w="heavy"] {
+    stroke-width: calc(var(--mc-sw) * 4 / 3);
+}
+
+
+/* =========================================================
+   Active elements
+   ========================================================= */
+
+.mc-root :is(
+    rect,
+    circle,
+    ellipse,
+    polygon
+)[data-mc-active] {
+    fill: var(--mc-active-fill);
+    fill-opacity: var(--mc-active-fill-opacity);
+}
+
+
+/* =========================================================
+   Other chart colours
+   ========================================================= */
+
+.mc-root [data-mc-ink="point"],
+.mc-root [data-mc-ink="bar"] {
+    fill: var(--mc-stroke);
+    stroke: none;
+}
+
+.mc-root [data-mc-ink="positive"] {
+    fill: var(--mc-positive);
+    stroke: none;
+}
+
+.mc-root [data-mc-ink="negative"] {
+    fill: var(--mc-negative);
+    stroke: none;
+}
+
+.mc-root [data-mc-ink="neutral"] {
+    fill: var(--mc-neutral);
+    stroke: none;
+}
+
+.mc-root [data-mc-ink="fill"] {
+    fill: var(--mc-stroke);
+    fill-opacity: 0.12;
+    stroke: none;
+}
+
+
+/* =========================================================
+   Tooltip / readout
+   ========================================================= */
+
+.mc-spark-readout {
+    background: var(--mc-surface);
+    color: var(--mc-surface-ink);
+
+    box-shadow:
+            0 0 0 1px var(--mc-surface-edge),
+            0 2px 6px -2px var(--mc-surface-shadow);
+
+    font-family: var(--mc-font);
+    font-size: var(--mc-label-size);
+
+    font-variant-numeric: tabular-nums;
+
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    pointer-events: none;
+
+    box-sizing: border-box;
+
+    border: 0;
+    border-radius: 0.4em;
+
+    max-width: max(100%, 14em);
+
+    margin: 0 0 0.3em;
+    padding: 0.05em 0.4em;
+
+    line-height: 1.35;
+
+    display: block;
+    position: absolute;
+
+    inset:
+            auto
+            auto
+            100%
+            50%;
+
+    overflow: hidden;
+
+    transform: translateX(-50%);
+}
+
+
+/* =========================================================
+   Your actual-value marker
+   ========================================================= */
+
+.numeric-statistic-chart {
+    width: 100px;
+    height: 20px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.numeric-statistic-marker {
+    pointer-events: auto;
+
+    background: #ffd400;
+
+    width: 3px;
+    height: 20px;
+
+    position: absolute;
+    top: 0;
+
+    transform: translateX(-50%);
+
+    z-index: 10;
+
+    border-radius: 1px;
+
+    box-shadow:
+            0 0 2px rgba(0, 0, 0, 0.7);
+}
+
+
+/* =========================================================
+   Reduced motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .mc-root *,
+    .mc-root,
+    .mc-spark-readout {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+
+/* =========================================================
+   Microcharts internal positioning
+   ========================================================= */
+
+@property --mc-seat {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 0;
+}
+
+@property --mc-seat-mid {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 0;
+}
