@@ -1,0 +1,128 @@
+﻿{
+  "options": {
+    "title": "Employees",
+    "pagination": true,
+    "pageSize": 10,
+    "sortable": true,
+    "filterable": true,
+    "striped": true,
+    "highlightOnHover": true,
+    "export": {
+      "csv": true,
+      "json": true,
+      "copy": true,
+      "filename": "employees"
+    }
+  },
+
+  "columns": [
+    {
+      "field": "name",
+      "title": "Name",
+
+      "sortable": true,
+      "filterable": true,
+
+      "filterType": "text"
+    },
+
+    {
+      "field": "department",
+      "title": "Department",
+
+      "sortable": true,
+      "filterable": true,
+
+      "filterType": "set"
+    },
+
+    {
+      "field": "salary",
+      "title": "Salary",
+
+      "type": "number",
+
+      "sortable": true,
+      "filterable": true,
+
+      "filterType": "number",
+
+      "right": true
+    },
+
+    {
+      "field": "hired",
+      "title": "Hired",
+
+      "type": "date",
+
+      "sortable": true,
+      "filterable": true,
+
+      "filterType": "date"
+    }
+  ],
+
+  "data": [
+    {
+      "name": "Alice",
+      "department": "Engineering",
+      "salary": 155000,
+      "hired": "2019-03-12"
+    },
+    {
+      "name": "Bob",
+      "department": "Product",
+      "salary": 132000,
+      "hired": "2020-07-01"
+    },
+    {
+      "name": "Charlie",
+      "department": "Design",
+      "salary": 118000,
+      "hired": "2021-01-15"
+    },
+    {
+      "name": "Diana",
+      "department": "Analytics",
+      "salary": 143000,
+      "hired": "2018-11-30"
+    },
+    {
+      "name": "Edward",
+      "department": "Engineering",
+      "salary": 128000,
+      "hired": "2022-04-22"
+    },
+    {
+      "name": "Fiona",
+      "department": "Engineering",
+      "salary": 162000,
+      "hired": "2017-09-05"
+    },
+    {
+      "name": "George",
+      "department": "Sales",
+      "salary": 97000,
+      "hired": "2023-02-08"
+    },
+    {
+      "name": "Helen",
+      "department": "Design",
+      "salary": 109000,
+      "hired": "2022-11-19"
+    },
+    {
+      "name": "Ian",
+      "department": "Product",
+      "salary": 138000,
+      "hired": "2020-03-30"
+    },
+    {
+      "name": "Jane",
+      "department": "Sales",
+      "salary": 104000,
+      "hired": "2021-08-14"
+    }
+  ]
+}
